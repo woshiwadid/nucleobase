@@ -1,14 +1,19 @@
 {
-  "name": "course.thesis",
+  "name": "coachme",
   "version": "1.0.0",
+  "description": "find a coach online.",
+  "main": "server/index.js",
+  "engines": {
+    "node": ">=6.4.0"
+  },
   "scripts": {
     "postinstall": "curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install | bash",
     "start": "nodemon server",
     "test": "NODE_ENV=test grunt test",
     "build": "webpack --watch"
   },
-  "author": "Hack Reactor",
-  "license": "MIT",
+  "author": "Nucleobase",
+  "license": "",
   "dependencies": {
     "babel-core": "^6.24.1",
     "bcrypt-nodejs": "^0.0.3",
