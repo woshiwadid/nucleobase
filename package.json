@@ -4,9 +4,10 @@
   "description": "find a coach online.",
   "main": "server/index.js",
   "engines": {
-    "node": ">=6.4.0"
+    "node": "6.10.3"
   },
   "scripts": {
+    "postinstall": "curl -S https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install | bash",
     "start": "nodemon server",
     "test": "NODE_ENV=test grunt test",
     "build": "webpack --watch"
@@ -50,6 +51,7 @@
     "grunt-mocha-test": "^0.13.2",
     "mocha": "^3.2.0",
     "node-mocks-http": "^1.6.1",
+    "nodemon": "^1.11.0",
     "supertest": "^3.0.0",
     "webpack": "^2.3.2",
     "webpack-dev-server": "^2.4.2"
