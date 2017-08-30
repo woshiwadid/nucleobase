@@ -1,17 +1,17 @@
-# Project Name
+# TrainerFinder
 
-The project description
+TrainerFinder is a centralized platform for personal trainers to find clients, and for users to find personal trainers. We provide trainers a place to set up available schedules that prospective clients can claim and pay for. We will feature a rating system for both users and trainers. This will motivate trainers to provide excellent service and for users to be excellent clients.
 
-## Team
+## Nucleobase
 
-- teamMember
-- teamMember
-- teamMember
-- teamMember
+- Andy Lien
+- Tom Cosby
+- Chao Zeng
+- Gui Choupeaux
 
 ## Roadmap
 
-View the project roadmap [here](LINK_TO_DOC)
+View the project roadmap [here](https://drive.google.com/open?id=10c67TZGKlYZL2NAHgN0q_6UWpl-oV2H2HMFLjHDAPnE)
 
 ## Contributing
 
@@ -102,5 +102,3 @@ To run server: `yarn run start`
 To run tests: `yarn run test`
 
 To run your redis server for the session store `redis-server`
-
-
