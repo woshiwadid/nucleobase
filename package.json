@@ -1,5 +1,5 @@
 {
-  "name": "coachme",
+  "name": "trainerfinder",
   "version": "1.0.0",
   "description": "find a coach online.",
   "main": "server/index.js",
