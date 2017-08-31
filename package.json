@@ -1,14 +1,18 @@
 {
-  "name": "course.thesis",
+  "name": "trainerfinder",
   "version": "1.0.0",
+  "description": "find a coach online.",
+  "main": "server/index.js",
+  "engines": {
+    "node": "6.10.3"
+  },
   "scripts": {
-    "postinstall": "curl -s https://raw.githubusercontent.com/reactorcore/pomander/master/bin/install | bash",
     "start": "nodemon server",
     "test": "NODE_ENV=test grunt test",
     "build": "webpack --watch"
   },
-  "author": "Hack Reactor",
-  "license": "MIT",
+  "author": "Nucleobase",
+  "license": "",
   "dependencies": {
     "babel-core": "^6.24.1",
     "bcrypt-nodejs": "^0.0.3",
@@ -33,7 +37,8 @@
     "pg": "^6.1.5",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "redis": "^2.7.1"
+    "redis": "^2.7.1",
+    "url": "^0.11.0"
   },
   "devDependencies": {
     "babel-loader": "^7.0.0",
@@ -46,6 +51,7 @@
     "grunt-mocha-test": "^0.13.2",
     "mocha": "^3.2.0",
     "node-mocks-http": "^1.6.1",
+    "nodemon": "^1.11.0",
     "supertest": "^3.0.0",
     "webpack": "^2.3.2",
     "webpack-dev-server": "^2.4.2"

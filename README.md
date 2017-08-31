@@ -66,9 +66,14 @@ And https://github.com/lorenwest/node-config/wiki/Environment-Variables#custom-e
 ## Database Initialization
 
 IMPORTANT: ensure `postgres` is running before performing these steps.
+```
+brew services start postgresql
+brew services stop postgresql
+```
 
 ### Database Creation:
-
+http://gruntjs.com/getting-started
+npm install -g grunt-cli
 Use grunt to create a new database for your development and test environments:
 
 Development envronment: `grunt pgcreatedb:default`
