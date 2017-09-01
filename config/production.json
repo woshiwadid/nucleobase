@@ -1,7 +1,9 @@
 {
   "knex": {
     "connection": {
-      "database": "dftlpt03rrpdht"
+      "database": "dftlpt03rrpdht",
+      "host": "ec2-54-225-113-161.compute-1.amazonaws.com",
+      "port": 5432
     },
     "debug": false,
     "pool": {
