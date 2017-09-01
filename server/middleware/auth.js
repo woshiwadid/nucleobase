@@ -19,3 +19,5 @@ module.exports.session = session({
   resave: false,
   saveUninitialized: false
 });
+
+//redis://h:p6d1279b3283f50b9b34e993c4da913ae33a552b03088ce95ad439e8821c6046c@ec2-52-21-74-44.compute-1.amazonaws.com:18299
