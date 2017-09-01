@@ -7,7 +7,8 @@
     "node": "6.10.3"
   },
   "scripts": {
-    "start": "nodemon server",
+    "server-dev": "nodemon server",
+    "start": "node server",
     "test": "NODE_ENV=test grunt test",
     "build": "webpack --watch"
   },
