@@ -107,3 +107,45 @@ To run server: `yarn run start`
 To run tests: `yarn run test`
 
 To run your redis server for the session store `redis-server`
+
+### Database Command:
+https://devcenter.heroku.com/articles/heroku-postgresql#provisioning-heroku-postgres
+
+On local machine:
+Connect to postgres:
+`psql -h localhost` OR `psql'
+
+Show databases:
+`\l'
+
+Connect to db:
+`\c thesis_devel`
+
+Show table:
+`\dt` OR '\d'
+
+Select:
+`select * from profiles;`
+
+Quit:
+`\q`
+
+---------------------------------------
+postgres://xabkbokctjroaa:09a2a4912a58010804195d730581b01c3d2653b708a663edf33bdd6739d82192@ec2-54-225-113-161.compute-1.amazonaws.com:5432/\c
+
+On heroku:
+Connect to postgres:
+`heroku pg:psql --app trainerfinder`
+
+push data from a local database into a remote Heroku Postgres database
+`heroku pg:push thesis_devel DATABASE_URL --app trainerfinder`
+Pushing thesis_devel ---> postgresql-amorphous-39879
+
+Show databases:
+`\l dftlpt03rrpdht`
+
+Connect to db:
+`\c dftlpt03rrpdht`
+
+
+
