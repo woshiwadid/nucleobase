@@ -1,5 +1,20 @@
 {
-  "passport": {
+  "knex": {
+    "connection": {
+      "database": "ddq89cunejrqik",
+      "host": "ec2-54-225-113-161.compute-1.amazonaws.com",
+      "port": 5432,
+      "user": "luaippxpdnxykl",
+      "password": "4549279bb0370a5852aeb4feedbb15b98c10ed6e1fe2bab33271ccb21ebb6f06"
+    },
+    "debug": false,
+    "pool": {
+      "min": 2,
+      "max": 10
+    }
+  },
+
+   "passport": {
     "Google": {
       "clientID": "GOOGLE_CLIENT_ID",
       "clientSecret": "GOOGLE_CLIENT_SECRET",
