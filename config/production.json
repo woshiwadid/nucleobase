@@ -4,6 +4,7 @@
       "database": "dftlpt03rrpdht",
       "host": "ec2-54-225-113-161.compute-1.amazonaws.com",
       "port": 5432,
+      "user": "xabkbokctjroaa",
       "password": "password"
     },
     "debug": false,
