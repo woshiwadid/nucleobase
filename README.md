@@ -145,5 +145,7 @@ Show databases:
 Connect to db:
 `\c dftlpt03rrpdht`
 
+heroku pg:credentials --app trainerfinder
+
 
 
