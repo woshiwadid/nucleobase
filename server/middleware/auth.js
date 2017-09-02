@@ -5,6 +5,8 @@ const redisClient = require('redis').createClient(process.env.REDIS_URL || '');
 
 var redisURL = url.parse(process.env.REDIS_URL);
 
+console.log('redisUrl: ', redisURL);
+
 module.exports.verify = (req, res, next) => {
   if (req.isAuthenticated()) {
     return next();
