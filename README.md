@@ -131,8 +131,6 @@ Quit:
 `\q`
 
 ---------------------------------------
-DATABASE_URL = postgres://xabkbokctjroaa:09a2a4912a58010804195d730581b01c3d2653b708a663edf33bdd6739d82192@ec2-54-225-113-161.compute-1.amazonaws.com:5432/dftlpt03rrpdht
-
 On heroku:
 Connect to postgres:
 `heroku pg:psql --app trainerfinder`
