@@ -145,7 +145,15 @@ Show databases:
 Connect to db:
 `\c dftlpt03rrpdht`
 
-heroku pg:credentials --app trainerfinder
+
+`heroku pg:credentials --app trainerfinder`
+
+----------------------------------------
+
+log on heroku 
+`heroku run bash --app trainerfinder-staging`
+`knex migrate:latest`
+"postinstall": "grunt pgcreatedb:default & knex migrate:latest & knex migrate:rollback & knex seed:run"
 
 
 

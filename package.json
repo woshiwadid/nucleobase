@@ -11,7 +11,6 @@
     "start": "node server",
     "test": "NODE_ENV=test grunt test",
     "build": "webpack --watch",
-    "postinstall": "grunt pgcreatedb:default & knex migrate:latest & knex migrate:rollback & knex seed:run"
   },
   "author": "Nucleobase",
   "license": "",
