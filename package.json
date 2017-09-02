@@ -31,6 +31,7 @@
     "grunt-cli": "^1.2.0",
     "grunt-pg": "https://github.com/watsoncj/grunt-pg.git",
     "knex": "^0.12.9",
+    "material-ui": "^0.19.1",
     "morgan": "^1.8.1",
     "passport": "^0.3.2",
     "passport-facebook": "^2.1.1",
@@ -40,7 +41,10 @@
     "pg": "^6.1.5",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
+    "react-redux": "^5.0.6",
+    "react-router": "^4.2.0",
     "redis": "^2.7.1",
+    "redux": "^3.7.2",
     "url": "^0.11.0",
     "webpack": "^2.3.2"
   },
@@ -55,6 +59,7 @@
     "mocha": "^3.2.0",
     "node-mocks-http": "^1.6.1",
     "nodemon": "^1.11.0",
+    "sinon": "^3.2.1",
     "supertest": "^3.0.0",
     "webpack-dev-server": "^2.4.2"
   },

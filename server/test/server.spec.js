@@ -2,7 +2,10 @@
 const request = require('supertest');
 const express = require('express');
 const expect = require('chai').expect;
+const sinon = require('sinon');
+
 const app = require('../app.js');
+const ejs = require('ejs');
 
 describe('basic server', function() {
   it('sends back hello world', function(done) {
@@ -24,4 +27,41 @@ describe('basic server', function() {
       })
       .end(done);
   });
+});
+
+describe('/dashboard', function() {
+
+  it('GET request finds a page', function(done) {
+    request(app)
+      .get('/dashboard')
+      .expect(302)
+      .end(done);
+  });
+
+  xit('GET request responds with rendering index.ejs', function(done) {
+    var spy = sinon.spy(ejs, '__express');
+    request(app)
+      .get('/dashboard')
+      .expect(302)
+      .end( (err, res) => {
+        if (err) {
+          return done(err);
+        }
+        expect(spy.calledWith(__dirname + '/views/index.ejs')).to.be.true;
+        spy.restore();
+        done();
+      });
+  });
+
+});
+
+describe('/login', function() {
+
+  it('GET request responds with OK', function(done) {
+    request(app)
+      .get('/login')
+      .expect(200)
+      .end(done);
+  });
+
 });
