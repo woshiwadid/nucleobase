@@ -3,9 +3,9 @@ const RedisStore = require('connect-redis')(session);
 var url = require('url');
 const redisClient = require('redis').createClient(process.env.REDIS_URL || '');
 
-var redisURL = url.parse(process.env.REDIS_URL);
-
-console.log('redisUrl: ', redisURL);
+if (process.env.REDIS_URL){
+  var redisURL = url.parse(process.env.REDIS_URL).hostname;
+}
 
 module.exports.verify = (req, res, next) => {
   if (req.isAuthenticated()) {
@@ -17,7 +17,7 @@ module.exports.verify = (req, res, next) => {
 module.exports.session = session({
   store: new RedisStore({
     client: redisClient,
-    host: redisURL.hostname || 'localhost',
+    host: redisURL || 'localhost',
     port: 6379
   }),
   secret: 'more laughter, more love, more life',
