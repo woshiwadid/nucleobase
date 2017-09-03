@@ -8,9 +8,10 @@
   },
   "scripts": {
     "server-dev": "nodemon server",
-    "start": "npm run build & node server",
     "test": "NODE_ENV=test grunt test",
-    "build": "webpack -d --watch"
+    "heroku-postbuild": "npm run build",
+    "build": "webpack -d",
+    "start": "node server"
   },
   "author": "Nucleobase",
   "license": "",
@@ -46,13 +47,13 @@
     "redis": "^2.7.1",
     "redux": "^3.7.2",
     "url": "^0.11.0",
-    "webpack": "^2.3.2"
-  },
-  "devDependencies": {
     "babel-loader": "^7.0.0",
     "babel-plugin-transform-es2015-modules-commonjs": "^6.24.0",
     "babel-preset-latest": "^6.24.0",
     "babel-preset-react": "^6.23.0",
+    "webpack": "^2.3.2"
+  },
+  "devDependencies": {
     "chai": "^3.5.0",
     "grunt-eslint": "^19.0.0",
     "grunt-mocha-test": "^0.13.2",
