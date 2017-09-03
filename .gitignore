@@ -1,6 +1,7 @@
 # Project specific
 config/development.json
 config/test.json
+package-lock.json
 
 # OS X
 .DS_Store
