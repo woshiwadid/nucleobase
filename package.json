@@ -9,8 +9,8 @@
   "scripts": {
     "server-dev": "nodemon server",
     "test": "NODE_ENV=test grunt test",
-    "heroku-postbuild": "npm run build",
-    "build": "webpack -d",
+    "heroku-postbuild": "webpack -d",
+    "build": "webpack -d -watch",
     "start": "node server"
   },
   "author": "Nucleobase",
