@@ -1,11 +1,11 @@
 {
   "knex": {
     "connection": {
-      "database": "thesis"
+      "database": "thesis_devel"
     }
   },
 
-   "passport": {
+  "passport": {
     "Google": {
       "clientID": "GOOGLE_CLIENT_ID",
       "clientSecret": "GOOGLE_CLIENT_SECRET",
