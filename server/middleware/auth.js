@@ -14,6 +14,13 @@ module.exports.verify = (req, res, next) => {
   res.redirect('/login');
 };
 
+module.exports.logged = (req, res, next) => {
+  if (req.isAuthenticated()) {
+    return next();
+  }
+  res.status(200).send({message: false});
+};
+
 module.exports.session = session({
   store: new RedisStore({
     client: redisClient,

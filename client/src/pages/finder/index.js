@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 
 import Navbar from '../../components/navbar';
 import SearchBar from './searchbar';
@@ -17,10 +18,10 @@ class Finder extends React.Component {
         width: '100%'
       }}>
 
-        <Navbar />
+        <Navbar loggedIn={this.props.loggedIn}/>
 
         <div className="col-sm-8 col-sm-offset-2" style={{
-          height: '96%',
+          height: '94.8%',
           backgroundColor: '#d9d9d9'
         }}>
           
@@ -30,6 +31,7 @@ class Finder extends React.Component {
         </div>
 
       </div>
+      
     );
 
   }

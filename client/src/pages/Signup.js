@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 
 import Navbar from '../components/navbar';
 
@@ -11,11 +12,18 @@ class Signup extends React.Component {
 
     return (
 
-      <div>
+      <div style={{
+        height: '100%',
+        width: '100%',
+        backgroundColor: '#BEBAB9'
+      }}>
 
-        <Navbar />
+        <Navbar loggedIn={this.props.loggedIn}/>
 
-        <div className="col-sm-6 col-sm-offset-3">
+        <div className="col-sm-6 col-sm-offset-3" style={{
+          height: '100%',
+          backgroundColor: '#DCD8D7'
+        }}>
 
           <h1><span className="fa fa-sign-in"></span> Signup</h1>
 

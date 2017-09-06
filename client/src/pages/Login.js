@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 
 import Navbar from '../components/navbar';
 
@@ -13,12 +14,16 @@ class Login extends React.Component {
 
       <div style={{
         height: '100%',
-        width: '100%'
+        width: '100%',
+        backgroundColor: '#BEBAB9'
       }}>
 
-        <Navbar />
+        <Navbar loggedIn={this.props.loggedIn}/>
 
-        <div className="col-sm-6 col-sm-offset-3">
+        <div className="col-sm-6 col-sm-offset-3" style={{
+          height: '100%',
+          backgroundColor: '#DCD8D7'
+        }}>
 
           <h1><span className="fa fa-sign-in"></span> Login</h1>
 
@@ -32,7 +37,7 @@ class Login extends React.Component {
               <input type="password" className="form-control" name="password" />
             </div>
 
-            <button type="submit" className="btn btn-warning btn-lg">Login</button>
+            <button type="submit" className="btn btn-lg" style={{backgroundColor: '#FDED01'}}>Login</button>
           </form>
 
           <hr />
