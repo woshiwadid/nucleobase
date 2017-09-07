@@ -10,98 +10,79 @@ class Main extends React.Component {
 
     return (
 
-      <div style={{
-        minHeight: '800px',
-        height: '96%',
-        width: '100%',
-        display: 'flex',
-        flexDirection: 'row',
-        justifyContent: 'space-evenly',
-        alignItems: 'center',
-      }}>
-
-        <div id="left-side" style={{
-          minHeight: '400px',
-          height: '96%',
-          width: '21.333%',
-          minWidth: '250px',
+      <div style={{height: '96%', width: '100%'}}>
+        
+        <div className="col-lg-3 col-sm-12" style={{
           display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'space-between',
           alignItems: 'center',
-          backgroundColor: '#DCD8D7'
+          justifyContent: 'center',
+          backgroundColor: '#ffffff'
         }}>
+          <div className="row">
+            <div className="col-lg-12 col-sm-4" style={{
+              height: '200px',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+              padding: '20px'
+            }}>
+              <img src="https://lh3.googleusercontent.com/-_G3XieI-P7Y/AAAAAAAAAAI/AAAAAAAAAEY/AU_AGutjoWQ/s640/photo.jpg" style={{height: '100%'}}/>
+            </div>
 
-          <div style={{
-            height: '20%',
-            width: '96%',
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-evenly',
-            alignItems: 'center',
-            marginTop: '4%',
-            backgroundColor: '#BEBAB9'
-          }}>
-            Profile Picture
+            <div className="col-lg-12 col-sm-4" style={{
+              height: '200px',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+              Some other stuff
+              <br/>
+              This can be a settings mini-tab
+              <br/>
+              or some sort of messaging center?
+            </div>
+
+            <div className="col-lg-12 col-sm-4" style={{
+              height: '200px',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+              Some other stuff
+              <br/>
+              This can be a settings mini-tab
+              <br/>
+              or some sort of messaging center?
+            </div>
           </div>
-
-          <div style={{
-            height: '48%',
-            width: '96%',
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-evenly',
-            alignItems: 'center',
-            marginBottom: '4%',
-            backgroundColor: '#BEBAB9'
-          }}>
-            Settings Box
-          </div>
-
         </div>
 
-        <div id="right-side" style={{
-          minHeight: '400px',
-          height: '96%',
-          minWidth: '250px',
-          width: '74.667%',
+        <div className="col-lg-9 col-sm-12" style={{
           display: 'flex',
           flexDirection: 'column',
           justifyContent: 'space-evenly',
-          alignItems: 'center',
-          backgroundColor: '#0B5258'
         }}>
+          <div className="row">
+            <div className="col-lg-12 col-sm-6 col-6" style={{
+              height: '400px',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+              Notification board?
+            </div>
 
-          <div style={{
-            minHeight: '400px',
-            height: '48%',
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-evenly',
-            alignItems: 'center',
-            backgroundColor: '#DCD8D7'
-          }}>
-            Things You've got to do
+            <div className="col-lg-12 col-sm-6 col-6" style={{
+              height: '400px',
+              display: 'flex',
+              justifyContent: 'center',
+              alignItems: 'center',
+            }}>
+              Upcoming things?
+            </div>
           </div>
-
-          <div style={{
-            minHeight: '400px',
-            height: '48%',
-            width: '100%',
-            display: 'flex',
-            flexDirection: 'row',
-            justifyContent: 'space-evenly',
-            alignItems: 'center',
-            backgroundColor: '#DCD8D7'
-          }}>
-            Analytics Window?
-          </div>
-          
         </div>
-
       </div>
-
     );
 
   }

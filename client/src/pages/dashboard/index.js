@@ -6,25 +6,31 @@ import DashNav from './dashnav';
 
 import Main from './main';
 import Schedule from './schedule';
+import Trainers from './trainers';
+import Clients from './clients';
 
+import { buildYear } from '../../helpers/buildYear';
 
 const pages = {
   'profile': <h1>Edit Profile View</h1>,
-  'schedule': <Schedule />,
-  'trainers': <h1>Trainers View</h1>,
+  'schedule': <Schedule year={buildYear(0)}/>,
+  'trainers': <Trainers />,
   'clients': <h1>Clients View</h1> 
 };
 
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
+    this.state = {
+      year: buildYear(0)
+    };
   }
 
   render() {
 
     return (
 
-      <div className=".col-lg-12" style={{
+      <div style={{
         height: '100%',
         width: '100%'
       }}>
