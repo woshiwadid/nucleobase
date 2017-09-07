@@ -139,8 +139,8 @@ push data from a local database into a remote Heroku Postgres database
 `heroku pg:push thesis_devel DATABASE_URL --app trainerfinder`
 Pushing thesis_devel ---> postgresql-amorphous-39879
 
-Show databases:
-`\l dftlpt03rrpdht`
+Show databases: prod or staging
+`\l dftlpt03rrpdht` or ddq89cunejrqik
 
 Connect to db:
 `\c dftlpt03rrpdht`
@@ -154,6 +154,15 @@ log on heroku
 `heroku run bash --app trainerfinder-staging`
 `knex migrate:latest`
 "postinstall": "grunt pgcreatedb:default & knex migrate:latest & knex migrate:rollback & knex seed:run"
+
+----------------------------------------
+Debug server
+
+npm install -g nodemon
+npm install -g node-inspector 
+
+nodemon --debug server/index.js
+node-inspector
 
 
 

@@ -130,11 +130,13 @@ passport.use('twitter', new TwitterStrategy({
   consumerSecret: config.Twitter.consumerSecret,
   callbackURL: config.Twitter.callbackURL,
   userProfileURL: 'https://api.twitter.com/1.1/account/verify_credentials.json?include_email=true'
+  //userAuthorizationURL: 'https://api.twitter.com/oauth2/token'
 },
   (accessToken, refreshToken, profile, done) => getOrCreateOAuthProfile('twitter', profile, done))
 );
 
 const getOrCreateOAuthProfile = (type, oauthProfile, done) => {
+
   return models.Auth.where({ type, oauth_id: oauthProfile.id }).fetch({
     withRelated: ['profile']
   })
@@ -152,12 +154,24 @@ const getOrCreateOAuthProfile = (type, oauthProfile, done) => {
     })
     .then(profile => {
 
-      let profileInfo = {
-        first: oauthProfile.name.givenName,
-        last: oauthProfile.name.familyName,
-        display: oauthProfile.displayName || `${oauthProfile.name.givenName} ${oauthProfile.name.familyName}`,
-        email: oauthProfile.emails[0].value
-      };
+      var profileInfo;
+
+      //name property doesn't exist for twitter
+      if (oauthProfile.provider === 'twitter') {
+        profileInfo = {
+          first: oauthProfile.displayName,
+          last: oauthProfile.username,
+          display: oauthProfile.displayName,
+          email: oauthProfile.emails[0].value
+        };
+      } else {
+        profileInfo = {
+          first: oauthProfile.name.givenName,
+          last: oauthProfile.name.familyName,
+          display: oauthProfile.displayName || `${oauthProfile.name.givenName} ${oauthProfile.name.familyName}`,
+          email: oauthProfile.emails[0].value
+        };
+      }
 
       if (profile) {
         //update profile with info from oauth
