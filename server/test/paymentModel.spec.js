@@ -31,7 +31,7 @@ describe('Payment model tests', () => {
       card_number: 1,
       card_type: 'Master Card',
       crv: 1,
-      expiration_data: 'October 10, 2017',
+      expiration_date: 'October 10, 2017',
       name_card_holder: 'Gui',
     };
 
