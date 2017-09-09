@@ -1,6 +1,6 @@
 import React from 'react';
 
-import List from './list';
+import ListComponent from './list';
 import Preview from './preview';
 
 
@@ -14,7 +14,7 @@ class ApptList extends React.Component {
     return (
 
       <div style={{
-        height: '600px',
+        height: '100%',
         minWidth: '500px',
         display: 'flex',
         justifyContent: 'center',
@@ -25,7 +25,12 @@ class ApptList extends React.Component {
           height: '600px',
         }}>
 
-          <List />
+          <div className="col-lg-4 col-sm-4" style={{
+            height: '100%',
+            backgroundColor: '#DCD8D7'
+          }}>
+            <ListComponent />
+          </div>
 
           <Preview />
 

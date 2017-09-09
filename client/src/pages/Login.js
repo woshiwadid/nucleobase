@@ -44,9 +44,9 @@ class Login extends React.Component {
           <div>
             {/* All of these buttons will have to be re-made */}
             Or login with any of the following services:<br />
-            <a style={{marginRight: '15px'}} href="/auth/facebook"><img src="../assets/fb-logo.png" /></a>
-            <a style={{marginLeft: '15px', marginRight: '15px'}} href="/auth/google"><img style={{width: '29px'}} src="../assets/google-logo.png" /></a>
-            <a style={{marginLeft: '15px'}} href="/auth/twitter"><img style={{width: '48px'}} src="../assets/twitter-logo.png" /></a>
+            <a style={{marginRight: '15px'}} href="/auth/facebook">Facebook</a>
+            <a style={{marginLeft: '15px', marginRight: '15px'}} href="/auth/google">Google</a>
+            <a style={{marginLeft: '15px'}} href="/auth/twitter">Twitter</a>
           </div>
           <hr />
 

@@ -1,11 +1,14 @@
 import React from 'react';
 
+import {List, ListItem, makeSelectable} from 'material-ui/List';
+import Subheader from 'material-ui/Subheader';
+
 import Entry from './entry';
 
 import appointments from './dummy';
 
 
-class List extends React.Component {
+class ListComponent extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -14,25 +17,35 @@ class List extends React.Component {
 
     return (
 
-      <div className="col-lg-4 col-sm-4" style={{
+      <div style={{
         height: '100%',
-        backgroundColor: '#DCD8D7'
+        width: '100%',
+        overflowY: 'scroll',
+        display: 'list',
+        flexDirection: 'column',
+        justifyContent: 'flex-start',
+        alignItems: 'center',
       }}>
-        <div style={{
-          height: '600px',
-          width: '100%',
-          display: 'flex',
-          flexDirection: 'column',
-          justifyContent: 'flex-start',
-          alignItems: 'center',
-          overflow: 'scroll'
-        }}>
+        <List>
+          <Subheader>Appointments</Subheader>
           {
             appointments.map((appointment, i) => (
-              <Entry key={i} appointment={appointment} />
+              <ListItem
+                hoverColor="#C3D600"
+                primaryText={appointment.location}
+                secondaryText={
+                  <div style={{
+                    display: 'flex',
+                    flexDirection: 'row',
+                  }}>
+                    <span style={{fontWeight: 'bold'}}>{appointment.price} -- </span>
+                    <span>{appointment.date}</span>
+                  </div>
+                }
+              />
             ))
           }
-        </div>
+        </List>
       </div>
 
     );
@@ -40,4 +53,4 @@ class List extends React.Component {
   }
 }
 
-export default List;
+export default ListComponent;
