@@ -6,13 +6,13 @@ import TextField from 'material-ui/TextField';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
 import Divider from 'material-ui/Divider';
-import SearchIcon from 'material-ui/svg-icons/Action/search';
+import SearchIcon from 'material-ui/svg-icons/action/search';
 import List from 'material-ui/List/List';
 import ListItem from 'material-ui/List/ListItem';
 import Avatar from 'material-ui/Avatar';
-import SmileFace from 'material-ui/svg-icons/Social/mood';
-import NeutralFace from 'material-ui/svg-icons/Social/sentiment-neutral';
-import SadFace from 'material-ui/svg-icons/Social/sentiment-very-dissatisfied';
+import SmileFace from 'material-ui/svg-icons/social/mood';
+import NeutralFace from 'material-ui/svg-icons/social/sentiment-neutral';
+import SadFace from 'material-ui/svg-icons/social/sentiment-very-dissatisfied';
 import AppBar from 'material-ui/AppBar';
 
 import Profiles from '../profiles/profiles';
