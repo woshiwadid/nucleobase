@@ -1,5 +1,9 @@
 import React from 'react';
 
+<<<<<<< HEAD
+=======
+import styled from 'styled-components';
+>>>>>>> Created trainer profile search and edit pages
 import TextField from 'material-ui/TextField';
 import DropDownMenu from 'material-ui/DropDownMenu';
 import MenuItem from 'material-ui/MenuItem';
@@ -91,8 +95,13 @@ class Search extends React.Component {
 		console.log(this.state.search)
 		return (
 			    <div>
+<<<<<<< HEAD
        	 	<span style={{marginLeft: '20%'}}>
        	 		<TextField hintText="Seach" style={{width: '300px', Height: '200px'}} onChange={this.handleSearchInput.bind(this)}/>
+=======
+       	 	<span style={{paddingLeft: '200px'}}>
+       	 		<TextField hintText="Seach" style={{width: '300px'}} onChange={this.handleSearchInput.bind(this)}/>
+>>>>>>> Created trainer profile search and edit pages
        	 	</span>
           <span><SearchIcon onClick={this.handleSearch.bind(this)}/></span>
        	 	<br/>

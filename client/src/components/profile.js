@@ -17,14 +17,23 @@ import SmileFace from 'material-ui/svg-icons/Social/mood';
 import styled from 'styled-components';
 
 const styles = {
-  top: {
+  layout: {
     display: 'flex',
     flexWrap: 'wrap',
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    width: '100%'
   },
-  botton: {
-    width: '70%',
-    alignContent: 'center'
+  bottom: {
+  	display: 'flex',
+    flexWrap: 'wrap',
+    justifyContent: 'space-between',
+    width: '100%'
+  },
+  left: {
+    width: '30%'
+  },
+  right: {
+  	width: '69%',
   }
 };
 
@@ -49,13 +58,13 @@ class Profile extends React.Component {
   render() {
     return (
 	  <div>
-	    <div style={styles.top}>
+	    <div style={styles.layout}>
 	      <div className='wrapper'>
 		      <img className="image--cover"  src="http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1444253482/DG2015-san-francisco.jpg?itok=MdRJm2Zo" height={150} width={150}/>
 	        	
 	      </div>
 		    <div>
-		    	<h1 style={{}}>full name</h1>
+		    	<h1>full name</h1>
 		    	<h2>biography blah blah blah .........</h2>
 		    </div>
 		    <div>
@@ -66,8 +75,9 @@ class Profile extends React.Component {
 		    </div>
 	    </div>   
 	    <Divider />
-	    <div>
-        <div>
+	    <br/>
+	    <div style={styles.bottom}>
+        <div style={styles.left}>
         	<DropDownMenu value={this.state.value} style={{backgroundColor:'white'}} iconButton={<SmileFace style={{Color:'black'}}/>}>
 	          <MenuItem value={1} leftIcon={<SmileFace/>} primaryText="More about me"/>
 	          <MenuItem value={2} primaryText="Gyms I go to" />
@@ -75,7 +85,8 @@ class Profile extends React.Component {
 	          <MenuItem value={4} primaryText="Total view" />
 	          <MenuItem value={5} primaryText="Avg rating" />
           </DropDownMenu>
-        <div style={{border:'2px solid', width:'70%',marginLeft: '30%'}}>
+        </div>  
+        <div style={styles.right}>
 		    	<Table>
 		    		<TableHeader displaySelectAll={false}>
 		    			<TableRow><TableHeaderColumn>Current course teaching</TableHeaderColumn></TableRow>
@@ -90,9 +101,8 @@ class Profile extends React.Component {
 		    				<TableRowColumn>Description</TableRowColumn>
 		    			</TableRow>
 		    		</TableBody>
-		    	</Table>
-		    </div>	
-		    <div style={{border:'2px solid', width:'70%',marginLeft: '30%'}}>
+		    	</Table>	
+		    	<br/>
 		    	<Table>
 		    		<TableHeader displaySelectAll={false}>
 		    			<TableRow><TableHeaderColumn>Trainee Review/Trainer Review</TableHeaderColumn></TableRow>
@@ -113,7 +123,6 @@ class Profile extends React.Component {
 		    </div>		
         </div>
 	    </div>
-	  </div>
     )
   }
 }
