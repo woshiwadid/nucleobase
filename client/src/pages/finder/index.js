@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from 'jquery';
+import { Link } from 'react-router-dom';
 
 import Navbar from '../../components/navbar';
 import SearchBar from './searchbar';
@@ -18,15 +18,15 @@ class Finder extends React.Component {
         width: '100%'
       }}>
 
-        <Navbar loggedIn={this.props.loggedIn}/>
+        <Navbar/>
 
         <div className="col-sm-8 col-sm-offset-2" style={{
           height: '94.8%',
-          backgroundColor: '#d9d9d9'
+          backgroundColor: '#FFFFFF'
         }}>
           
           <SearchBar />
-          <a href="/dashboard">Dashboard View</a>
+          <Link to="/dashboard">Dashboard View</Link>
 
         </div>
 

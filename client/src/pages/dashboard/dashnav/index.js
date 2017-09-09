@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import FlatButton from 'material-ui/FlatButton';
 
@@ -24,12 +25,12 @@ class DashNav extends React.Component {
           flexDirection: 'row',
           justifyContent: 'space-evenly',
           alignItems: 'center',
-          backgroundColor: '#111822'
+          backgroundColor: '#4DC1EA'
         }}>
-          <FlatButton href="/dashboard/" label="Dashboard" style={{color: 'white'}} hoverColor="#2b3c55"/>
-          <FlatButton href="/dashboard/schedule" label="Schedule" style={{color: 'white'}} hoverColor="#2b3c55"/>
-          <FlatButton href="/dashboard/trainers" label="Trainers" style={{color: 'white'}} hoverColor="#2b3c55"/>
-          <FlatButton href="/dashboard/profile" label="Profile" style={{color: 'white'}} hoverColor="#2b3c55"/>
+          <Link to="/dashboard/"><FlatButton label="Dashboard" style={{color: 'white'}} hoverColor="#2b3c55"/></Link>
+          <Link to="/dashboard/schedule"><FlatButton label="Schedule" style={{color: 'white'}} hoverColor="#2b3c55"/></Link>
+          <Link to="/dashboard/trainers"><FlatButton label="Trainers" style={{color: 'white'}} hoverColor="#2b3c55"/></Link>
+          <Link to="/dashboard/profile"><FlatButton label="Profile" style={{color: 'white'}} hoverColor="#2b3c55"/></Link>
         </div>
       </div>
     );

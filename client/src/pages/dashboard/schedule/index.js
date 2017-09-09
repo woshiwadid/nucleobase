@@ -1,7 +1,7 @@
 import React from 'react';
 
 import ControlPanel from './controlPanel';
-import Calendar from './calendar';
+import ApptList from './appointmentList';
 
 
 class Schedule extends React.Component {
@@ -18,31 +18,30 @@ class Schedule extends React.Component {
         <div className="col-lg-3 col-xsm-6" style={{
           display: 'flex',
           flexDirection: 'column',
-          backgroundColor: '#e6ffff'
         }}>
-
           <ControlPanel />
-
         </div>
 
         <div className="col-lg-9 col-xsm-6" style={{
+          height: '600px',
           display: 'flex',
           flexDirection: 'column',
-          justifyContent: 'space-evenly',
-          backgroundColor: '#e6ffe6', 
+          justifyContent: 'space-evenly', 
+          padding: '0'
         }}>
+          <ApptList />
+        </div>
 
-          <div style={{
-            height: '500px',
-            minWidth: '500px',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            backgroundColor: '#BEBAB9'
-          }}>
-            <Calendar year={this.props.year}/>
-          </div>
-
+        <div className="row" style={{
+          margin: '0',
+          minHeight: '295px',
+          width: '100%',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
+          backgroundColor: '#111822'
+        }}>
+          Some content down here
         </div>
       </div>
 

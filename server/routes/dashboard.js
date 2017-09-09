@@ -1,41 +1,32 @@
 const express = require('express');
 const middleware = require('../middleware');
+const path = require('path');
 
 const router = express.Router();
 
 router.route('/')
   .get(middleware.auth.verify, (req, res) => {
-    res.render('index.ejs', {
-      loggedIn: true
-    });
+    res.sendFile(path.join(__dirname + '/../../public/dist/index.html'));
   });
 
 router.route('/profile')
   .get(middleware.auth.verify, (req, res) => {
-    res.render('index.ejs', {
-      loggedIn: true
-    });
+    res.sendFile(path.join(__dirname + '/../../public/dist/index.html'));
   });
 
 router.route('/schedule')
   .get(middleware.auth.verify, (req, res) => {
-    res.render('index.ejs', {
-      loggedIn: true
-    });
+    res.sendFile(path.join(__dirname + '/../../public/dist/index.html'));
   });
 
 router.route('/trainers')
   .get(middleware.auth.verify, (req, res) => {
-    res.render('index.ejs', {
-      loggedIn: true
-    });
+    res.sendFile(path.join(__dirname + '/../../public/dist/index.html'));
   });
 
 router.route('/clients')
   .get(middleware.auth.verify, (req, res) => {
-    res.render('index.ejs', {
-      loggedIn: true
-    });
+    res.sendFile(path.join(__dirname + '/../../public/dist/index.html'));
   });
 
 module.exports = router;

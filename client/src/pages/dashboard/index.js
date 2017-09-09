@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from 'jquery';
+import { Route } from 'react-router-dom';
 
 import Navbar from '../../components/navbar';
 import DashNav from './dashnav';
@@ -8,25 +8,17 @@ import Main from './main';
 import Schedule from './schedule';
 import Trainers from './trainers';
 import Clients from './clients';
+import EditProfile from './editProfile';
 
-import { buildYear } from '../../helpers/buildYear';
-
-const pages = {
-  'profile': <h1>Edit Profile View</h1>,
-  'schedule': <Schedule year={buildYear(0)}/>,
-  'trainers': <Trainers />,
-  'clients': <h1>Clients View</h1> 
-};
 
 class Dashboard extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      year: buildYear(0)
-    };
   }
 
   render() {
+
+    console.log(this.props);
 
     return (
 
@@ -35,24 +27,24 @@ class Dashboard extends React.Component {
         width: '100%'
       }}>
 
-        <Navbar loggedIn={this.props.loggedIn}/>
+        <Navbar />
 
         <div className="col-sm-8 col-sm-offset-2" style={{
           height: '94.8%',
-          backgroundColor: '#DCD8D7',
+          backgroundColor: '#FFFFFF',
           padding: 0
         }}>
 
           <DashNav />
 
-          {
-            this.props.path[2] ?
-              pages[this.props.path[2]] :
-              <Main />
-          }
+          <Route path={`${this.props.match.url}/schedule`} component={Schedule}/>
+          <Route path={`${this.props.match.url}/trainers`} component={Trainers}/>
+          <Route path={`${this.props.match.url}/profile`} component={EditProfile}/>
+          <Route exact path={`${this.props.match.url}`} component={Main}/>
         
 
         </div>
+
 
       </div>
     );

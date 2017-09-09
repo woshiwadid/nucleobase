@@ -57,7 +57,7 @@ describe('/dashboard', function() {
 
 describe('/login', function() {
 
-  it('GET request responds with OK', function(done) {
+  xit('GET request responds with OK', function(done) {
     request(app)
       .get('/login')
       .expect(200)

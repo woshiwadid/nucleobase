@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import FlatButton from 'material-ui/FlatButton';
 import Paper from 'material-ui/Paper';
@@ -6,7 +7,7 @@ import Paper from 'material-ui/Paper';
 
 const Navbar = (props) => (
 
-  <Paper zDepth={2} style={{
+  <Paper zDepth={1} style={{
     height: '50px',
     width: '100%',
     display: 'flex',
@@ -43,19 +44,6 @@ const Navbar = (props) => (
         justifyContent: 'space-evenly',
         alignItems: 'center',
       }}>
-        
-        {
-          !props.loggedIn ?
-            <span></span>
-            :
-            <div>
-              <FlatButton href="/" label="Search" style={{color: 'white'}} hoverColor="#4DC1EA"/>
-              <span style={{width: '30px'}}></span>
-              <FlatButton href="/dashboard" label="Dashboard" style={{color: 'white'}} hoverColor="#4DC1EA"/>
-            </div>
-        }
-
-        
 
       </div>
 
@@ -67,14 +55,11 @@ const Navbar = (props) => (
         alignItems: 'center',
       }}>
         {
-          props.loggedIn ?
-            <FlatButton href="/logout" label="Logout" style={{color: 'white'}} hoverColor="#4DC1EA"/>
-            :
-            <div>
-              <FlatButton href="/signup" label="Signup" style={{color: 'white'}} hoverColor="#4DC1EA"/>
-              <span style={{width: '30px'}}></span>
-              <FlatButton href="/login" label="Login" style={{color: 'white'}} hoverColor="#4DC1EA"/>
-            </div>
+          <div>
+            <Link to="/signup"><FlatButton label="Signup" style={{color: 'white'}} hoverColor="#4DC1EA"/></Link>
+            <span style={{width: '30px'}}></span>
+            <Link to="/login"><FlatButton label="Login" style={{color: 'white'}} hoverColor="#4DC1EA"/></Link>
+          </div>
         }
 
         

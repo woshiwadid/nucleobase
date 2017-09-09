@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from 'jquery';
+import { Link } from 'react-router-dom';
 
 import Navbar from '../components/navbar';
 
@@ -18,7 +18,7 @@ class Signup extends React.Component {
         backgroundColor: '#BEBAB9'
       }}>
 
-        <Navbar loggedIn={this.props.loggedIn}/>
+        <Navbar />
 
         <div className="col-sm-6 col-sm-offset-3" style={{
           height: '100%',
@@ -49,8 +49,8 @@ class Signup extends React.Component {
           </div>
           <hr />
 
-          <p>Already have an account? <a href="/login">Login</a></p>
-          <p>Or go <a href="/">home</a>.</p>
+          <p>Already have an account? <Link to="/login">Login</Link></p>
+          <p>Or go <Link to="/">home</Link>.</p>
 
         </div>
 

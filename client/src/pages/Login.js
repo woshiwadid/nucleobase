@@ -1,5 +1,5 @@
 import React from 'react';
-import $ from 'jquery';
+import { Link } from 'react-router-dom';
 
 import Navbar from '../components/navbar';
 
@@ -18,7 +18,7 @@ class Login extends React.Component {
         backgroundColor: '#BEBAB9'
       }}>
 
-        <Navbar loggedIn={this.props.loggedIn}/>
+        <Navbar />
 
         <div className="col-sm-6 col-sm-offset-3" style={{
           height: '100%',
@@ -42,15 +42,16 @@ class Login extends React.Component {
 
           <hr />
           <div>
+            {/* All of these buttons will have to be re-made */}
             Or login with any of the following services:<br />
-            <a style={{marginRight: '15px'}} href="/auth/facebook"><img src="/assets/fb-logo.png" /></a>
-            <a style={{marginLeft: '15px', marginRight: '15px'}} href="/auth/google"><img style={{width: '29px'}} src="/assets/google-logo.png" /></a>
-            <a style={{marginLeft: '15px'}} href="/auth/twitter"><img style={{width: '48px'}} src="/assets/twitter-logo.png" /></a>
+            <a style={{marginRight: '15px'}} href="/auth/facebook"><img src="../assets/fb-logo.png" /></a>
+            <a style={{marginLeft: '15px', marginRight: '15px'}} href="/auth/google"><img style={{width: '29px'}} src="../assets/google-logo.png" /></a>
+            <a style={{marginLeft: '15px'}} href="/auth/twitter"><img style={{width: '48px'}} src="../assets/twitter-logo.png" /></a>
           </div>
           <hr />
 
-          <p>Need to sign up for an account? <a href="/signup">Signup</a></p>
-          <p><a href="/">home</a></p>
+          <p>Need to sign up for an account? <Link to="/signup">Signup</Link></p>
+          <p><Link to="/">home</Link></p>
 
         </div>      
 
