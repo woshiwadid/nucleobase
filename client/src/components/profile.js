@@ -14,7 +14,6 @@ import {
   TableRowColumn,
 } from 'material-ui/Table';
 import SmileFace from 'material-ui/svg-icons/Social/mood';
-import styled from 'styled-components';
 
 const styles = {
   layout: {
@@ -36,12 +35,6 @@ const styles = {
   	width: '69%',
   }
 };
-
-const Div = styled.div`
-  flexWrap: wrap;
-
-`;
-
 
 class Profile extends React.Component {
 	constructor(props) {
@@ -69,8 +62,8 @@ class Profile extends React.Component {
 		    </div>
 		    <div>
 		    	<List style={{backgroundColor:'white',width: 150, borderBottom:'2px solid'}}>
-		    		<ListItem primaryText='phone'/>
-		    		<ListItem primaryText='email'/>
+		    		<ListItem primaryText='Chat me'/>
+		    		<ListItem primaryText='Email me'/>
 		    	</List>
 		    </div>
 	    </div>   
