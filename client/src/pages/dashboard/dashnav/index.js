@@ -39,7 +39,6 @@ class DashNav extends React.Component {
           <Link to="/dashboard/trainers"><FlatButton label={this.state.sessionType === 'trainer' ? 'My Trainees' : 'My Trainers'} style={{color: 'white'}} hoverColor="#4f5b62"/></Link>
           <Link to="/dashboard/profile"><FlatButton label="Profile" style={{color: 'white'}} hoverColor="#4f5b62"/></Link>
         </div>
-      </div>
     );
 
   }
