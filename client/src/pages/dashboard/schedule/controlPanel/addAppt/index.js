@@ -155,7 +155,8 @@ class AddAppointment extends React.Component {
             justifyContent: 'flex-start',
             alignContent: 'center'
           }}>
-            <TextField 
+            <TextField
+              hintText="price"
               value={this.state.addPrice}
               onChange={(e) => this.addUpdater(e, {type: 'price'})}
             />
