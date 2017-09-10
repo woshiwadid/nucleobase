@@ -1,5 +1,10 @@
 const expect = require('chai').expect;
 const Profile = require('../../db/models/profiles.js');
+const ServiceJoin = require('../../db/models/services_join.js');
+const Service = require('../../db/models/services.js');
+const Auth = require('../../db/models/auths.js');
+const Payment = require('../../db/models/payments.js');
+const BankAccount = require('../../db/models/bank_accounts.js');
 const dbUtils = require('../../db/lib/utils.js');
 
 describe('Profile model tests', function () {
@@ -31,7 +36,7 @@ describe('Profile model tests', function () {
     // Insert a user with a username that's already in existence
     Profile.forge({ email: 'admin@domain.com' }).save()
       .then(function (result) {
-        done(new Error('was not supposed to succeed'))
+        done(new Error('was not supposed to succeed'));
       })
       .catch(function (err) {
         expect(err).to.be.an('error');
@@ -64,7 +69,12 @@ describe('Profile model tests', function () {
 
   it('Should be able to delete a record', function (done) {
     // Inserts a user
-    Profile.where({ id: 1 }).destroy()
+    ServiceJoin.where('id', '!=', '0').destroy()
+      .then(Service.where('id', '!=', '0').destroy())
+      .then(Auth.where('id', '!=', '0').destroy())
+      .then(Payment.where('id', '!=', '0').destroy())
+      .then(BankAccount.where('id', '!=', '0').destroy())
+      .then(() => Profile.where({ id: 1 }).destroy())
       // verifies that the user has been inserted
       .then(function () {
         return Profile.where({ id: 1 }).fetch();

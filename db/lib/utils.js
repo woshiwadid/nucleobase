@@ -18,6 +18,7 @@ exports.rollbackMigrate = (done) => {
 };
 
 exports.rollback = (done) => {
+
   knex.migrate.rollback()
     .then(function () {
       done();

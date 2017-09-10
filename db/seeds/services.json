@@ -1,0 +1,50 @@
+[ 
+  {
+    "service": {
+        "service": "Cardio",
+        "description": "be fast"
+    }
+  },
+  {
+    "service": {
+        "service": "Strength",
+        "description": "be strong"
+    }
+  }, 
+  {
+    "service": {
+        "service": "Full body exercise",
+        "description": "be fast and strong"
+    }
+  }, 
+  {
+    "service": {
+        "service": "Cross Fit",
+        "description": "break your leg for free"
+    }
+  }, 
+  {
+    "service": {
+        "service": "Power Lifting",
+        "description": "super strong"
+    }
+  }, 
+  {
+    "service": {
+        "service": "Zumba",
+        "description": "dance"
+    }
+  }, 
+  {
+    "service": {
+        "service": "Yoga",
+        "description": "relax..."
+    }
+  }, 
+  {
+    "service": {
+        "service": "Body Building",
+        "description": "look like Arnold"
+    }
+  }     
+]

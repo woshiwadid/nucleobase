@@ -17,7 +17,7 @@ describe('Message model tests', () => {
     var res = httpMocks.createResponse();
 
     res.send = (data) => {
-      req.body.id = 1;
+      req.body.id = data.attributes.id;
 
       expect(data).to.be.an('object');
       expect(data.attributes).to.be.an('object');

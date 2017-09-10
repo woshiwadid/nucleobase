@@ -20,6 +20,17 @@
     "auth": {
         "type":"local",
         "password": "admin123"
+    },
+    "payment": {
+        "card_number":"1234 1234 1234 1234",
+        "card_type": "Visa",
+        "crv": "123",
+        "expiration_date": "09/01/2012",
+        "name_card_holder": "Jojo"
+    },
+    "bank_account": {
+        "account_number":"1234567",
+        "routing_number": "1231456"
     }
   },
   {
@@ -43,6 +54,17 @@
     "auth": {
         "type":"local",
         "password": "123"
+    },
+    "payment": {
+        "card_number":"1234 1234 1234 1234",
+        "card_type": "Visa",
+        "crv": "123",
+        "expiration_date": "09/01/2012",
+        "name_card_holder": "GiuGui"
+    },
+    "bank_account": {
+        "account_number":"1234567",
+        "routing_number": "1231456"
     }
   },
   {
@@ -66,6 +88,17 @@
     "auth": {
         "type":"local",
         "password": "123"
+    },
+    "payment": {
+        "card_number":"1234 1234 1234 1234",
+        "card_type": "Visa",
+        "crv": "123",
+        "expiration_date": "09/01/2012",
+        "name_card_holder": "Tom"
+    },
+    "bank_account": {
+        "account_number":"1234567",
+        "routing_number": "1231456"
     }
   },
   {
@@ -89,6 +122,17 @@
     "auth": {
         "type":"local",
         "password": "123"
+    },
+    "payment": {
+        "card_number":"1234 1234 1234 1234",
+        "card_type": "Visa",
+        "crv": "123",
+        "expiration_date": "09/01/2012",
+        "name_card_holder": "Chao"
+    },
+    "bank_account": {
+        "account_number":"1234567",
+        "routing_number": "1231456"
     }
   },
   {
@@ -112,6 +156,17 @@
     "auth": {
         "type":"local",
         "password": "123"
+    },
+    "payment": {
+        "card_number":"1234 1234 1234 1234",
+        "card_type": "Visa",
+        "crv": "123",
+        "expiration_date": "09/01/2012",
+        "name_card_holder": "Andy"
+    },
+    "bank_account": {
+        "account_number":"1234567",
+        "routing_number": "1231456"
     }
   }
 ]

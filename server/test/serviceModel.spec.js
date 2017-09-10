@@ -1,4 +1,10 @@
 const Services = require('../../server/controllers/services.js');
+
+const ServiceJoin = require('../../db/models/services_join.js');
+const Auth = require('../../db/models/auths.js');
+const Payment = require('../../db/models/payments.js');
+const BankAccount = require('../../db/models/bank_accounts.js');
+
 const dbUtils = require('../../db/lib/utils.js');
 const httpMocks = require('node-mocks-http');
 const expect = require('chai').expect;
@@ -17,7 +23,7 @@ describe('Service model tests', () => {
     var res = httpMocks.createResponse();
 
     res.send = (data) => {
-      req.body.id = 1;
+      req.body.id = data.attributes.id;
 
       expect(data).to.be.an('object');
       expect(data.attributes).to.be.an('object');
@@ -92,6 +98,10 @@ describe('Service model tests', () => {
       id: 1
     };
 
-    Services.delete(req, res);
+    ServiceJoin.where('id', '!=', '0').destroy()
+      .then(Auth.where('id', '!=', '0').destroy())
+      .then(Payment.where('id', '!=', '0').destroy())
+      .then(BankAccount.where('id', '!=', '0').destroy())
+      .then(Services.delete(req, res));
   });
 });

@@ -46,11 +46,12 @@ module.exports.update = (req, res) => {
     res.status(201).send(service);
   })
   .error(error => {
+    console.log(error);
     res.status(500).send(error);
   })
   .catch(() => {
     res.sendStatus(404);
-  })
+  });
 };
 
 module.exports.get = (req, res) => {
