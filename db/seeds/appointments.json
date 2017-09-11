@@ -1,0 +1,26 @@
+[ 
+  {
+    "appointment": {
+        "time": "6:00AM",
+        "date": "09/24/2017",
+        "price": 50,
+        "location": "in Hackreactor"
+    }
+  },
+  {
+    "appointment": {
+        "time": "8:00pM",
+        "date": "09/18/2017",
+        "price": 100,
+        "location": "SF down town"
+    }
+  },
+  {
+    "appointment": {
+        "time": "10:00pM",
+        "date": "tomorow",
+        "price": 99,
+        "location": "GPS coordinate..."
+    }
+  }
+]

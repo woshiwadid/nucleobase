@@ -7,6 +7,13 @@ const Payment = require('../../db/models/payments.js');
 const BankAccount = require('../../db/models/bank_accounts.js');
 const dbUtils = require('../../db/lib/utils.js');
 
+const Review = require('../../db/models/reviews.js');
+const Rating = require('../../db/models/ratings.js');
+const Message = require('../../db/models/messages.js');
+const Appointment = require('../../db/models/appointments.js');
+const UserTrainerJoin = require('../../db/models/user_trainer_join.js');
+
+
 describe('Profile model tests', function () {
   // Deletes all tables, creates new tables, and seeds tables with test data
   beforeEach(function (done) {
@@ -74,6 +81,11 @@ describe('Profile model tests', function () {
       .then(Auth.where('id', '!=', '0').destroy())
       .then(Payment.where('id', '!=', '0').destroy())
       .then(BankAccount.where('id', '!=', '0').destroy())
+      .then(Review.where('id', '!=', '0').destroy())
+      .then(Rating.where('id', '!=', '0').destroy())
+      .then(Message.where('id', '!=', '0').destroy())
+      .then(Appointment.where('id', '!=', '0').destroy())
+      .then(UserTrainerJoin.where('id', '!=', '0').destroy())
       .then(() => Profile.where({ id: 1 }).destroy())
       // verifies that the user has been inserted
       .then(function () {
