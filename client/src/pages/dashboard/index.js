@@ -2,6 +2,8 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 
 import Navbar from '../../components/navbar';
+import Search from '../../components/search/search';
+import Info from '../../components/edit/info';
 import DashNav from './dashnav';
 
 import Main from './main';
@@ -38,8 +40,8 @@ class Dashboard extends React.Component {
           <DashNav />
 
           <Route path={`${this.props.match.url}/schedule`} component={Schedule}/>
-          <Route path={`${this.props.match.url}/trainers`} component={Trainers}/>
-          <Route path={`${this.props.match.url}/profile`} component={EditProfile}/>
+          <Route path={`${this.props.match.url}/trainers`} component={Search}/>
+          <Route path={`${this.props.match.url}/profile`} component={Info}/>
           <Route exact path={`${this.props.match.url}`} component={Main}/>
         
 

@@ -25,6 +25,7 @@
     "bluebird": "^3.5.0",
     "body-parser": "^1.17.1",
     "bookshelf": "^0.10.3",
+    "bootstrap": "^4.0.0-beta",
     "config": "^1.26.1",
     "connect-flash": "^0.1.1",
     "connect-redis": "^3.2.0",
@@ -52,6 +53,7 @@
     "react-router-dom": "^4.2.2",
     "redis": "^2.7.1",
     "redux": "^3.7.2",
+    "styled-components": "^2.1.2",
     "url": "^0.11.0",
     "webpack": "^2.3.2"
   },
