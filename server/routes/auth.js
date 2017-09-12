@@ -25,10 +25,15 @@ router.route('/signup')
     res.sendFile(path.join(__dirname + '/../../public/dist/index.html'));
   })
   .post(middleware.passport.authenticate('local-signup', {
-    successRedirect: '/profile',
+    successRedirect: '/signup/create',
     failureRedirect: '/signup',
     failureFlash: true
   }));
+
+router.route('/signup/create')
+  .get((req, res) => {
+    res.sendFile(path.join(__dirname + '/../../public/dist/index.html'));
+  });
 
 router.route('/profile')
   .get(middleware.auth.verify, (req, res) => {

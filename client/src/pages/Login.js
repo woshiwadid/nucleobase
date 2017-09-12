@@ -20,7 +20,7 @@ class Login extends React.Component {
 
         <Navbar />
 
-        <div className="col-sm-6 col-sm-offset-3" style={{
+        <div className="col-sm-8 col-sm-offset-2" style={{
           height: '100%',
           backgroundColor: '#DCD8D7'
         }}>
