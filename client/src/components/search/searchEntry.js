@@ -18,7 +18,6 @@ class SearchEntry extends React.Component {
   };
 
 	render() {
-		console.log(this.props.profile)
 		return (
    		<div>
    			<ListItem
