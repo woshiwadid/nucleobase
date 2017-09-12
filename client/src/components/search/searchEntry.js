@@ -10,7 +10,6 @@ class SearchEntry extends React.Component {
 		this.state = {
 
 		};
-
 	};
   
   handleClick() {
@@ -19,7 +18,7 @@ class SearchEntry extends React.Component {
   };
 
 	render() {
-		// this.props.profile.rating = 4.9
+		console.log(this.props.profile)
 		return (
    		<div>
    			<ListItem
