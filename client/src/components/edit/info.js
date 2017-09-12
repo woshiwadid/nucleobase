@@ -1,15 +1,15 @@
 import React from 'react';
 import Edit from './edit';
 import AJAX from '../../ajax.js';
-import EmailIcon from 'material-ui/svg-icons/Communication/email';
-import PhoneIcon from 'material-ui/svg-icons/Communication/phone';
-import PeopleIcon from 'material-ui/svg-icons/Social/people';
-import RatingIcon from 'material-ui/svg-icons/Toggle/star';
-import RatingCountIcon from 'material-ui/svg-icons/Notification/confirmation-number';
-import ViewIcon from 'material-ui/svg-icons/Image/remove-red-eye';
-import GoalIcon from 'material-ui/svg-icons/Image/adjust';
-import QualificationIcon from 'material-ui/svg-icons/Social/school';
-import BiographIcon from 'material-ui/svg-icons/Social/whatshot';
+import EmailIcon from 'material-ui/svg-icons/communication/email';
+import PhoneIcon from 'material-ui/svg-icons/communication/phone';
+import PeopleIcon from 'material-ui/svg-icons/social/people';
+import RatingIcon from 'material-ui/svg-icons/toggle/star';
+import RatingCountIcon from 'material-ui/svg-icons/notification/confirmation-number';
+import ViewIcon from 'material-ui/svg-icons/image/remove-red-eye';
+import GoalIcon from 'material-ui/svg-icons/image/adjust';
+import QualificationIcon from 'material-ui/svg-icons/social/school';
+import BiographIcon from 'material-ui/svg-icons/social/whatshot';
 import Divider from 'material-ui/Divider';
 import {
   Table,

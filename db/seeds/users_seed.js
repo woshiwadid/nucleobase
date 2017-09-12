@@ -216,15 +216,6 @@ exports.seed = function (knex, Promise) {
         });      
     })))
 
-
-    /*
-      table.integer('user_id').references('id').inTable('profiles');
-      table.integer('trainer_id').references('id').inTable('profiles');
-      table.integer('user_rating').nullable();
-      table.integer('trainer_rating').nullable();
-    */
-
-
     // write rating table
     // use random data
     // trainer reviewing customer
@@ -261,29 +252,6 @@ exports.seed = function (knex, Promise) {
       console.log(error);
     });
 };
-
-
-
-
-// exports.seed = function (knex, Promise) {
-
-//   // delete all rows
-//   return models.Profile.where('id', '!=', '0').destroy()
-//     .then(models.Auth.where('id', '!=', '0').destroy())
-
-//     // write all object 
-//     .then( () =>(Promise.each( mockData, el => {  
-//       //console.log(el.profile.first);
-//       return models.Profile.forge(el.profile).save()
-//         .then((profile) => {
-//           el.auth.profile_id = profile.get('id');
-//           return models.Auth.forge(el.auth).save();
-//         })
-//         .catch((error) => {
-//           console.log(error);
-//         });
-//     })));
-// };
 
 
 /*
