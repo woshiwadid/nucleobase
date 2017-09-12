@@ -13,7 +13,7 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
-import SmileFace from 'material-ui/svg-icons/Social/mood';
+import SmileFace from 'material-ui/svg-icons/social/mood';
 
 const styles = {
   layout: {
