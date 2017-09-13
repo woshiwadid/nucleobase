@@ -19,7 +19,7 @@ class SearchEntry extends React.Component {
   };
 
 	render() {
-		this.props.profile.rating = 3.9
+		// this.props.profile.rating = 4.9
 		return (
    		<div>
    			<ListItem
