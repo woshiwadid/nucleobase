@@ -256,7 +256,6 @@ exports.seed = function (knex, Promise) {
 
 /*
 exports.seed = function (knex, Promise) {
-
   return models.Profile.where({ email: 'admin@domain.com' }).fetch()
     .then((profile) => {
       if (profile) {
@@ -286,8 +285,5 @@ exports.seed = function (knex, Promise) {
     .catch(() => {
       console.log('WARNING: defualt user already exists.');
     });
-
 };
 */
-
-

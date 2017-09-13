@@ -1,6 +1,7 @@
 const models = require('../../db/models');
 
 module.exports.getAll = (req, res) => {
+      console.log('get here ')
   models.Profile.fetchAll()
     .then(profiles => {
       res.status(200).send(profiles);
@@ -10,6 +11,18 @@ module.exports.getAll = (req, res) => {
       res.status(503).send(err);
     });
 };
+
+// module.exports.getAll = (req, res) => {
+//   console.log('get here')
+//   models.Profile.where(req.query)
+//   .fetchAll()
+//   .then(profiles => {
+//     res.status(200).send(profiles);
+//   })
+//   .catch(error => {
+//     res.status(503).send(error);
+//   })
+// };
 
 module.exports.create = (req, res) => {
   models.Profile.forge({ email: req.body.email })
@@ -46,23 +59,52 @@ module.exports.getOne = (req, res) => {
     });
 };
 
+// module.exports.update = (req, res) => {
+//   console.log('i hate andy')
+//   console.log(req.body.id)
+//   models.Profile.where({ id: req.params.id }).fetch()
+//     .then(profile => {
+//       if (!profile) {
+//         throw profile;
+//       }
+//       console.log('still hate andy')
+//       return profile.save(req.body, { method: 'update' });
+//     })
+//     .then(() => {
+//       res.sendStatus(201);
+//     })
+//     .error(err => {
+//       res.status(500).send(err);
+//     })
+//     .catch(() => {
+//       res.sendStatus(404);
+//     });
+// };
+
 module.exports.update = (req, res) => {
-  models.Profile.where({ id: req.params.id }).fetch()
-    .then(profile => {
-      if (!profile) {
-        throw profile;
-      }
-      return profile.save(req.body, { method: 'update' });
-    })
-    .then(() => {
-      res.sendStatus(201);
-    })
-    .error(err => {
-      res.status(500).send(err);
-    })
-    .catch(() => {
-      res.sendStatus(404);
-    });
+  if ( req.params.id ) {
+    req.body.id = req.params.id;
+  }
+
+  models.Profile.where({ id: req.body.id })
+  .fetch()
+  .then(profile => {
+    if (!profile) {
+      throw profile;
+    }
+    console.log('this is profile', profile.attributes)
+    console.log( req.body );
+    return profile.save(req.body, { method: 'update' });
+  })
+  .then(profile => {
+    res.status(201).send(profile);
+  })
+  .error(error => {
+    res.status(500).send(error);
+  })
+  .catch(() => {
+    res.sendStatus(404);
+  })
 };
 
 module.exports.deleteOne = (req, res) => {

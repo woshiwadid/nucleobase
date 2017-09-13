@@ -4,6 +4,7 @@ import Divider from 'material-ui/Divider';
 import TextField from 'material-ui/TextField';
 import {List, ListItem} from 'material-ui/List';
 import DropDownMenu from 'material-ui/DropDownMenu';
+import AJAX from '../../ajax.js';
 import MenuItem from 'material-ui/MenuItem';
 import {
   Table,
@@ -13,7 +14,18 @@ import {
   TableRow,
   TableRowColumn,
 } from 'material-ui/Table';
+import Avatar from 'material-ui/Avatar';
+import Dialog from 'material-ui/Dialog';
+import FlatButton from 'material-ui/FlatButton';
 import SmileFace from 'material-ui/svg-icons/social/mood';
+import Star from 'material-ui/svg-icons/toggle/star';
+import StarHalf from 'material-ui/svg-icons/toggle/star-half';
+import StarBorder from 'material-ui/svg-icons/toggle/star-border';
+import ContentAdd from 'material-ui/svg-icons/content/add';
+import StarRatingComponent from 'react-star-rating-component';
+
+
+
 
 const styles = {
   layout: {
@@ -33,36 +45,100 @@ const styles = {
   },
   right: {
   	width: '74%',
-  }
+  },
 };
 
 class Profile extends React.Component {
 	constructor(props) {
 	  super(props);
 	  this.state = {
-	  	value: 1
+	  	value: 1,
+	  	starBorder: 0,
+	  	star: 0,
+	  	starHalf: 0,
+	  	open: false,
+	  	rating: 1
 	  };
+	  this.countStar.bind(this);
 	};
+
+	componentWillMount() {
+		this.setState({
+			star: parseInt(this.props.profile.rating),
+			starHalf: this.props.profile.rating%1 > 0 ? 1 : 0,
+			// starBorder: 5 - this.state.star - this.state.starHalf
+		});
+		// AJAX.get('/service', {}, (data) =>{
+	 //   	this.setState({
+	 //   		session: data
+	 //   	});
+	 //  });
+
+	}
 
 	handleClick() {
 		this.props.handleClick();
 	}; 
 
+	handleOpen() {
+		this.setState({
+			open: !this.state.open
+		});
+	};
+
+	handleClose() {
+		this.setState({
+			open: !this.state.open
+		});
+	};
+
+	handleRating(x) {
+		console.log('hahaha', x)
+		// this.setState({
+		// 	rating: x
+		// })
+	}
+
+	countStar() {
+	  var result = [];
+	  var i = 0
+	  while(i < this.state.star) {
+	  	result.push(<Star key={Math.random()}/>);
+	  	i ++;
+	  }
+	  this.state.starHalf > 0 ? result.push(<StarHalf key={Math.random()}/>) :result
+	  while(result.length < 5) {
+	  	result.push(<StarBorder key={Math.random()}/>)
+	  }
+	  return result;
+	}
+
+	onStarClick(nextValue, prevValue, name) {
+        this.setState({rating: nextValue});
+    }
 
   render() {
+    console.log(111, this.props.profile)
+    const action = [
+      <FlatButton
+        label="Submit"
+        primary={true}
+        onClick={this.handleClose.bind(this)}
+      />,
+    ];
     return (
 	  <div>
 	    <div style={styles.layout}>
-	      <div className='wrapper'>
-		      <img className="image--cover"  src="http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1444253482/DG2015-san-francisco.jpg?itok=MdRJm2Zo" height={150} width={150}/>
-	        	
+	      <div>
+		      <Avatar size={150} src="http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1444253482/DG2015-san-francisco.jpg?itok=MdRJm2Zo" height={150} width={150}/>
 	      </div>
 		    <div>
-		    	<h1>full name</h1>
-		    	<h2>biography blah blah blah .........</h2>
+		    	<h1>{this.props.profile.first + ' ' + this.props.profile.last}</h1>
+		    	<h4>{this.props.profile.biography}</h4>
+		    	<span>{this.countStar()}{' ' + this.props.profile.rating}</span>
 		    </div>
 		    <div>
-		    	<List style={{backgroundColor:'white',width: 150, borderBottom:'2px solid'}}>
+		    	<List style={{backgroundColor:'white',width: 150}}>
 		    		<ListItem primaryText='Chat me'/>
 		    		<ListItem primaryText='Email me'/>
 		    		<ListItem primaryText='Go back to search page' onClick={this.handleClick.bind(this)}/>
@@ -75,14 +151,14 @@ class Profile extends React.Component {
         <div style={styles.right}>
 		    	<Table>
 		    		<TableHeader displaySelectAll={false}>
-		    			<TableRow><TableHeaderColumn>Current course teaching</TableHeaderColumn></TableRow>
+		    			<TableRow><TableHeaderColumn style={{fontSize: 30}}>Current course teaching</TableHeaderColumn></TableRow>
 		    		</TableHeader>
 		    		<TableBody displayRowCheckbox={false}>
-		    			<TableRow>
+		    			<TableRow selectable={false}>
 		    				<TableRowColumn>Course name </TableRowColumn>
 		    				<TableRowColumn>Description</TableRowColumn>
 		    			</TableRow>
-		    			<TableRow>
+		    			<TableRow selectable={false}>
 		    				<TableRowColumn>Course name</TableRowColumn>
 		    				<TableRowColumn>Description</TableRowColumn>
 		    			</TableRow>
@@ -91,21 +167,49 @@ class Profile extends React.Component {
 		    	<br/>
 		    	<Table>
 		    		<TableHeader displaySelectAll={false}>
-		    			<TableRow><TableHeaderColumn>Trainee Review/Trainer Review</TableHeaderColumn></TableRow>
+		    			<TableRow>
+		    				<TableHeaderColumn style={{fontSize: 30}}>
+		    					Trainee Review/Trainer Review
+		    				</TableHeaderColumn>
+		    			</TableRow>
 		    		</TableHeader>
 		    		<TableBody displayRowCheckbox={false}>
-		    			<TableRow>
+		    			<TableRow selectable={false}>
 		    				<TableRowColumn>name</TableRowColumn>
 		    				<TableRowColumn>rating</TableRowColumn>
 		    				<TableRowColumn>review super longggggggggggggggg rrrrr</TableRowColumn>
 		    			</TableRow>
-		    			<TableRow>
+		    			<TableRow selectable={false}>
 		    				<TableRowColumn>name2</TableRowColumn>
 		    				<TableRowColumn>rating2</TableRowColumn>
 		    				<TableRowColumn>review2</TableRowColumn>
 		    			</TableRow>
 		    		</TableBody>
 		    	</Table>
+		    	<FlatButton hoverColor='red' label='add review' onClick={this.handleOpen.bind(this)} fullWidth={true}></FlatButton>
+		    		<Dialog
+        			actions={action}
+        			modal={true}
+        			open={this.state.open}
+        		>
+      				<h4>Your review</h4><br/>
+      				<div>
+                <StarRatingComponent 
+                		name='star'
+                    starCount={5}
+                    value={this.state.rating}
+                    onStarClick={this.onStarClick.bind(this)}
+                />
+                <h4>
+                	{this.state.rating < 5 ? this.state.rating < 4 ? this.state.rating < 3 ? this.state.rating < 2 ? 'Meh, I experienced better.' : 'I may not book the second one with this trainer.' : 'A-Ok.' : 'Yay! I am a fan.' : 'Woohoo! This tranier is awsome!'}
+                </h4>
+            	</div>
+     					<TextField hintText='Please write a review'
+     						floatingLabelText="Your review"
+     						fullWidth={true}
+     						multiLine={true}
+			   			/><br/>
+        		</Dialog>
 		    </div>
 		    <div style={styles.left}>
         	<DropDownMenu value={this.state.value} style={{backgroundColor:'white'}} iconButton={<SmileFace style={{Color:'black'}}/>}>

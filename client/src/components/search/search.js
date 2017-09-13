@@ -1,4 +1,5 @@
 import React from 'react';
+import AJAX from '../../ajax.js';
 
 import styled from 'styled-components';
 import TextField from 'material-ui/TextField';
@@ -11,10 +12,11 @@ import ListItem from 'material-ui/List/ListItem';
 import Avatar from 'material-ui/Avatar';
 import SmileFace from 'material-ui/svg-icons/social/mood';
 import NeutralFace from 'material-ui/svg-icons/social/sentiment-neutral';
-import SadFace from 'material-ui/svg-icons/social/sentiment-very-dissatisfied';
+import SadFace from 'material-ui/svg-icons/Social/sentiment-very-dissatisfied';
 import AppBar from 'material-ui/AppBar';
 
 import Profiles from '../profiles/profiles';
+import SearchEntry from'./searchEntry';
 
 const styles = {
 	layout: {
@@ -57,9 +59,19 @@ class Search extends React.Component {
 			view: 1,
 			price: 1,
 			search: '',
-			toggle: false
+			profiles: [],
+			toggle: false,
+			clickedProfile: {}
 		};
 	};
+
+	componentWillMount() {
+     AJAX.get('/ihateandy', {}, (data) =>{
+     		this.setState({
+     			profiles: data
+     		});
+     });
+ 	};
 
 	handleRatingChange(event, index, value) {
 		this.setState({
@@ -89,18 +101,19 @@ class Search extends React.Component {
   	console.log('i got clicked')
   };
 
-  handleProfileClick() {
-  	console.log('profile got clicked')
+  handleProfileClick(profile) {
   	this.setState({
-  		toggle: !this.state.toggle
+  		toggle: !this.state.toggle,
+  		clickedProfile: profile
+
   	});
   };
 
 
 	render() {
-		console.log(1111, this.state.search)
+		// console.log(this.state.clickedProfile)
 		if(this.state.toggle) {
-			return <Profiles handleClick={this.handleProfileClick.bind(this)}/>
+			return <Profiles handleClick={this.handleProfileClick.bind(this)} profile={this.state.clickedProfile}/>
 		} else {
 		return (
 			   <div>
@@ -148,66 +161,11 @@ class Search extends React.Component {
 						<div style={styles.right}>
 							<h3 style={{textAlign: 'center',backgroundColor: '#ffff02'}}>Result List</h3>
 							<List>
-								<ListItem
-									leftAvatar={
-       							<Avatar 
-       								icon={<SmileFace/>} 
-       								color={'red'}
-       								size={90}
-       							/>
-      						}
-      						onClick={
-      							this.handleProfileClick.bind(this)
-      						}
-								>
-								<div style={{paddingLeft: '100px'}}>
-								 	<h3>Chao Zeng</h3>
-								 	<span><h5>rating 4.9</h5></span>
-								</div> 	
-								<p>He is a very handsome boy who just gets his lol account back</p>
-								</ListItem>
-								<br/>
-								<ListItem
-									leftAvatar={
-       							<Avatar 
-       								icon={<SadFace/>} 
-       								color={'red'}
-       								size={90}
-       							/>
-      						}
-      						onClick={
-      							this.handleProfileClick.bind(this)
-      						}
-								>
-								  <div style={{paddingLeft: '100px'}}>
-										<span><h3>Gui Choupeaux</h3></span>
-										<span><h5>rating 4.9</h5></span>
-								  </div>
-									<p>He is a poor guy who is looking for another apartment in the city</p>
-								</ListItem>
-								<br/>
-								<ListItem
-									leftAvatar={
-       							<Avatar 
-       								icon={<NeutralFace/>} 
-       								color={'red'}
-       								size={90}
-       							/>
-      						}
-      						onClick={
-      							this.handleProfileClick.bind(this)
-      						}
-								>
-								  <div style={{paddingLeft: '100px'}}>
-										<span><h3>Andy Lien</h3></span>
-										<span><h5>rating 4.9</h5></span>
-								  </div>
-									<p>He saves money from lunch to give away to homeless which is stupid</p>
-								</ListItem>
+							{this.state.profiles.map((profile, i) => <SearchEntry key={i} profile={profile} handleProfileClick={this.handleProfileClick.bind(this)}/>)}
 							</List>
 						</div>
           </div> 
-          </div>
+        </div>
 		)
 			
 		};

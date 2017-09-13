@@ -37,6 +37,10 @@ app.get('/session', middleware.auth.verify, (req, res) => {
   res.send(req.user);
 } );
 
+app.put('/ihateandy2', middleware.auth.verify, control.Profiles.update);
+app.get('/ihateandy', middleware.auth.verify, control.Profiles.getAll);
+
+
 app.post('/appointments', middleware.auth.verify, control.Appointments.create);
 app.delete('/appointments', middleware.auth.verify, control.Appointments.delete);
 app.put('/appointments', middleware.auth.verify, control.Appointments.update);
