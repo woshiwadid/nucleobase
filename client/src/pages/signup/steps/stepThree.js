@@ -7,34 +7,34 @@ class StepThree extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      qualifications: '',
+      qualification: '',
       qualTextCount: 255,
       goals: '',
       goalTextCount: 255,
     };
-    this.qualUpdater = this.qualUpdater.bind(this);
-    this.goalUpdater = this.goalUpdater.bind(this);
+    this.infoUpdater = this.infoUpdater.bind(this);
     this.stepThreeUpdater = this.stepThreeUpdater.bind(this);
   }
 
-  qualUpdater(e) {
-    this.setState({
-      qualifications: e.target.value,
-      qualTextCount: 255 - e.target.value.length
-    });
-  }
-
-  goalUpdater(e) {
-    this.setState({
-      goals: e.target.value,
-      goalTextCount: 255 - e.target.value.length
-    });
+  infoUpdater(type, e) {
+    if (type === 'qual') {
+      this.setState({
+        qualification: e.target.value,
+        qualTextCount: 255 - e.target.value.length
+      });
+    }
+    if (type === 'goal') {
+      this.setState({
+        goals: e.target.value,
+        goalTextCount: 255 - e.target.value.length
+      });
+    }
   }
 
   stepThreeUpdater() {
-    const { qualifications, goals } = this.state;
+    const { qualification, goals } = this.state;
     let options = {
-      qualifications: qualifications,
+      qualification: qualification,
       goals: goals
     };
     this.props.updateInfo(options);
@@ -42,13 +42,13 @@ class StepThree extends React.Component {
 
   render() {
 
-    const { qualifications, qualTextCount, goals, goalTextCount } = this.state;
+    const { qualification, qualTextCount, goals, goalTextCount } = this.state;
 
     var disabler = false;
     if (qualTextCount < 0 || goalTextCount < 0) {
       disabler = true;
     }
-    if (qualifications === '' || goals === '') {
+    if (qualification === '' || goals === '') {
       disabler = true;
     }
 
@@ -60,7 +60,7 @@ class StepThree extends React.Component {
         flexDirection: 'column',
       }}>
         <span style={{height: '15px'}}></span>
-        <h4>Your Qualifications</h4>
+        <h3>Your Qualifications</h3>
         <TextField
           errorText={this.state.qualTextCount <= 0 ? 'You are limited to 255 characters!' : ''}
           rows={3}
@@ -72,8 +72,8 @@ class StepThree extends React.Component {
           floatingLabelStyle={{fontSize: '16px'}}
           floatingLabelShrinkStyle={{color: '#6a6462'}}
           textareaStyle={{backgroundColor: '#f3f2f1'}}
-          value={this.state.qualifications}
-          onChange={this.qualUpdater}
+          value={this.state.qualification}
+          onChange={(e) => this.infoUpdater('qual', e)}
         /><br/>
         <span style={{alignSelf: 'flex-end', color: '#6a6462'}}>Characters remaining: <span style={{color: '#4DC1EA'}}>{this.state.qualTextCount}</span></span>
         <TextField
@@ -88,7 +88,7 @@ class StepThree extends React.Component {
           floatingLabelShrinkStyle={{color: '#6a6462'}}
           textareaStyle={{backgroundColor: '#f3f2f1'}}
           value={this.state.goals}
-          onChange={this.goalUpdater}
+          onChange={(e) => this.infoUpdater('goal', e)}
         /><br/>
         <span style={{alignSelf: 'flex-end', color: '#6a6462'}}>Characters remaining: <span style={{color: '#4DC1EA'}}>{this.state.goalTextCount}</span></span>
       

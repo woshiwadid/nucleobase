@@ -42,6 +42,16 @@ module.exports.logged = (req, res, next) => {
   res.status(200).send({message: false});
 };
 
+module.exports.profile = (req, res, next) => {
+  if (req.user === undefined) {
+    res.redirect('/');
+  }
+  if (req.user.type === null || !req.user) {
+    res.redirect('/signup/create');
+  }
+  next();
+};
+
 module.exports.session = session({
   store: new RedisStore({
     client: redisClient,

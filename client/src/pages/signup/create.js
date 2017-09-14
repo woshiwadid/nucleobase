@@ -1,15 +1,20 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
 import { Step, Stepper, StepLabel, StepButton, StepContent } from 'material-ui/Stepper';
 
 import StepOne from './steps/stepOne';
 import StepTwo from './steps/stepTwo';
 import StepThree from './steps/stepThree';
+import StepFour from './steps/stepFour';
+
+import AJAX from '../../ajax.js';
 
 class Create extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      session: {},
       finished: false,
       stepIndex: 0,
       type: '',
@@ -17,12 +22,21 @@ class Create extends React.Component {
       lastName: '',
       phoneNumber: '',
       biography: '',
-      qualifications: '',
+      qualification: '',
       goals: '',
+      gyms: '',
+      image_url: ''
     };
     this.selectProfileType = this.selectProfileType.bind(this);
     this.stepTwoUpdater = this.stepTwoUpdater.bind(this);
     this.stepThreeUpdater = this.stepThreeUpdater.bind(this);
+    this.stepFourUpdater = this.stepFourUpdater.bind(this);
+  }
+
+  componentWillMount() {
+    AJAX.get('/session', {}, (session) => {
+      this.setState({session: session});
+    });
   }
 
   selectProfileType(type) {
@@ -48,17 +62,44 @@ class Create extends React.Component {
   }
 
   stepThreeUpdater(options) {
-    const { qualifications, goals } = options;
+    const { qualification, goals } = options;
     this.setState({
-      qualifications,
+      qualification,
       goals,
       stepIndex: 3
     });
   }
 
+  stepFourUpdater(options) {
+    const { gyms, image_url } = options;
+    this.setState({
+      gyms,
+      image_url,
+      finished: true
+    });
+  }
+
   render() {
 
-    const { stepIndex, type } = this.state;
+    const { stepIndex, type, session, finished } = this.state;
+
+    if (finished === true) {
+      var options = {
+        biography: this.state.biography,
+        first: this.state.firstName,
+        goals: this.state.goals,
+        gyms: this.state.gyms,
+        image_url: this.state.image_url,
+        id: this.state.session.id,
+        last: this.state.lastName,
+        phone: this.state.phoneNumber,
+        qualification: this.state.qualification,
+        type: this.state.type
+      };
+      AJAX.put('/ihateandy2', options, (result) => {
+        window.location.pathname = '/dashboard';
+      });
+    }
 
     return (
 
@@ -77,17 +118,23 @@ class Create extends React.Component {
             orientation="vertical"
           >
             <Step>
-              <StepButton onClick={() => this.setState({stepIndex: 0})}>
-                Choose account type
+              <StepButton onClick={() => this.setState({stepIndex: 0, finished: false})}>
+                Choose Account Type
               </StepButton>
               <StepContent>
                 <StepOne select={this.selectProfileType}/>
               </StepContent>
             </Step>
             <Step>
-              <StepButton onClick={() => this.setState({stepIndex: 1})}>
-                Build profile
-              </StepButton>
+              {
+                this.state.type === '' ?
+                  <StepLabel>
+                    Basic Info
+                  </StepLabel> :
+                  <StepButton onClick={() => this.setState({stepIndex: 1, finished: false})}>
+                    Basic Info
+                  </StepButton>
+              }
               <StepContent>
                 <StepTwo updateInfo={this.stepTwoUpdater} profileType={type}/>
               </StepContent>
@@ -102,11 +149,10 @@ class Create extends React.Component {
             </Step>
             <Step>
               <StepLabel>
-                Final Submission
+                Profile Picture &
               </StepLabel>
               <StepContent>
-                Hi
-                {console.log(this.state)}
+                <StepFour session={session} updateInfo={this.stepFourUpdater}/>
               </StepContent>
             </Step>
           </Stepper>

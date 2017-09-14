@@ -35,7 +35,7 @@ app.get('/verify', middleware.auth.logged, (req, res) => {
 
 app.get('/session', middleware.auth.verify, (req, res) => {
   res.send(req.user);
-} );
+});
 
 app.put('/ihateandy2', middleware.auth.verify, control.Profiles.update);
 app.get('/ihateandy', middleware.auth.verify, control.Profiles.getAll);

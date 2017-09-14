@@ -1,33 +1,33 @@
-[ 
+[
   {
     "appointment": {
       "location":  "San Francisco, CA",
       "date": "Sat Sep 23 2017 00:00:00 GMT-0700 (PDT)",
-      "price":  "60",
+      "price":  60,
       "time": {
-        "from": "Thu Sep 07 2017 13:30:39 GMT-0700 (PDT)", 
-        "to": "Thu Sep 07 2017 14:30:44 GMT-0700 (PDT)"
+        "from": "Thu Sep 07 2017 08:30:39 GMT-0700 (PDT)", 
+        "to": "Thu Sep 07 2017 10:30:44 GMT-0700 (PDT)"
       }
     }
   },
     {
     "appointment": {
-      "location":  "San Francisco, CA",
-      "date": "Sat Sep 23 2017 00:00:00 GMT-0700 (PDT)",
-      "price":  "60",
+      "location":  "Sunnyvale, CA",
+      "date": "Sat Sep 26 2017 00:00:00 GMT-0700 (PDT)",
+      "price":  85,
       "time": {
-        "from": "Thu Sep 07 2017 13:30:39 GMT-0700 (PDT)", 
-        "to": "Thu Sep 07 2017 14:30:44 GMT-0700 (PDT)"
+        "from": "Thu Sep 07 2017 11:30:39 GMT-0700 (PDT)", 
+        "to": "Thu Sep 07 2017 12:30:44 GMT-0700 (PDT)"
       }
     }
   },
     {
     "appointment": {
-      "location":  "San Francisco, CA",
-      "date": "Sat Sep 23 2017 00:00:00 GMT-0700 (PDT)",
-      "price":  "60",
+      "location":  "Sacramento, CA",
+      "date": "Sat Sep 24 2017 00:00:00 GMT-0700 (PDT)",
+      "price":  110,
       "time": {
-        "from": "Thu Sep 07 2017 13:30:39 GMT-0700 (PDT)", 
+        "from": "Thu Sep 07 2017 13:45:39 GMT-0700 (PDT)", 
         "to": "Thu Sep 07 2017 14:30:44 GMT-0700 (PDT)"
       }
     }

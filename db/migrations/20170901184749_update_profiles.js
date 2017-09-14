@@ -10,6 +10,7 @@ exports.up = function(knex, Promise) {
     table.string('qualification', 255).nullable();
     table.string('biography', 255).nullable();
     table.string('goals', 255).nullable();
+    table.string('image_url', 255).nullable();
   });
 };
 
@@ -25,6 +26,7 @@ exports.down = function(knex, Promise) {
     table.dropColumn('qualification');
     table.dropColumn('biography');
     table.dropColumn('goals');
+    // table.dropColumn('image_url');
   });
 };
 

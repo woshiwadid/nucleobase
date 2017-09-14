@@ -76,8 +76,8 @@ class StepTwo extends React.Component {
           <span style={{height: '15px'}}></span>
           {
             this.props.profileType === 'trainer' ?
-              <h4>About You</h4> : 
-              <h4>(Optional) About You</h4>
+              <h3>About You</h3> : 
+              <h3>(Optional) About You</h3>
           }
 
           <div style={{
