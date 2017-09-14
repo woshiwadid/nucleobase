@@ -12,7 +12,7 @@ import ListItem from 'material-ui/List/ListItem';
 import Avatar from 'material-ui/Avatar';
 import SmileFace from 'material-ui/svg-icons/social/mood';
 import NeutralFace from 'material-ui/svg-icons/social/sentiment-neutral';
-import SadFace from 'material-ui/svg-icons/Social/sentiment-very-dissatisfied';
+import SadFace from 'material-ui/svg-icons/social/sentiment-very-dissatisfied';
 import AppBar from 'material-ui/AppBar';
 
 import Profiles from '../profiles/profiles';
