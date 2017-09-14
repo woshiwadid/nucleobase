@@ -5,7 +5,7 @@ module.exports.create = (req, res) => {
 
   // send email
   if (req.body.receiverEmail !== undefined) {
-    email.send(req.body.senderDisplay, req.body.receiverEmail, 'Trainer Finder', req.body.message);
+    email.send(req.body.senderDisplay, req.body.senderEmail, req.body.receiverDisplay, req.body.receiverEmail, 'Trainer Finder', req.body.message);
   }
 
   // save data 

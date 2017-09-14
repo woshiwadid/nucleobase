@@ -92,8 +92,6 @@ module.exports.update = (req, res) => {
       if (!profile) {
         throw profile;
       }
-      console.log('this is profile', profile.attributes);
-      console.log('this is req.body', req.body);
       return profile.save(req.body, { method: 'update' });
     })
     .then(profile => {

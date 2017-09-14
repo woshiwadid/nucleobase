@@ -2,13 +2,7 @@
 const nodemailer = require('nodemailer');
 const email = require('config')['email'];
 
-module.exports.send = (sender, receiver, subject, text) => {
-
-  console.log(sender);
-  console.log(receiver);
-  console.log(subject);
-  console.log(text);
-
+module.exports.send = (senderDisplay, senderEmail, receiverDisplay, receiverEmail, subject, text) => {
 
   // Send email
   var transporter = nodemailer.createTransport({
@@ -21,9 +15,9 @@ module.exports.send = (sender, receiver, subject, text) => {
 
   var mailOptions = {
     from: 'Trainer Finder',
-    to: receiver,
-    subject: subject, //'Sending Email using Node.js',
-    text: 'sender: ' + sender + '\n' + text //'That was easy!'
+    to: receiverEmail,
+    subject: subject,
+    text: `Hi ${receiverDisplay},\n\nYou received a message from ${senderDisplay}:\n"${text}"\n${senderDisplay} email: ${senderEmail}\n\nSincerely,\nTrainer Finder`
   };
 
   transporter.sendMail(mailOptions, function(error, info) {
