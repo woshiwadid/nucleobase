@@ -15,7 +15,7 @@ const Profile = db.Model.extend({
     return this.hasMany('Auth');
   },
   messages: function() {
-    return this.hasMany('Payment');
+    return this.hasMany('Messages');
   },
   ratings: function() {
     return this.hasMany('Rating');

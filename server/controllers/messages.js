@@ -1,7 +1,15 @@
 const models = require('../../db/models');
+const email = require('../middleware/email');
 
 module.exports.create = (req, res) => {
-  models.Message.forge(req.body)
+
+  // send email
+  if (req.body.receiverEmail !== undefined) {
+    email.send(req.body.senderDisplay, req.body.receiverEmail, 'Trainer Finder', req.body.message);
+  }
+
+  // save data 
+  models.Message.forge({sender: req.body.sender, receiver: req.body.receiver, message: req.body.message})
   .save()
   .then(message => {
     res.status(201).send(message);

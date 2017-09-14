@@ -3,7 +3,7 @@ const RedisStore = require('connect-redis')(session);
 var url = require('url');
 const redisClient = require('redis').createClient(process.env.REDIS_URL || '');
 
-if (process.env.REDIS_URL){
+if (process.env.REDIS_URL) {
   var redisURL = url.parse(process.env.REDIS_URL).hostname;
 }
 

@@ -6,12 +6,12 @@ module.exports.post = (endpoint, options, callback) => {
     url: endpoint,
     data: options,
     success: (data) => {
-      console.log('SUCCESS:', data);
+      console.log('POST SUCCESS:', data);
 
       callback( data );
     },
     error: (error) => {
-      console.log('ERROR:', error);
+      console.log('POST ERROR:', error);
     }
   });
 };
@@ -22,12 +22,12 @@ module.exports.delete = (endpoint, options, callback) => {
     url: endpoint,
     data: options,
     success: (data) => {
-      console.log('SUCCESS:', data);
+      console.log('DELETE SUCCESS:', data);
 
       callback( data );
     },
     error: (error) => {
-      console.log('ERROR:', error);
+      console.log('DELETE ERROR:', error);
     }
   });
 };
@@ -38,12 +38,12 @@ module.exports.put = (endpoint, options, callback) => {
     url: endpoint,
     data: options,
     success: (data) => {
-      console.log('SUCCESS:', data);
+      console.log('PUT SUCCESS:', data);
 
       callback( data );
     },
     error: (error) => {
-      console.log('ERROR:', error);
+      console.log('PUT ERROR:', error);
     }
   });
 };
@@ -54,12 +54,12 @@ module.exports.get = (endpoint, options, callback) => {
     url: endpoint,
     data: options,
     success: (data) => {
-      console.log('SUCCESS:', data);
+      console.log('GET SUCCESS:', data);
 
       callback( data );
     },
     error: (error) => {
-      console.log('ERROR:', error);
+      console.log('GET ERROR:', error);
     }
   });
 };

@@ -57,17 +57,30 @@ class Profile extends React.Component {
 	  	star: 0,
 	  	starHalf: 0,
 	  	open: false,
-	  	rating: 1
+	  	rating: 1,
+	  	text: ''
 	  };
 	  this.countStar.bind(this);
 	};
 
 	componentWillMount() {
+
+
+		//console.log('trainer profile: ', this.props.profile)
+
+
 		this.setState({
 			star: parseInt(this.props.profile.rating),
 			starHalf: this.props.profile.rating%1 > 0 ? 1 : 0,
 			// starBorder: 5 - this.state.star - this.state.starHalf
 		});
+
+		AJAX.get('/session', {}, (session) => {
+      this.setState({session: session});
+    });
+
+
+
 		// AJAX.get('/service', {}, (data) =>{
 	 //   	this.setState({
 	 //   		session: data
@@ -75,6 +88,10 @@ class Profile extends React.Component {
 	 //  });
 
 	}
+
+	
+
+
 
 	handleClick() {
 		this.props.handleClick();
@@ -99,6 +116,37 @@ class Profile extends React.Component {
 		// })
 	}
 
+
+	// send email
+  sendEmail() {
+    console.log('Send button: ', this.state);
+
+    AJAX.post('/messages', {
+
+    	// user 
+      sender: this.state.session.id, 
+      senderDisplay: this.state.session.display, 
+      senderEmail: this.state.session.email,
+
+      // trainer
+      receiver: this.props.profile.id, 
+      receiverDisplay: this.props.profile.display, 
+      receiverEmail: this.props.profile.email, 
+
+      // message
+      message: this.state.text
+
+    }, (data) =>{
+      console.log(data);
+    });
+  }
+
+  // email 
+  handleChange(e) {
+    this.setState({text: e.target.value});
+  }  
+
+
 	countStar() {
 	  var result = [];
 	  var i = 0
@@ -113,9 +161,15 @@ class Profile extends React.Component {
 	  return result;
 	}
 
+
+
 	onStarClick(nextValue, prevValue, name) {
         this.setState({rating: nextValue});
     }
+
+
+
+
 
   render() {
     console.log(111, this.props.profile)
@@ -141,6 +195,13 @@ class Profile extends React.Component {
 		    	<List style={{backgroundColor:'white',width: 150}}>
 		    		<ListItem primaryText='Chat me'/>
 		    		<ListItem primaryText='Email me'/>
+
+		    		<form onSubmit={this.sendEmail.bind(this)}>
+                <input onChange={this.handleChange.bind(this)} value={this.state.text} />
+                <button>Send</button>
+             </form>
+
+
 		    		<ListItem primaryText='Go back to search page' onClick={this.handleClick.bind(this)}/>
 		    	</List>
 		    </div>
