@@ -9,6 +9,7 @@ import ViewIcon from 'material-ui/svg-icons/image/remove-red-eye';
 import GoalIcon from 'material-ui/svg-icons/image/adjust';
 import CreateIcon from 'material-ui/svg-icons/content/create';
 import GymsIcon from 'material-ui/svg-icons/places/fitness-center';
+
 import QualificationIcon from 'material-ui/svg-icons/social/school';
 import BiographIcon from 'material-ui/svg-icons/social/whatshot';
 import Divider from 'material-ui/Divider';
