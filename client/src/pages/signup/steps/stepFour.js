@@ -15,7 +15,7 @@ class StepFour extends React.Component {
     super(props);
     this.state = {
       imgSrc: 'https://lh3.googleusercontent.com/-_G3XieI-P7Y/AAAAAAAAAAI/AAAAAAAAAEY/AU_AGutjoWQ/s640/photo.jpg',
-      gymText: '',
+      gymText: '', 
       gyms: []
     };
     this.gymNameHandler = this.gymNameHandler.bind(this);

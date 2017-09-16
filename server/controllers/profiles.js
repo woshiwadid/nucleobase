@@ -11,6 +11,17 @@ module.exports.getAll = (req, res) => {
     });
 };
 
+module.exports.getByFilter = (req, res) => {
+  models.Profile.where({type: req.query.filter})
+    .fetchAll()
+    .then(services => {
+      res.status(200).send(services);
+    })
+    .catch(error => {
+      res.status(503).send(error);
+    });
+};
+
 // module.exports.getAll = (req, res) => {
 //   console.log('get here')
 //   models.Profile.where(req.query)

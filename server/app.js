@@ -39,6 +39,7 @@ app.get('/session', middleware.auth.verify, (req, res) => {
 
 app.put('/ihateandy2', middleware.auth.verify, control.Profiles.update);
 app.get('/ihateandy', middleware.auth.verify, control.Profiles.getAll);
+app.get('/profilesByFilter', control.Profiles.getByFilter);
 
 
 app.post('/appointments', middleware.auth.verify, control.Appointments.create);

@@ -16,159 +16,169 @@ import SadFace from 'material-ui/svg-icons/social/sentiment-very-dissatisfied';
 import AppBar from 'material-ui/AppBar';
 
 import Profiles from '../profiles/profiles';
-import SearchEntry from'./searchEntry';
+import SearchEntry from './searchEntry';
 
 const styles = {
-	layout: {
-		display: 'flex',
-		flexDirection: 'row',
+  layout: {
+    display: 'flex',
+    flexDirection: 'row',
     justifyContent: 'space-between',
-		width: '100%'
+    width: '100%'
 
-	},
-	left: {
-		border: '2px solid',
-		// height: '10%',
-		marginTop: '50px',
-		width: '20%',
-		height: '50%'
-	},
-	right: {
+  },
+  left: {
+    border: '2px solid',
+    // height: '10%',
+    marginTop: '50px',
+    width: '20%',
+    height: '50%'
+  },
+  right: {
     width: '75%',
     // border: '2px solid',
     // marginTop: '10px'
 
-	},
-	list: {
-		// border: '1px solid',
-		marginTop: '10px',
-		marginRight: '30px',
-		height: '35px'
-	},
-	filterbar : {
-		// border: '1px solid',
-		background: '#d7dee8'
-	}
-}
+  },
+  list: {
+    // border: '1px solid',
+    marginTop: '10px',
+    marginRight: '30px',
+    height: '35px'
+  },
+  filterbar: {
+    // border: '1px solid',
+    background: '#d7dee8'
+  }
+};
+
 
 class Search extends React.Component {
-	constructor(props) {
-		super(props);
-		this.state ={
-			rating: 1,
-			view: 1,
-			price: 1,
-			search: '',
-			profiles: [],
-			toggle: false,
-			clickedProfile: {}
-		};
-	};
+  constructor(props) {
+    super(props);
+    this.state = {
+      rating: 1,
+      view: 1,
+      price: 1,
+      search: '',
+      profiles: [],
+      toggle: false,
+      clickedProfile: {}
+    };
+  }
 
-	componentWillMount() {
-     AJAX.get('/ihateandy', {}, (data) =>{
-     		this.setState({
-     			profiles: data
-     		});
-     });
- 	};
+  componentWillMount() {
+    AJAX.get('/profilesByFilter', {filter: 'trainer'}, (data) =>{
+      this.setState({
+        profiles: data
+      });
+    });
+  }
 
-	handleRatingChange(event, index, value) {
-		this.setState({
-			rating: value
-		});
-  };
+  handleRatingChange(event, index, value) {
+    this.setState({
+      rating: value
+    });
+  }
 
   handleViewChange(event, index, value) {
-		this.setState({
-			view: value
-		});
-  };
+    this.setState({
+      view: value
+    });
+  }
 
   handlePriceChange(event, index, value) {
-		this.setState({
-			price: value
-		});
-  };
+    this.setState({
+      price: value
+    });
+  }
 
   handleSearchInput(event) {
-  	this.setState({
-  		search: event.target.value
-  	});
-  };
+    this.setState({
+      search: event.target.value
+    });
+  }
 
   handleSearch() {
-  	console.log('i got clicked')
-  };
+    console.log('i got clicked');
+  }
 
   handleProfileClick(profile) {
-  	this.setState({
-  		toggle: !this.state.toggle,
-  		clickedProfile: profile
+    this.setState({
+      toggle: !this.state.toggle,
+      clickedProfile: profile
+    });
+  }
 
-  	});
-  };
 
+  render() {
 
-	render() {
-		// console.log(this.state.clickedProfile)
-		if(this.state.toggle) {
-			return <Profiles handleClick={this.handleProfileClick.bind(this)} profile={this.state.clickedProfile}/>
-		} else {
-		return (
-			   <div>
-       	 	<AppBar>
-       	 		<TextField hintText="Seach" style={{width: '300px', Height: '200px'}} onChange={this.handleSearchInput.bind(this)}/>
-          	<SearchIcon onClick={this.handleSearch.bind(this)}/>
-       	 	</AppBar>
-       	 	<br/>
-			    <div style = {styles.layout}>
-            <div style = {styles.left}>
-           	 	<ul>
-           	 	  <li style={{marginTop: '30px'}}>
-		           	 	<div style={styles.filterbar}>Filter by rating</div>
-		           	 	<div style={styles.list}>
-		           	 			<DropDownMenu value={this.state.rating} style={{width: 50, autoWidth:false}} onChange={this.handleRatingChange.bind(this)}>
-		           	 				<MenuItem  value={1} label="default" primaryText="default" />
-		           	 				<MenuItem  value={2} label="option1" primaryText="option1" />
-		           	 				<MenuItem  value={3} label="option2" primaryText="option2" />
-		           	 			</DropDownMenu>
-		           	 	</div>
-           	 	  </li>
-           	 	  <li style={{marginTop: '30px'}}>
-		           	 	<div style={styles.filterbar}>Filter by View</div>
-		           	 	<div style={styles.list}>
-		           	 			<DropDownMenu value={this.state.view} style={{width: 50, autoWidth:false}} onChange={this.handleViewChange.bind(this)}>
-		           	 				<MenuItem  value={1} label="default" primaryText="default" />
-		           	 				<MenuItem  value={2} label="option1" primaryText="option1" />
-		           	 				<MenuItem  value={3} label="option2" primaryText="option2" />
-		           	 			</DropDownMenu>
-		           	 	</div>
-           	 	  </li>
-           	 	  <li style={{marginTop: '30px'}}>
-		           	 	<div style={styles.filterbar}>Filter by Price</div>
-		           	 	<div style={styles.list}>
-		           	 			<DropDownMenu value={this.state.price} style={{width: 50, autoWidth:false}} onChange={this.handlePriceChange.bind(this)}>
-		           	 				<MenuItem  value={1} label="default" primaryText="default" />
-		           	 				<MenuItem  value={2} label="option1" primaryText="option1" />
-		           	 				<MenuItem  value={3} label="option2" primaryText="option2" />
-		           	 			</DropDownMenu>
-		           	 	</div>
-           	 	  </li>
-           	 	</ul>
-						</div>
-						<br/>
-						<div style={styles.right}>
-							<h3 style={{textAlign: 'center',backgroundColor: '#ffff02'}}>Result List</h3>
-							<List>
-							{this.state.profiles.map((profile, i) => <SearchEntry key={i} profile={profile} handleProfileClick={this.handleProfileClick.bind(this)}/>)}
-							</List>
-						</div>
+    console.log(this.state.profiles);
+
+    if (this.state.toggle) {
+      return <Profiles handleClick={this.handleProfileClick.bind(this)} profile={this.state.clickedProfile}/>;
+    } else {
+      return (
+        <div>
+          {/* This is where the searching function lives as well as the button for submitting the search */}
+          <AppBar>
+            <TextField hintText="Seach" style={{width: '300px', Height: '200px'}} onChange={this.handleSearchInput.bind(this)}/>
+            <SearchIcon onClick={this.handleSearch.bind(this)}/>
+          </AppBar>
+          <br/>
+          <div style={styles.layout}>
+            <div style={styles.left}>
+              <ul>
+
+                {/* This is where the 3 drop down menus live */}
+
+                <li style={{marginTop: '30px'}}>
+                  <div style={styles.filterbar}>Filter by rating</div>
+                  <div style={styles.list}>
+                    <DropDownMenu value={this.state.rating} style={{width: 50, autoWidth: false}} onChange={this.handleRatingChange.bind(this)}>
+                      <MenuItem value={1} label="default" primaryText="default" />
+                      <MenuItem value={2} label="option1" primaryText="option1" />
+                      <MenuItem value={3} label="option2" primaryText="option2" />
+                    </DropDownMenu>
+                  </div>
+                </li>
+                <li style={{marginTop: '30px'}}>
+                  <div style={styles.filterbar}>Filter by View</div>
+                  <div style={styles.list}>
+                    <DropDownMenu value={this.state.view} style={{width: 50, autoWidth: false}} onChange={this.handleViewChange.bind(this)}>
+                      <MenuItem value={1} label="default" primaryText="default" />
+                      <MenuItem value={2} label="option1" primaryText="option1" />
+                      <MenuItem value={3} label="option2" primaryText="option2" />
+                    </DropDownMenu>
+                  </div>
+                </li>
+                <li style={{marginTop: '30px'}}>
+                  <div style={styles.filterbar}>Filter by Price</div>
+                  <div style={styles.list}>
+                    <DropDownMenu value={this.state.price} style={{width: 50, autoWidth: false}} onChange={this.handlePriceChange.bind(this)}>
+                      <MenuItem value={1} label="default" primaryText="default" />
+                      <MenuItem value={2} label="option1" primaryText="option1" />
+                      <MenuItem value={3} label="option2" primaryText="option2" />
+                    </DropDownMenu>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <br/>
+
+            {/* This is the results list */}
+
+            <div style={styles.right}>
+              <h3 style={{textAlign: 'center', backgroundColor: '#ffff02'}}>Result List</h3>
+              <List>
+                {this.state.profiles.map((profile, i) => <SearchEntry key={i} profile={profile} handleProfileClick={this.handleProfileClick.bind(this)}/>)}
+              </List>
+            </div>
           </div> 
         </div>
-		)
-			
-		};
-	};
-};
+      );
+      
+    }
+  }
+}
+
 export default Search;

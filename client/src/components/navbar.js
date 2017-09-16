@@ -9,6 +9,7 @@ const Navbar = (props) => (
 
   <Paper zDepth={1} style={{
     height: '50px',
+    minWidth: '500px',
     width: '100%',
     display: 'flex',
     flexDirection: 'row',

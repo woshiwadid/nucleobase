@@ -1,40 +1,55 @@
 import React from 'react';
-import $ from 'jquery';
 import { Link } from 'react-router-dom';
 
 import Navbar from '../../components/navbar';
 import SearchBar from './searchbar';
+import ResultsList from './resultsList';
+
+import AJAX from '../../ajax';
+
 
 class Finder extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       session: '',
+      profiles: []
     };
+    this.fetchProfiles = this.fetchProfiles.bind(this);
   }
 
   componentDidMount() {
-    $.ajax({
-      url: '/session',
-      type: 'GET',
-      success: (data) => {
-        this.setState({
-          session: data
-        });
-      },
-      error: (err) => {
-        console.error(err);
-      }
+    AJAX.get('/session', {}, (data) => {
+      this.setState({
+        session: data
+      }, this.fetchProfiles);
+    });
+  }
+
+  fetchProfiles() {
+    let options = {};
+    // this.state.session.type === 'trainer' || typeof this.state.session !== 'string' ?
+    //   options.filter = 'trainee' :
+    //   options.filter = 'trainer';
+    if (this.state.session.type === 'trainer') {
+      options.filter = 'trainee';
+    } else {
+      options.filter = 'trainer';
+    }
+    AJAX.get('/profilesByFilter', options, (profiles) => {
+      this.setState({
+        profiles
+      });
     });
   }
 
   render() {
 
-    const { session } = this.state;
+    const { session, profiles } = this.state;
 
     return (
 
-      <div className=".col-lg-12" style={{
+      <div style={{
         height: '100%',
         width: '100%'
       }}>
@@ -43,17 +58,13 @@ class Finder extends React.Component {
 
         <div className="col-sm-8 col-sm-offset-2" style={{
           height: '94.8%',
-          backgroundColor: '#FFFFFF'
+          backgroundColor: '#FFFFFF',
+          padding: '0'
         }}>
           
-          <SearchBar />
-          <Link to="/dashboard">Dashboard View</Link>
+          <SearchBar session={session}/>
 
-          {
-            typeof this.state.session === 'string' ?
-              <span>YOU HAVE NO SESSION</span> :
-              <span>YOU HAVE A SESSION</span>
-          }
+          <ResultsList profiles={profiles}/>
 
         </div>
 
