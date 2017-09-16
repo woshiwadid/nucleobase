@@ -7,8 +7,6 @@ import Paper from 'material-ui/Paper';
 
 const Navbar = (props) => (
 
-  console.log(props),
-
   <Paper zDepth={1} style={{
     height: '50px',
     width: '100%',
