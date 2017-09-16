@@ -25,7 +25,8 @@ class Create extends React.Component {
       qualification: '',
       goals: '',
       gyms: '',
-      image_url: ''
+      image_url: '',
+      location: ''
     };
     this.selectProfileType = this.selectProfileType.bind(this);
     this.stepTwoUpdater = this.stepTwoUpdater.bind(this);
@@ -47,7 +48,7 @@ class Create extends React.Component {
   }
 
   stepTwoUpdater(options) {
-    const { firstName, lastName, biography, phoneNumber } = options;
+    const { firstName, lastName, biography, phoneNumber, location } = options;
     let stepIndex = 3;
     if (this.state.type === 'trainer') {
       stepIndex = 2;
@@ -57,6 +58,7 @@ class Create extends React.Component {
       lastName,
       biography,
       phoneNumber,
+      location,
       stepIndex: stepIndex
     });
   }
@@ -92,6 +94,7 @@ class Create extends React.Component {
         image_url: this.state.image_url,
         id: this.state.session.id,
         last: this.state.lastName,
+        location: this.state.location,
         phone: this.state.phoneNumber,
         qualification: this.state.qualification,
         type: this.state.type

@@ -12,7 +12,8 @@ class StepTwo extends React.Component {
       bioTextCount: 255,
       firstName: '',
       lastName: '',
-      phoneNumber: ''
+      phoneNumber: '',
+      location: ''
     };
     this.infoUpdater = this.infoUpdater.bind(this);
     this.stepTwoUpdater = this.stepTwoUpdater.bind(this);
@@ -31,15 +32,19 @@ class StepTwo extends React.Component {
     if (type === 'bio') {
       this.setState({biography: e.target.value, bioTextCount: 255 - e.target.value.length});
     }
+    if (type === 'location') {
+      this.setState({location: e.target.value});
+    }
   }
 
   stepTwoUpdater() {
-    const { firstName, lastName, phoneNumber, biography} = this.state; 
+    const { firstName, lastName, phoneNumber, biography, location } = this.state; 
     let options = {
       firstName: firstName,
       lastName: lastName,
       phoneNumber: phoneNumber,
-      biography: biography
+      biography: biography,
+      location: location
     };
     this.props.updateInfo(options);
   }
@@ -52,7 +57,7 @@ class StepTwo extends React.Component {
       disabler = true;
     }
     if (this.props.profileType === 'trainer') {
-      if (firstName === '' || lastName === '' || phoneNumber === '' || bioTextCount === 255) {
+      if (firstName === '' || lastName === '' || phoneNumber === '' || bioTextCount === 255 || location === '') {
         disabler = true;
       }
     }
@@ -99,6 +104,14 @@ class StepTwo extends React.Component {
               onChange={(e) => this.infoUpdater('last', e)}
             />
           </div>
+
+          <TextField
+            floatingLabelText="Location"
+            floatingLabelStyle={{fontSize: '16px'}}
+            hintText="San Francisco, CA"
+            value={this.state.location}
+            onChange={(e) => this.infoUpdater('location', e)}
+          />
 
           <TextField
             floatingLabelText="Phone Number"

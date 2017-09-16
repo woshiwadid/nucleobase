@@ -2,6 +2,9 @@ import React from 'react';
 
 import Avatar from 'material-ui/Avatar';
 
+import TrainerInfo from './trainerInfo';
+import TraineeInfo from './traineeInfo';
+
 
 const ResultsEntry = (props) => (
 
@@ -63,34 +66,14 @@ const ResultsEntry = (props) => (
           <span style={{fontStyle: 'italic', color: '#999999', paddingLeft: '10px'}}>{props.profile.location}</span>
         </div>
 
-        <div style={{
-          height: '60%',
-          display: 'flex',
-          flexDirection: 'column',
+        {/* PLACEHOLDER FOR THE BIO / GOALS / QUALS SPACE.  BREAKING OUT TO SEPARATE COMPONENTS */}
 
-        }}>
+        {
+          props.profile.type === 'trainer' ?
+            <TrainerInfo qualification={props.profile.qualification} goals={props.profile.goals} /> :
+            <TraineeInfo biography={props.profile.biography} goals={goals.profile.goals} />
+        }
 
-          {/* REMOVE THIS INTO IT'S OWN COMPONENT, AND MAKE ANOTHER ONE DEPENDING ON THE PROFILE TYPE OF THE SESSION */}
-
-          <div style={{
-            height: '50%',
-          }}>
-            <p style={{paddingLeft: '10px', overflow: 'hidden', whiteSpace: 'nowrap'}}>
-              <span style={{fontWeight: 'bold'}}>Biography:&nbsp;</span>
-              {`${props.profile.biography}`}
-            </p>
-          </div>
-
-          <div style={{
-            height: '50%'
-          }}>
-            <p style={{paddingLeft: '10px', overflow: 'hidden', whiteSpace: 'nowrap'}}>
-              <span style={{fontWeight: 'bold'}}>Goals:&nbsp;</span>
-              {`${props.profile.goals}`}
-            </p>
-          </div> 
-
-        </div>
 
       </div>
 

@@ -11,6 +11,7 @@ exports.up = function(knex, Promise) {
     table.string('biography', 255).nullable();
     table.string('goals', 255).nullable();
     table.string('image_url', 255).nullable();
+    table.string('location', 255).nullable();
   });
 };
 
@@ -27,6 +28,7 @@ exports.down = function(knex, Promise) {
     table.dropColumn('biography');
     table.dropColumn('goals');
     table.dropColumn('image_url');
+    // table.dropColumn('location');
   });
 };
 
