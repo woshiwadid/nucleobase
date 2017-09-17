@@ -4,12 +4,13 @@ const path = require('path');
 const middleware = require('./middleware');
 const routes = require('./routes');
 const control = require('./controllers');
+const stripe = require('stripe')('sk_test_NyxGEEYxKDEyHCiyis476efz');
 
 const app = express();
 
 app.use(middleware.morgan('dev'));
 app.use(middleware.cookieParser());
-app.use(middleware.bodyParser.urlencoded({extended: false}));
+app.use(middleware.bodyParser.urlencoded({extended: true}));
 app.use(middleware.bodyParser.json());
 
 
@@ -28,6 +29,26 @@ app.use('/', routes.auth);
 app.use('/dashboard', routes.dashboard);
 app.use('/api', routes.api);
 app.use('/api/profiles', routes.profiles);
+app.use('/payment', routes.payment);
+
+app.post('/charge', (req, res) => {
+	console.log(req.body.token)
+	var token = req.body.token;
+	var chargeAmount = 100
+	stripe.charges.create({
+		amount: chargeAmount,
+		currency: 'USD',
+		source: token.id
+	}, (err, charge) => {
+		if(err) {
+			console.log(err)
+			// res.end(err)
+		} else {
+	  	res.end('you made it')
+		}
+	});
+
+});
 
 app.get('/verify', middleware.auth.logged, (req, res) => {
   res.status(200).send({message: true, user_id: req.user.id});

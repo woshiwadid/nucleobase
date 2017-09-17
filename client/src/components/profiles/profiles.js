@@ -24,6 +24,7 @@ import StarBorder from 'material-ui/svg-icons/toggle/star-border';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 import StarRatingComponent from 'react-star-rating-component';
 import EmailDialog from 'material-ui/Dialog';
+import Payment from '../../pages/payment'
 
 const styles = {
   layout: {
@@ -36,10 +37,10 @@ const styles = {
     display: 'flex',
     flexWrap: 'wrap',
     justifyContent: 'space-between',
-    width: '100%'
+    width: '100%',
   },
   left: {
-    width: '25%'
+    width: '25%',
   },
   right: {
     width: '74%',
@@ -165,6 +166,7 @@ class Profile extends React.Component {
 
     return (
     <div>
+      <Payment/>
       <div style={styles.layout}>
         <div>
           <Avatar size={150} src="http://cdn-image.travelandleisure.com/sites/default/files/styles/1600x1000/public/1444253482/DG2015-san-francisco.jpg?itok=MdRJm2Zo" height={150} width={150}/>

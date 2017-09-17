@@ -1,13 +1,12 @@
 import React from 'react';
 import $ from 'jquery';
 import { Route } from 'react-router-dom';
-
 import Navbar from '../../components/navbar';
 import Search from '../../components/search/search';
 import Profile from '../../components/profiles/profiles';
 import Info from '../../components/edit/info';
+import MyProfile from '../../components/edit/myProfile'
 import DashNav from './dashnav';
-
 import Main from './main';
 import Schedule from './schedule';
 import Trainers from './trainers';
@@ -61,7 +60,7 @@ class Dashboard extends React.Component {
 
           <Route path={`${this.props.match.url}/schedule`} component={Schedule}/>
           <Route path={`${this.props.match.url}/trainers`} component={Trainers}/>
-          <Route path={`${this.props.match.url}/profile`} component={Info}/>
+          <Route path={`${this.props.match.url}/profile`} component={MyProfile}/>
           <Route exact path={`${this.props.match.url}`} component={Main}/>
         
 
