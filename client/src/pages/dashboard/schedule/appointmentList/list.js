@@ -1,6 +1,3 @@
-// something cool we could try to implement is if the appointment is booked, when you hover over it, the hover color would be different
-// if the appointment wasn't booked, the hover color would be like, green, or something conveying the message of available.
-
 import {List, ListItem, makeSelectable} from 'material-ui/List';
 import ClearIcon from 'material-ui/svg-icons/content/clear';
 import IconButton from 'material-ui/IconButton';
@@ -21,10 +18,12 @@ class ListComponent extends React.Component {
       for (var key in appointment) {
         if (appointment[key]){
           for (var i = 0; i !== this.props.filter.length; i++) {
-            if (this.props.filter[i]) {
-              if (JSON.stringify(appointment[key]).toUpperCase().includes(this.props.filter[i].toUpperCase())) {
+            if (key === 'sender' || key === 'receiver' ) {
+              if (JSON.stringify(appointment[key].first + appointment[key].last).toUpperCase().includes(this.props.filter[i].toUpperCase())) {
                 return true;
               }
+            } else if (JSON.stringify(appointment[key]).toUpperCase().includes(this.props.filter[i].toUpperCase())) {
+              return true;
             }
           }
         }
@@ -39,7 +38,7 @@ class ListComponent extends React.Component {
   render() {
     const iconButtonElement = (appointment, index) => (
       <IconButton
-        key={'k' + index}
+        key={'IconButton' + index}
         tooltip="Cancel"
         tooltipPosition="bottom-center"
         onClick={() => {this.props.deleteAppointment(appointment)}}
@@ -48,55 +47,51 @@ class ListComponent extends React.Component {
       </IconButton>
     );
 
+    const appointmentElement = (appointment, index) => (
+      <div key={'div' + index}>
+        <ListItem
+          key={'List' + index}
+          hoverColor="#C3D600"
+          style={{padding: '0'}}
+          rightIconButton={iconButtonElement(appointment, index)}
+          onClick={() => this.props.previewAppointment(appointment)}
+          primaryText={`${parseDateAbrv(appointment.date)}`}
+          secondaryText={
+            <div key={'div' + index} style={{
+              display: 'flex',
+              flexDirection: 'column',
+            }}>
+              <span key={'span' + index} >
+                {`${parseTime(appointment.time.from)} - ${parseTime(appointment.time.to)}`}
+              </span>
+            </div>
+          }
+        />
+        <Divider
+          key={'Divider' + index}
+          inset={true}
+        />
+      </div>
+    );
+
     return (
       <div style={{
-        height: '100%',
         width: '100%',
-        overflowY: 'scroll',
+        height: '100%',
         display: 'list',
-        flexDirection: 'column',
-        justifyContent: 'flex-start',
+        overflowY: 'scroll',
         alignItems: 'center',
+        flexDirection: 'column',
+        justifyContent: 'flex-start'
       }}>
         <List>
           <Subheader>
             Appointments
-          </Subheader>
-          {
-            this.props.appointments.map((appointment, i) => {
-              if (!this.filter(appointment)) {
-                return;
+          </Subheader>{
+            this.props.appointments.map((appointment, index) => {
+              if (this.filter(appointment)) {
+                return appointmentElement(appointment, index);
               }
-
-              if (typeof appointment.time === 'string') {
-                appointment.time = JSON.parse(appointment.time);
-                appointment.time.from = (new Date(Date.parse(appointment.time.from))).toString();
-                appointment.time.to = (new Date(Date.parse(appointment.time.to))).toString();
-              }
-
-              return (
-                <div key={'div' + i}>
-                  <ListItem
-                    key={i}
-                    hoverColor="#C3D600"
-                    primaryText={`${parseDateAbrv(appointment.date)}`}
-                    secondaryText={
-                      <div key={'div' + i} style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                      }}>
-                        <span key={'s' + i} >
-                          {`${parseTime(appointment.time.from)} - ${parseTime(appointment.time.to)}`}
-                        </span>
-                      </div>
-                    }
-                    rightIconButton={iconButtonElement(appointment, i)}
-                    style={{padding: '0'}}
-                    onClick={() => this.props.previewAppointment(appointment)}
-                  />
-                  <Divider key={'x' + i} inset={true}/>
-                </div>
-              );
             })
           }
         </List>

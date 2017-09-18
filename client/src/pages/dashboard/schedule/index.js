@@ -7,8 +7,8 @@ class Schedule extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      session: {},
       appointments: [],
+      session: {},
       filter: []
     };
   }
@@ -22,7 +22,7 @@ class Schedule extends React.Component {
           }
         } else {
           var options = {
-            //receiver: this.state.session.id
+            receiver: this.state.session.id
           }
         }
 
@@ -34,16 +34,17 @@ class Schedule extends React.Component {
   }
 
   addAppointment(appointment) {
+    appointment.time = JSON.stringify(appointment.time);
     appointment.sender = this.state.session.id;
 
     AJAX.post('/appointments', appointment, () => {
-      if ( this.state.session.type === 'trainer' ) {
+      if (this.state.session.type === 'trainer') {
         var options = {
           sender: this.state.session.id
         }
       } else {
         var options = {
-          //receiver: this.state.session.id
+          receiver: this.state.session.id
         }
       }
 
@@ -55,13 +56,13 @@ class Schedule extends React.Component {
 
   deleteAppointment(appointment) {
     AJAX.delete('/appointments', {id: appointment.id}, () => {
-      if ( this.state.session.type === 'trainer' ) {
+      if (this.state.session.type === 'trainer') {
         var options = {
           sender: this.state.session.id
         }
       } else {
         var options = {
-          //receiver: this.state.session.id
+          receiver: this.state.session.id
         }
       }
 
@@ -72,17 +73,14 @@ class Schedule extends React.Component {
   }
 
   filterAppointments(event) {
-    var words = event.target.value.split(' ');
-    var filter = [];
-
-    for (var i = 0; i !== words.length; i++) {
-      if (words[i]) {
-        filter.push(words[i]);
-      }
-    }
-
     this.setState({
-      filter: filter
+      filter: event.target.value.split(' ').reduce((filter, word) => {
+        if (word) {
+          filter.push(word);
+        }
+
+        return filter;
+      }, [])
     });
   }
 
@@ -94,7 +92,7 @@ class Schedule extends React.Component {
       }}>
         <div className="col-lg-3 col-xsm-6" style={{
           display: 'flex',
-          flexDirection: 'column',
+          flexDirection: 'column'
         }}>
           <ControlPanel
             addAppointment={this.addAppointment.bind(this)}
@@ -102,25 +100,26 @@ class Schedule extends React.Component {
           />
         </div>
         <div className="col-lg-9 col-xsm-6" style={{
-          height: '600px',
+          padding: '0',
           display: 'flex',
+          height: '600px',
           flexDirection: 'column',
-          justifyContent: 'space-evenly', 
-          padding: '0'
+          justifyContent: 'space-evenly'
         }}>
           <ApptList
             filter={this.state.filter}
+            session={this.state.session}
             appointments={this.state.appointments}
             deleteAppointment={this.deleteAppointment.bind(this)}
           />
         </div>
         <div className="row" style={{
           margin: '0',
-          minHeight: '295px',
           width: '100%',
           display: 'flex',
-          justifyContent: 'center',
+          minHeight: '295px',
           alignItems: 'center',
+          justifyContent: 'center',
           backgroundColor: '#111822'
         }}>
           Some content down here

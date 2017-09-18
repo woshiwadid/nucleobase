@@ -1,77 +1,52 @@
+import AJAX from '../../../../ajax.js';
 import ListComponent from './list';
 import Preview from './preview';
 import React from 'react';
-import AJAX from '../../../../ajax.js';
 
 class ApptList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
       appointment: {
+        location: '',
+        rating: '',
         time: {},
         sender: {
-          id: '',
           first: '',
-          last: ''
+          last: '',
+          id: ''
         },
         receiver: {
-          id: '',
           first: '',
-          last: ''
-        },
-        rating: '',
-        location: ''
+          last: '',
+          id: ''
+        }
       }
     };
   }
 
   previewAppointment(appointment) {
-    if (!appointment.rating) {
-      appointment.rating = 'Not yet rated';
-    }
-
-    if (typeof appointment.sender === 'number') {
-      AJAX.get('/api/profiles/' + appointment.sender, {}, (sender) => {
-        appointment.sender = sender;
-
-        if (typeof appointment.receiver === 'number') {
-          AJAX.get('/api/profiles/' + appointment.receiver, {}, (receiver) => {
-            appointment.receiver = receiver;
-
-            this.setState({
-              appointment: appointment
-            });
-          });
-        } else {
-          this.setState({
-            appointment: appointment
-          });
-        }
-      });
-    } else {
-      this.setState({
-        appointment: appointment
-      });
-    }
+    this.setState({
+      appointment: appointment
+    });
   }
 
   render() {
-    console.log('from appointment', this.state.appointment)
     return (
       <div style={{
         height: '100%',
-        minWidth: '500px',
         display: 'flex',
-        justifyContent: 'center',
+        minWidth: '500px',
         alignItems: 'center',
+        justifyContent: 'center'
       }}>
         <div className="row" style={{
           width: '100%',
-          height: '600px',
+          height: '600px'
         }}>
           <div className="col-lg-4 col-sm-4" style={{
-            height: '100%',
             padding: '0',
+            height: '100%',
             backgroundColor: '#DCD8D7'
           }}>
             <ListComponent
@@ -82,6 +57,7 @@ class ApptList extends React.Component {
             />
           </div>
           <Preview
+            session={this.props.session}
             appointment={this.state.appointment}
           />
         </div>

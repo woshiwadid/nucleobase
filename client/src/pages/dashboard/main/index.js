@@ -1,5 +1,5 @@
-import React from 'react';
 import AJAX from '../../../ajax.js';
+import React from 'react';
 import {
   Table,
   TableBody,
@@ -24,7 +24,6 @@ class Main extends React.Component {
   }
 
   componentWillMount() {
-
     // // current user
     AJAX.get('/session', {}, (session) => {
       this.state.session = session;
@@ -88,7 +87,11 @@ class Main extends React.Component {
               alignItems: 'center',
               padding: '20px'
             }}>
-              <img src={this.state.session.image_url} style={{height: '100%'}}/>
+              <img style={{height: '100%'}} src={
+                this.state.session.image_url ||
+                "https://lh3.googleusercontent.com/-_G3XieI-P7Y/AAAAAAAAAAI/AAAAAAAAAEY/AU_AGutjoWQ/s640/photo.jpg"
+              }
+              />
             </div>
 
             <div className="col-lg-12 col-sm-4" style={{

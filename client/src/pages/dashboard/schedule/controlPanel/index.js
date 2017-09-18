@@ -12,44 +12,41 @@ class ControlPanel extends React.Component {
     };
   }
 
-  handleToggle(option) {
-    const toggles = {
-      'addOpen': this.setState({addOpen: !this.state.addOpen})
-    };
-    toggles[option.type];
+  handleToggle() {
+    this.setState({addOpen: !this.state.addOpen});
   }
   
   render() {
     return (
       <div className="row">
         <div className="col-lg-12 col-sm-4" style={{
-          height: '100px',
           display: 'flex',
-          justifyContent: 'center',
+          height: '100px',
           alignItems: 'center',
+          justifyContent: 'center'
         }}>
           <SearchAppointment
             filterAppointments={this.props.filterAppointments}
           />
         </div>
         <div className="col-lg-12 col-sm-4" style={{
-          height: '100px',
           display: 'flex',
-          justifyContent: 'center',
+          height: '100px',
           alignItems: 'center',
+          justifyContent: 'center',
         }}>
           <RaisedButton
             label="Create"
-            labelPosition="before"
-            labelColor="#ffffff"
-            backgroundColor="#4DC1EA"
             icon={<AddCircle />}
-            onClick={() => this.handleToggle({type: 'addApp'})}
+            labelColor="#ffffff"
+            labelPosition="before"
+            backgroundColor="#4DC1EA"
+            onClick={this.handleToggle.bind(this)}
           />
           <AddAppointment 
-            handleToggle={this.handleToggle.bind(this)}
             addOpen={this.state.addOpen}
             addAppointment={this.props.addAppointment}
+            handleToggle={this.handleToggle.bind(this)}
           />
         </div>
       </div>
