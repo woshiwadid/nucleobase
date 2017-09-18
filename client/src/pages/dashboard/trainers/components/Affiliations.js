@@ -23,7 +23,7 @@ class Affiliations extends React.Component {
                   leftAvatar={
                     <Avatar
                       src={
-                        trainers.image_url ||
+                        trainer.image_url ||
                         'https://lh3.googleusercontent.com/-_G3XieI-P7Y/AAAAAAAAAAI/AAAAAAAAAEY/AU_AGutjoWQ/s640/photo.jpg'
                       }
                     />
