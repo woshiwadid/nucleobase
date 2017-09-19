@@ -72,7 +72,6 @@ class Affiliations extends React.Component {
   }
 
   render() {
-
     const action = [
       <FlatButton
         label="Submit"
@@ -92,7 +91,6 @@ class Affiliations extends React.Component {
         }
       >
         {user.first + ' ' + user.last}
-
         <FlatButton hoverColor='red' label='add review' onClick={this.handleOpen.bind(this, user.id)} fullWidth={false} style={{marginLeft: '20px'}}></FlatButton>
         <Dialog
           actions={action}
@@ -117,7 +115,6 @@ class Affiliations extends React.Component {
             multiLine={true}
           /><br/>
         </Dialog>
-
       </ListItem>
     );
 

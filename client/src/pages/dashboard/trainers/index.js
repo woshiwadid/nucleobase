@@ -5,14 +5,12 @@ import React from 'react';
 class Trainers extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
-      trainers: [],
       trainees: [],
+      trainers: [],
       session: {}
     };
   }
-
 
   componentWillMount() {
     AJAX.get('/session', {}, (session)=>{
