@@ -112,6 +112,18 @@ class Info extends React.Component {
     });
   };
 
+  handleCancelClose1() {
+    this.setState({
+      open1: false
+    });
+  };
+
+  handleCancelClose2() {
+    this.setState({
+      open2: false
+    });
+  };
+
   handleFirstNameChange(event) {
     this.state.session.first = event.target.value;
 
@@ -171,16 +183,28 @@ class Info extends React.Component {
 
   render() {
     const action1 = [
+       <FlatButton
+        label="Cancel"
+        primary={true}
+        onClick={this.handleCancelClose1.bind(this)}
+      />,
       <FlatButton
         label="Submit"
         primary={true}
+        keyboardFocused={true}
         onClick={this.handleClose1.bind(this)}
-      />,
+      />
     ];
     const action2 = [
+       <FlatButton
+        label="Cancel"
+        primary={true}
+        onClick={this.handleCancelClose2.bind(this)}
+      />,
       <FlatButton
         label="Submit"
         primary={true}
+        keyboardFocused={true}
         onClick={this.handleClose2.bind(this)}
       />,
     ];
@@ -225,23 +249,6 @@ class Info extends React.Component {
                 </TableRow>
                 <TableRow selectable={false} displayBorder={false}>
                   <TableRowColumn ><EmailIcon/>Email: {this.state.session.email ? this.state.session.email : 'not filled yet'}</TableRowColumn>
-                </TableRow>
-              </TableBody>
-            </Table>
-          </div>
-          <Divider/>
-          <div style={style}>
-            <h4>My reviews</h4>
-            <Table>
-              <TableBody displayRowCheckbox={false}>
-                <TableRow selectable={false} displayBorder={false}>
-                  <TableRowColumn ><RatingIcon/>Rating: {this.state.session.rating ? this.state.session.rating : 'You do not have any rating yet'}</TableRowColumn>
-                </TableRow>
-                <TableRow selectable={false} displayBorder={false}>
-                  <TableRowColumn ><RatingCountIcon/>Rating counts: {this.state.session.rating_count ? this.state.session.rating_count : '0'}</TableRowColumn>
-                </TableRow>
-                <TableRow selectable={false} displayBorder={false}>
-                  <TableRowColumn><ViewIcon/>Total views: {this.state.session.total_view ? this.state.session.total_view : '0'}</TableRowColumn>
                 </TableRow>
               </TableBody>
             </Table>

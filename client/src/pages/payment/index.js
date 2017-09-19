@@ -25,13 +25,13 @@ export default class Payment extends React.Component {
           paid: !payment.state.paid,
           paymentFailed: true 
         })
-    	},
-    	error: () => {
-    		console.log('error')
+      },
+      error: () => {
+        console.log('error')
         Payment.setState({
           paymentFailed: true
         })
-    	}
+      }
     });
   };
  
@@ -47,7 +47,7 @@ export default class Payment extends React.Component {
             description='Looking forward to meet you!'
             token={this.onToken.bind(this)}
             amount={100}
-      			currency="USD"
+            currency="USD"
             stripeKey="pk_test_qFuSdzDsL4hRDxF1tFzQq3bR"
             // billingAddress={true}
           />
