@@ -94,12 +94,16 @@ class StepTwo extends React.Component {
             <TextField
               floatingLabelText="First Name"
               floatingLabelStyle={{fontSize: '16px'}}
+              floatingLabelShrinkStyle={{color: '#ff7961'}}
+              underlineFocusStyle={{borderColor: '#ff7961'}}
               value={this.state.firstName}
               onChange={(e) => this.infoUpdater('first', e)}
             />
             <TextField
               floatingLabelText="Last Name"
               floatingLabelStyle={{fontSize: '16px'}}
+              floatingLabelShrinkStyle={{color: '#ff7961'}}
+              underlineFocusStyle={{borderColor: '#ff7961'}}
               value={this.state.lastName}
               onChange={(e) => this.infoUpdater('last', e)}
             />
@@ -108,6 +112,8 @@ class StepTwo extends React.Component {
           <TextField
             floatingLabelText="Location"
             floatingLabelStyle={{fontSize: '16px'}}
+            floatingLabelShrinkStyle={{color: '#ff7961'}}
+            underlineFocusStyle={{borderColor: '#ff7961'}}
             hintText="San Francisco, CA"
             value={this.state.location}
             onChange={(e) => this.infoUpdater('location', e)}
@@ -116,6 +122,8 @@ class StepTwo extends React.Component {
           <TextField
             floatingLabelText="Phone Number"
             floatingLabelStyle={{fontSize: '16px'}}
+            floatingLabelShrinkStyle={{color: '#ff7961'}}
+            underlineFocusStyle={{borderColor: '#ff7961'}}
             hintText="(123) 456-7890"
             value={this.state.phoneNumber}
             onChange={(e) => this.infoUpdater('number', e)}
@@ -130,13 +138,13 @@ class StepTwo extends React.Component {
             underlineShow={false}
             floatingLabelText="Describe yourself"
             floatingLabelStyle={{fontSize: '16px'}}
-            floatingLabelShrinkStyle={{color: '#6a6462'}}
+            floatingLabelShrinkStyle={{color: '#ff7961'}}
             textareaStyle={bioTextCount < 0 ? {backgroundColor: '#ffcccc'} : {backgroundColor: '#f3f2f1'}}
             value={this.state.biography}
             onChange={(e) => this.infoUpdater('bio', e)}
             style={{height: '140px'}}
           /><br/>
-          <span style={{alignSelf: 'flex-end', color: '#6a6462'}}>Characters remaining: <span style={{color: '#4DC1EA'}}>{this.state.bioTextCount}</span></span>
+          <span style={{alignSelf: 'flex-end', color: '#6a6462'}}>Characters remaining: <span style={{color: '#f44336'}}>{this.state.bioTextCount}</span></span>
         </div>
 
         <div style={{

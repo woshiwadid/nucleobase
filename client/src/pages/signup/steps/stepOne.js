@@ -36,7 +36,7 @@ class StepOne extends React.Component {
           <RaisedButton 
             label="Join as Trainer"
             labelColor="#ffffff"
-            backgroundColor="#4DC1EA"
+            backgroundColor="#78909c"
             onClick={() => this.props.select('trainer')}
           />
         </div>
@@ -57,7 +57,7 @@ class StepOne extends React.Component {
           <RaisedButton 
             label="Join as Trainee"
             labelColor="#ffffff"
-            backgroundColor="#4DC1EA"
+            backgroundColor="#78909c"
             onClick={() => this.props.select('trainee')}
           />
         </div>

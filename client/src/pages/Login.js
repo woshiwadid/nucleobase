@@ -36,14 +36,13 @@ class Login extends React.Component {
       <div style={{
         height: '100%',
         width: '100%',
-        backgroundColor: '#BEBAB9'
       }}>
 
         <Navbar session={session}/>
 
         <div className="col-sm-8 col-sm-offset-2" style={{
           height: '100%',
-          backgroundColor: '#DCD8D7'
+          backgroundColor: '#FFFFFF'
         }}>
 
           <h1><span className="fa fa-sign-in"></span> Login</h1>
@@ -62,7 +61,7 @@ class Login extends React.Component {
           </form>
 
           <hr />
-          <div>
+          <div >
             {/* All of these buttons will have to be re-made */}
             Or login with any of the following services:<br />
             <a style={{marginRight: '15px'}} href="/auth/facebook">Facebook</a>

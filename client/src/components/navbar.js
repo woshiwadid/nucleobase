@@ -14,7 +14,7 @@ const Navbar = (props) => (
     display: 'flex',
     flexDirection: 'row',
     alignItems: 'center',
-    backgroundColor: '#4986A2'
+    backgroundColor: '#000a12'
   }}>
     
     <div className="col-sm-8 col-sm-offset-2" style={{
@@ -48,9 +48,9 @@ const Navbar = (props) => (
         {
           typeof props.session === 'object' && props.session.type !== null ?
             <div>
-              <Link to="/"><FlatButton label="Search" style={{color: 'white'}} hoverColor="#4DC1EA"/></Link>
+              <Link to="/"><FlatButton label="Search" style={{color: 'white'}} hoverColor="#4f5b62"/></Link>
               <span style={{width: '30px'}}></span>
-              <Link to="/dashboard"><FlatButton label="Dashboard" style={{color: 'white'}} hoverColor="#4DC1EA"/></Link>
+              <Link to="/dashboard"><FlatButton label="Dashboard" style={{color: 'white'}} hoverColor="#4f5b62"/></Link>
             </div> :
             <span></span>
         }
@@ -66,12 +66,13 @@ const Navbar = (props) => (
         {
           typeof props.session === 'object' ?
             <div>
-              <a href="/logout"><FlatButton label="Logout" style={{color: 'white'}} hoverColor="#4DC1EA"/></a>
+              <a href="/logout"><FlatButton label="Logout" style={{color: 'white'}} hoverColor="#f44336"/></a>
             </div> :
-            <div>
-              <Link to="/signup"><FlatButton label="Signup" style={{color: 'white'}} hoverColor="#4DC1EA"/></Link>
+            <div style={{display: 'flex', flexDirection: 'row'}}>
               <span style={{width: '30px'}}></span>
-              <Link to="/login"><FlatButton label="Login" style={{color: 'white'}} hoverColor="#4DC1EA"/></Link>
+              <Link to="/signup"><FlatButton label="Signup" style={{color: 'white',}} hoverColor="#4f5b62"/></Link>
+              <span style={{width: '30px'}}></span>
+              <Link to="/login"><FlatButton label="Login" style={{color: 'white'}} hoverColor="#4f5b62"/></Link>
             </div>
         }
 

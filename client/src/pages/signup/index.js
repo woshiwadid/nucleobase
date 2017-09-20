@@ -38,7 +38,6 @@ class Signup extends React.Component {
       <div style={{
         height: '100%',
         width: '100%',
-        backgroundColor: '#DCD8D7'
       }}>
 
         <Navbar session={session}/>

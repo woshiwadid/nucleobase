@@ -2,6 +2,7 @@ import React from 'react';
 import { Redirect } from 'react-router-dom';
 
 import { Step, Stepper, StepLabel, StepButton, StepContent } from 'material-ui/Stepper';
+import LensIcon from 'material-ui/svg-icons/image/lens';
 
 import StepOne from './steps/stepOne';
 import StepTwo from './steps/stepTwo';
@@ -104,7 +105,15 @@ class Create extends React.Component {
       });
     }
 
+    const StepIcon = ({ label, color = '#f44336', textColor = '#000000' }) => (
+      <div style={{ position: 'relative' }}>
+        <LensIcon color={color} />
+        <div style={{ color: textColor, position: 'absolute', top: 0, left: 0, width: '100%', height: '100%', textAlign: 'center', lineHeight: '24px' }}>{label}</div>
+      </div>
+    );
+
     return (
+
 
       <div className="col-sm-8 col-sm-offset-2" style={{
         height: '94.8%',
@@ -121,7 +130,7 @@ class Create extends React.Component {
             orientation="vertical"
           >
             <Step>
-              <StepButton onClick={() => this.setState({stepIndex: 0, finished: false})}>
+              <StepButton onClick={() => this.setState({stepIndex: 0, finished: false})} icon={<StepIcon label={1} color={stepIndex === 0 ? '#f44336' : '#78909c'}/>}>
                 Choose Account Type
               </StepButton>
               <StepContent>
@@ -131,10 +140,10 @@ class Create extends React.Component {
             <Step>
               {
                 this.state.type === '' ?
-                  <StepLabel>
+                  <StepLabel icon={<StepIcon label={2} color={stepIndex === 1 ? '#f44336' : '#78909c'}/>}>
                     Basic Info
                   </StepLabel> :
-                  <StepButton onClick={() => this.setState({stepIndex: 1, finished: false})}>
+                  <StepButton onClick={() => this.setState({stepIndex: 1, finished: false})} icon={<StepIcon label={2} color={stepIndex === 1 ? '#f44336' : '#78909c'}/>}>
                     Basic Info
                   </StepButton>
               }
@@ -143,7 +152,7 @@ class Create extends React.Component {
               </StepContent>
             </Step>
             <Step>
-              <StepLabel>
+              <StepLabel icon={<StepIcon label={3} color={stepIndex === 2 ? '#f44336' : '#78909c'}/>}>
                 <span style={{fontStyle: 'italic'}}>Trainers Only</span>
               </StepLabel>
               <StepContent>
@@ -151,7 +160,7 @@ class Create extends React.Component {
               </StepContent>
             </Step>
             <Step>
-              <StepLabel>
+              <StepLabel icon={<StepIcon label={4} color={stepIndex === 3 ? '#f44336' : '#78909c'}/>}>
                 Profile Picture &
               </StepLabel>
               <StepContent>

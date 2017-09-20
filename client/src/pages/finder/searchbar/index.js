@@ -34,7 +34,7 @@ class SearchBar extends React.Component {
         display: 'flex',
         flexDirection: 'row',
         alignItems: 'center',
-        backgroundColor: '#4DC1EA'
+        backgroundColor: '#263238'
       }}>
         <IconButton onClick={this.handleToggle} iconStyle={{color: '#FFFFFF'}}>
           <Hamburger />
@@ -46,7 +46,7 @@ class SearchBar extends React.Component {
             width: '100%',
             display: 'flex',
             justifyContent: 'flex-end',
-            backgroundColor: '#111822'
+            backgroundColor: '#263238'
           }}>
             <IconButton onClick={this.handleToggle} iconStyle={{color: '#FFFFFF'}}>
               <Clear />
@@ -60,19 +60,7 @@ class SearchBar extends React.Component {
           </div>
         </Drawer>
 
-        <TextField 
-          hintText="Search..."
-          hintStyle={{color: '#137aa0'}}
-          multiLine={true}
-          rowsMax={1}
-          style={{paddingLeft: '30px'}}
-          underlineStyle={{
-            borderColor: '#464d00'
-          }}
-          underlineFocusStyle={{
-            borderColor: '#C3D600'
-          }}
-        />
+        <span style={{color: '#ffffff'}}>Filters</span>
 
       </div>
 

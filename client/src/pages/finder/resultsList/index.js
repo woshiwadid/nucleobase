@@ -1,35 +1,23 @@
 import React from 'react';
 
-import Avatar from 'material-ui/Avatar';
-
 import ResultsEntry from '../resultsEntry';
 
 
-class ResultsList extends React.Component {
-  constructor(props) {
-    super(props);
-  }
+const ResultsList = (props) => (
 
-  render() {
+  <div style={{
+    height: '95.4%',
+    width: '100%',
+    display: 'list',
+    overflowY: 'scroll'
+  }}>
+    {
+      props.profiles.map((profile, i) => (
+        <ResultsEntry select={props.select} profile={profile} key={i} />
+      ))
+    }
+  </div>
 
-    return (
-
-      <div style={{
-        height: '96%',
-        width: '100%',
-        display: 'list',
-        overflowY: 'scroll'
-      }}>
-        {
-          this.props.profiles.map((profile, i) => (
-            <ResultsEntry profile={profile} key={i} />
-          ))
-        }
-      </div>
-
-    );
-
-  }
-}
+);
 
 export default ResultsList;

@@ -1,6 +1,7 @@
 import React from 'react';
 
 import Avatar from 'material-ui/Avatar';
+import Star from 'material-ui/svg-icons/toggle/star';
 
 import TrainerInfo from './trainerInfo';
 import TraineeInfo from './traineeInfo';
@@ -8,7 +9,6 @@ import TraineeInfo from './traineeInfo';
 
 const ResultsEntry = (props) => (
 
-  console.log(props),
 
   <div style={{
     height: '150px',
@@ -18,7 +18,9 @@ const ResultsEntry = (props) => (
     justifyContent: 'space-between',
     alignItems: 'center',
     padding: '7.5px 0'
-  }}>
+  }}
+  onClick={() => props.select(props.profile)}
+  >
 
     <div style={{
       height: '100%',
@@ -56,17 +58,20 @@ const ResultsEntry = (props) => (
         flexGrow: '2'
       }}>
 
-        <div style={{height: '25%'}}>
-          <span style={{fontSize: '24px', paddingLeft: '10px'}}>{`${props.profile.first} ${props.profile.last}`}</span>
+        <div style={{
+          height: '25%',
+          display: 'flex',
+          flexDirection: 'row',
+          alignItems: 'center',
+        }}>
+          <span style={{fontSize: '24px', paddingLeft: '10px'}}>{`${props.profile.first} ${props.profile.last}`.toUpperCase()}</span>
+          <span style={{width: '10px'}}></span>
+          <Star style={{color: '#333333'}}/>&nbsp;{props.profile.rating === null ? 'No Ratings' : props.profile.rating.toFixed(2)}
         </div>
-
-        {/* LOCATION IS CURRENTLY MISSING, THE SIGNUP COMPONENT NEEDS TO BE UPDATED PRIOR TO THIS SMALL PORTION WORKING */}
 
         <div style={{height: '15%'}}>
-          <span style={{fontStyle: 'italic', color: '#999999', paddingLeft: '10px'}}>{props.profile.location}</span>
+          <span style={{fontStyle: 'italic', color: '#999999', paddingLeft: '10px'}}>{props.profile.location === '' ? 'No Location Specified' : props.profile.location}</span>
         </div>
-
-        {/* PLACEHOLDER FOR THE BIO / GOALS / QUALS SPACE.  BREAKING OUT TO SEPARATE COMPONENTS */}
 
         {
           props.profile.type === 'trainer' ?
@@ -74,19 +79,8 @@ const ResultsEntry = (props) => (
             <TraineeInfo biography={props.profile.biography} goals={goals.profile.goals} />
         }
 
-
       </div>
 
-    </div>
-
-    <div style={{
-      height: '100%',
-      minWidth: '75px',
-      display: 'flex',
-      flexDirection: 'column',
-      flexGrow: '0'
-    }}>
-      Test 2
     </div>
 
   </div>

@@ -66,7 +66,7 @@ app.get('/profilesByFilter', control.Profiles.getByFilter);
 app.post('/appointments', middleware.auth.verify, control.Appointments.create);
 app.delete('/appointments', middleware.auth.verify, control.Appointments.delete);
 app.put('/appointments', middleware.auth.verify, control.Appointments.update);
-app.get('/appointments', middleware.auth.verify, control.Appointments.get);
+app.get('/appointments', control.Appointments.get);
 
 app.post('/bank_accounts', middleware.auth.verify, control.BankAccounts.create);
 app.delete('/bank_accounts', middleware.auth.verify, control.BankAccounts.delete);

@@ -26,6 +26,8 @@ const days = {
   'sat': 'Saturday'
 };
 
+module.exports.days = days;
+
 const months = {
   'jan': 'January',
   'feb': 'February',

@@ -165,6 +165,7 @@ class Profile extends React.Component {
     ];
 
     return (
+
     <div>
       <Payment/>
       <div style={styles.layout}>
@@ -193,52 +194,56 @@ class Profile extends React.Component {
                   value={this.state.text}
                 />
               </EmailDialog>
-            <ListItem primaryText='Go back to search page' onClick={this.handleClick.bind(this)}/>
-          </List>
-        </div>
-      </div>   
-      <Divider />
-      <br/>
-      <div style={styles.bottom}>
-        <div style={styles.right}>
-          <Table>
-            <TableHeader displaySelectAll={false}>
-              <TableRow><TableHeaderColumn style={{fontSize: 30}}>Current course teaching</TableHeaderColumn></TableRow>
-            </TableHeader>
-            <TableBody displayRowCheckbox={false}>
-              <TableRow selectable={false}>
-                <TableRowColumn>Course name </TableRowColumn>
-                <TableRowColumn>Description</TableRowColumn>
-              </TableRow>
-              <TableRow selectable={false}>
-                <TableRowColumn>Course name</TableRowColumn>
-                <TableRowColumn>Description</TableRowColumn>
-              </TableRow>
-            </TableBody>
-          </Table>  
-          <br/>
-          <Table>
-            <TableHeader displaySelectAll={false}>
-              <TableRow>
-                <TableHeaderColumn style={{fontSize: 30}}>
-                  Trainee Review/Trainer Review
-                </TableHeaderColumn>
-              </TableRow>
-            </TableHeader>
-            <TableBody displayRowCheckbox={false}>
-              <TableRow selectable={false}>
-                <TableRowColumn>name</TableRowColumn>
-                <TableRowColumn>rating</TableRowColumn>
-                <TableRowColumn>review super longggggggggggggggg rrrrr</TableRowColumn>
-              </TableRow>
-              <TableRow selectable={false}>
-                <TableRowColumn>name2</TableRowColumn>
-                <TableRowColumn>rating2</TableRowColumn>
-                <TableRowColumn>review2</TableRowColumn>
-              </TableRow>
-            </TableBody>
-          </Table>
-          <FlatButton hoverColor='red' label='add review' onClick={this.handleOpen.bind(this)} fullWidth={true}></FlatButton>
+              <ListItem primaryText='Go back to search page' onClick={this.handleClick.bind(this)}/>
+            </List>
+          </div>
+
+          {/*  */}
+
+
+        </div>   
+        <Divider />
+        <br/>
+        <div style={styles.bottom}>
+          <div style={styles.right}>
+            <Table>
+              <TableHeader displaySelectAll={false}>
+                <TableRow><TableHeaderColumn style={{fontSize: 30}}>Current course teaching</TableHeaderColumn></TableRow>
+              </TableHeader>
+              <TableBody displayRowCheckbox={false}>
+                <TableRow selectable={false}>
+                  <TableRowColumn>Course name </TableRowColumn>
+                  <TableRowColumn>Description</TableRowColumn>
+                </TableRow>
+                <TableRow selectable={false}>
+                  <TableRowColumn>Course name</TableRowColumn>
+                  <TableRowColumn>Description</TableRowColumn>
+                </TableRow>
+              </TableBody>
+            </Table>  
+            <br/>
+            <Table>
+              <TableHeader displaySelectAll={false}>
+                <TableRow>
+                  <TableHeaderColumn style={{fontSize: 30}}>
+                    Trainee Review/Trainer Review
+                  </TableHeaderColumn>
+                </TableRow>
+              </TableHeader>
+              <TableBody displayRowCheckbox={false}>
+                <TableRow selectable={false}>
+                  <TableRowColumn>name</TableRowColumn>
+                  <TableRowColumn>rating</TableRowColumn>
+                  <TableRowColumn>review super longggggggggggggggg rrrrr</TableRowColumn>
+                </TableRow>
+                <TableRow selectable={false}>
+                  <TableRowColumn>name2</TableRowColumn>
+                  <TableRowColumn>rating2</TableRowColumn>
+                  <TableRowColumn>review2</TableRowColumn>
+                </TableRow>
+              </TableBody>
+            </Table>
+            <FlatButton hoverColor='red' label='add review' onClick={this.handleOpen.bind(this)} fullWidth={true}></FlatButton>
             <Dialog
               actions={action}
               modal={true}
@@ -247,10 +252,10 @@ class Profile extends React.Component {
               <h4>Your review</h4><br/>
               <div>
                 <StarRatingComponent 
-                    name='star'
-                    starCount={5}
-                    value={this.state.rating}
-                    onStarClick={this.onStarClick.bind(this)}
+                  name='star'
+                  starCount={5}
+                  value={this.state.rating}
+                  onStarClick={this.onStarClick.bind(this)}
                 />
                 <h4>
                   {this.state.rating < 5 ? this.state.rating < 4 ? this.state.rating < 3 ? this.state.rating < 2 ? 'Meh, I experienced better.' : 'I may not book the second one with this trainer.' : 'A-Ok.' : 'Yay! I am a fan.' : 'Woohoo! This tranier is awsome!'}
@@ -262,16 +267,16 @@ class Profile extends React.Component {
                 multiLine={true}
               /><br/>
             </Dialog>
-        </div>
-        <div style={styles.left}>
-          <DropDownMenu value={this.state.value} style={{backgroundColor: 'white'}} iconButton={<SmileFace style={{Color: 'black'}}/>}>
-            <MenuItem value={1} leftIcon={<SmileFace/>} primaryText="More about me"/>
-            <MenuItem value={2} primaryText="Gyms I go to" />
-            <MenuItem value={3} primaryText="Qualification" />
-            <MenuItem value={4} primaryText="Total view" />
-            <MenuItem value={5} primaryText="Avg rating" />
-          </DropDownMenu>
-        </div>    
+          </div>
+          <div style={styles.left}>
+            <DropDownMenu value={this.state.value} style={{backgroundColor: 'white'}} iconButton={<SmileFace style={{Color: 'black'}}/>}>
+              <MenuItem value={1} leftIcon={<SmileFace/>} primaryText="More about me"/>
+              <MenuItem value={2} primaryText="Gyms I go to" />
+              <MenuItem value={3} primaryText="Qualification" />
+              <MenuItem value={4} primaryText="Total view" />
+              <MenuItem value={5} primaryText="Avg rating" />
+            </DropDownMenu>
+          </div>    
         </div>
       </div>
     );
