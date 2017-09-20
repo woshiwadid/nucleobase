@@ -70,12 +70,12 @@ class StepThree extends React.Component {
           underlineShow={false}
           floatingLabelText="Describe your qualifications"
           floatingLabelStyle={{fontSize: '16px'}}
-          floatingLabelShrinkStyle={{color: '#6a6462'}}
+          floatingLabelShrinkStyle={{color: '#ff7961'}}
           textareaStyle={{backgroundColor: '#f3f2f1'}}
           value={this.state.qualification}
           onChange={(e) => this.infoUpdater('qual', e)}
         /><br/>
-        <span style={{alignSelf: 'flex-end', color: '#6a6462'}}>Characters remaining: <span style={{color: '#4DC1EA'}}>{this.state.qualTextCount}</span></span>
+        <span style={{alignSelf: 'flex-end', color: '#6a6462'}}>Characters remaining: <span style={{color: '#f44336'}}>{this.state.qualTextCount}</span></span>
         <TextField
           errorText={this.state.goalTextCount <= 0 ? 'You are limited to 255 characters!' : ''}
           rows={3}
@@ -85,12 +85,12 @@ class StepThree extends React.Component {
           underlineShow={false}
           floatingLabelText="What services do you provide?"
           floatingLabelStyle={{fontSize: '16px'}}
-          floatingLabelShrinkStyle={{color: '#6a6462'}}
+          floatingLabelShrinkStyle={{color: '#ff7961'}}
           textareaStyle={{backgroundColor: '#f3f2f1'}}
           value={this.state.goals}
           onChange={(e) => this.infoUpdater('goal', e)}
         /><br/>
-        <span style={{alignSelf: 'flex-end', color: '#6a6462'}}>Characters remaining: <span style={{color: '#4DC1EA'}}>{this.state.goalTextCount}</span></span>
+        <span style={{alignSelf: 'flex-end', color: '#6a6462'}}>Characters remaining: <span style={{color: '#f44336'}}>{this.state.goalTextCount}</span></span>
       
         <div style={{
           width: '100%',
@@ -103,7 +103,7 @@ class StepThree extends React.Component {
           <RaisedButton 
             label='Next'
             labelColor="#ffffff"
-            backgroundColor="#4DC1EA"
+            backgroundColor="#78909c"
             disabled={disabler}
             onClick={this.stepThreeUpdater}
           />

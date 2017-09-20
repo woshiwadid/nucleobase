@@ -78,7 +78,7 @@ class Finder extends React.Component {
           padding: '0'
         }}>
           
-          <SearchBar session={session}/>
+          <SearchBar session={session} profiles={profiles}/>
 
           {
             selected === true ? 

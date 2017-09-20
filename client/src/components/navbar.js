@@ -32,10 +32,8 @@ const Navbar = (props) => (
         alignItems: 'center',
         flexWrap: 'nowrap',
         overflowX: 'visible',
-        fontSize: '20px',
-        color: 'white'
       }}>
-        TRAINER FINDER
+        <span style={{fontSize: '20px', color: '#f44336'}}>TRAINER FINDER</span>
       </div>
 
       <div style={{
@@ -46,7 +44,7 @@ const Navbar = (props) => (
         alignItems: 'center',
       }}>
         {
-          typeof props.session === 'object' && props.session.type !== null ?
+          typeof props.session === 'object' && props.session.type !== null && props.session.type !== 'trainer' ?
             <div>
               <Link to="/"><FlatButton label="Search" style={{color: 'white'}} hoverColor="#4f5b62"/></Link>
               <span style={{width: '30px'}}></span>
@@ -70,7 +68,7 @@ const Navbar = (props) => (
             </div> :
             <div style={{display: 'flex', flexDirection: 'row'}}>
               <span style={{width: '30px'}}></span>
-              <Link to="/signup"><FlatButton label="Signup" style={{color: 'white',}} hoverColor="#4f5b62"/></Link>
+              <Link to="/signup"><FlatButton label="Signup" style={{color: 'white'}} hoverColor="#4f5b62"/></Link>
               <span style={{width: '30px'}}></span>
               <Link to="/login"><FlatButton label="Login" style={{color: 'white'}} hoverColor="#4f5b62"/></Link>
             </div>

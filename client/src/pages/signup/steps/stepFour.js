@@ -161,7 +161,7 @@ class StepFour extends React.Component {
           <RaisedButton 
             label='Create Profile'
             labelColor="#ffffff"
-            backgroundColor="#4DC1EA"
+            backgroundColor="#78909c"
             onClick={this.stepFourUpdater}
           />
         </div>

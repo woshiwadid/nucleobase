@@ -158,7 +158,7 @@ class StepTwo extends React.Component {
           <RaisedButton 
             label='Next'
             labelColor="#ffffff"
-            backgroundColor="#4DC1EA"
+            backgroundColor="#78909c"
             disabled={disabler}
             onClick={this.stepTwoUpdater}
           />

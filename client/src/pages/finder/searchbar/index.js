@@ -6,6 +6,9 @@ import IconButton from 'material-ui/IconButton';
 import Hamburger from 'material-ui/svg-icons/image/dehaze';
 import Clear from 'material-ui/svg-icons/content/clear';
 
+import FilterRating from './filterRating';
+import FilterPrice from './filterPrice';
+
 import AJAX from '../../../ajax';
 
 
@@ -52,12 +55,11 @@ class SearchBar extends React.Component {
               <Clear />
             </IconButton>
           </div>
-          <div style={{
-            height: '100px',
-            width: '100%',
-          }}>
-            This is a place for a filter
-          </div>
+
+          <FilterRating />
+
+          <FilterPrice />
+
         </Drawer>
 
         <span style={{color: '#ffffff'}}>Filters</span>
