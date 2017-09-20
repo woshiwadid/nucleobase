@@ -39,11 +39,13 @@ const styles = {
   },
   left: {
     width: '15%',
-    marginRight: '10px'
+    marginRight: '10px',
+    paddingLeft: '10px'
   },
   right: {
     width: '80%',
-    marginRight: '-60px'
+    marginRight: '-60px',
+    paddingLeft: '20px'
   },
 };
 
@@ -86,7 +88,7 @@ class MyProfile extends React.Component {
   }
 
   handleOpen() {
-    this.setState({open: true});
+    this.setState({open: !this.state.open});
   };
 
   handleClose() {
@@ -100,10 +102,10 @@ class MyProfile extends React.Component {
     var result = [];
     var i = 0;
     while (i < this.state.star) {
-      result.push(<Star key={Math.random()}/>);
+      result.push(<Star color={'#f44336'} key={Math.random()}/>);
       i ++;
     }
-    this.state.starHalf > 0 ? result.push(<StarHalf key={Math.random()}/>) : result;
+    this.state.starHalf > 0 ? result.push(<StarHalf color={'#f44336'} key={Math.random()}/>) : result;
     while (result.length < 5) {
       result.push(<StarBorder key={Math.random()}/>);
     }
@@ -178,6 +180,11 @@ class MyProfile extends React.Component {
   render() {
     const action = [
       <FlatButton
+        label="Cancel"
+        primary={true}
+        onClick={this.handleOpen.bind(this)}
+      />,
+      <FlatButton
         label="Submit"
         primary={true}
         onClick={this.handleClose.bind(this)}
@@ -196,7 +203,7 @@ class MyProfile extends React.Component {
           <Info />
         </Dialog>
         <div style={styles.layout}>
-          <div>
+          <div style={{paddingLeft: '10px'}}>
             <Avatar size={150} src={this.state.session.image_url} style={{marginTop: '10px'}}/>
           </div>
           <div>
@@ -273,7 +280,6 @@ class MyProfile extends React.Component {
             </Table>
           </div>
         </div>
-        <Message/>
       </div>
     )
   }

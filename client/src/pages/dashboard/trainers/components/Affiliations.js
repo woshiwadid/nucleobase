@@ -28,7 +28,13 @@ class Affiliations extends React.Component {
       open: !this.state.open,
       reviewedId: id
     });
-  }
+  };
+
+  handleCancel() {
+    this.setState({
+      open: !this.state.open
+    });
+  };
 
   handleClose() {
     this.setState({
@@ -89,6 +95,11 @@ class Affiliations extends React.Component {
 
   render() {
     const action = [
+      <FlatButton
+        label="Cancel"
+        primary={true}
+        onClick={this.handleCancel.bind(this)}
+      />,
       <FlatButton
         label="Submit"
         primary={true}
