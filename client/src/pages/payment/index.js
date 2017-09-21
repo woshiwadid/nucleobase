@@ -20,7 +20,7 @@ export default class Payment extends React.Component {
     $.ajax({
       url: '/charge',
       method: 'POST',
-      data: {token: token},
+      data: {token: token, price: this.props.appointment.price * 100},
       success: () => {
         let options = {
           id: this.props.appointment.id,
@@ -57,7 +57,7 @@ export default class Payment extends React.Component {
             name='Trainer Finder'
             description='Looking forward to meet you!'
             token={this.onToken.bind(this)}
-            amount={100}
+            amount={this.props.appointment.price * 100}
             currency="USD"
             stripeKey="pk_test_qFuSdzDsL4hRDxF1tFzQq3bR"
             billingAddress={true}

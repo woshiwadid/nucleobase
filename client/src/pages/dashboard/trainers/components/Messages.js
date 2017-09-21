@@ -4,7 +4,7 @@ import Avatar from 'material-ui/Avatar';
 import {List, ListItem} from 'material-ui/List';
 import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
-import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
+
 
 class Messages extends React.Component {
   constructor(props) {
@@ -29,18 +29,17 @@ class Messages extends React.Component {
 
     const messageElement = (message, index) => {
       if (this.props.session.id === message.sender.id) {
-        return  <ListItem 
+        return <ListItem 
           key={index}
           rightAvatar={<Avatar src={message.sender.image_url} />}
           primaryText={
-            <Card 
-              style= {{ width: 300, height: 50, background: '#75a8f9',display: 'inline-block'}} 
-              zDepth={5}
+            <Paper 
+            style= {{width: 300, height: 50, background: '#f7cbb2'}} 
+            zDepth={5}
             >
-              <CardText>{message.message}</CardText>
-            </Card>} 
+              {message.message}
+            </Paper>}
           disabled={true}
-          rounded={false}
           style={{marginLeft: '100px'}}
         >
         </ListItem>
@@ -48,7 +47,13 @@ class Messages extends React.Component {
         return <ListItem 
           key={index}
           leftAvatar={<Avatar src={message.sender.image_url} />}
-          primaryText={<Paper style= {{width: 300, height: 50}} zDepth={5}>{message.message}</Paper>}
+          primaryText={
+            <Paper 
+            style= {{width: 300, height: 50}} 
+            zDepth={5}
+            >
+              {message.message}
+            </Paper>}
           disabled={true}
         >
         </ListItem>

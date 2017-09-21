@@ -34,7 +34,7 @@ app.use('/payment', routes.payment);
 app.post('/charge', (req, res) => {
 	console.log(req.body.token)
 	var token = req.body.token;
-	var chargeAmount = 100
+	var chargeAmount = req.body.price
 	stripe.charges.create({
 		amount: chargeAmount,
 		currency: 'USD',
