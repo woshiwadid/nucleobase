@@ -3,7 +3,7 @@ import React from 'react';
 const Category = (props) => (
 
   <div style={{
-    height: '150px',
+    height: '125px',
     display: 'flex',
     flexDirection: 'column',
     justifyContent: 'space-between',

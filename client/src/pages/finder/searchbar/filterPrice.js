@@ -30,6 +30,7 @@ class FilterPrice extends React.Component {
           trackSwitchedStyle={{backgroundColor: '#ff867c'}}
           labelStyle={{color: '#4f5b62'}}
           style={{width: '150px'}}
+          onToggle={() => { this.props.handleFilter({action: 'toggle', filter: 'price'}); }}
         />
       </div>
 

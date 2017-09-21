@@ -17,7 +17,7 @@ class AppointmentsList extends React.Component {
 
     return (
 
-      <div style={{height: '94%', width: '100%', backgroundColor: 'white', display: 'list', overflowY: 'scroll'}}>
+      <div style={{height: '50%', width: '100%', backgroundColor: 'white', display: 'list', overflowY: 'scroll'}}>
         {
           this.props.appointments.map((appointment, i) => (
             appointment.receiver === null ?

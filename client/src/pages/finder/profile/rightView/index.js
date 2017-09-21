@@ -1,6 +1,7 @@
 import React from 'react';
 
 import AppointmentsList from './appointmentsList';
+import Reviews from './reviews';
 
 import AJAX from '../../../../ajax';
 
@@ -10,18 +11,22 @@ class Appointments extends React.Component {
     super(props);
     this.state = {
       appointments: [],
+      reviews: [],
       loading: false
     };
   }
 
   componentWillMount() {
-    let options = {
+    let optionsA = {
       sender: this.props.profile.id
+    };
+    let optionsB = {
+      trainer_id: this.props.profile.id
     };
     this.setState({
       loading: true
     });
-    AJAX.get('/appointments', options, (appointments) => {
+    AJAX.get('/appointments', optionsA, (appointments) => {
       appointments.sort(function(a, b) {
         return Date.parse(a.date) - Date.parse(b.date);
       });
@@ -30,15 +35,29 @@ class Appointments extends React.Component {
         loading: false
       });
     });
+    AJAX.get('/reviews', optionsB, (reviews) => {
+      reviews.forEach(review => {
+        let reviewOption = {
+          user_id: review.user_id,
+          trainer_id: review.trainer_id
+        };
+        AJAX.get('/ratings', reviewOption, (rating) => {
+          console.log('rating per review', review, rating);
+        });
+      });
+      // this.setState({
+      //   reviews
+      // }, console.log('reviews found and set: ', reviews));
+    });
   }
 
   render() {
 
-    const { loading, appointments } = this.state;
+    const { loading, appointments, reviews } = this.state;
 
     return (
 
-      <div className="col-lg-6 col-sm-12" style={{height: '100%', backgroundColor: '#FFFFFF'}}>
+      <div className="col-lg-6 col-sm-12" style={{height: '100%', backgroundColor: '#FFFFFF', display: 'flex', flexDirection: 'column', alignItems: 'center'}}>
 
         <div style={{
           height: '50px',
@@ -56,6 +75,10 @@ class Appointments extends React.Component {
             <h1>Loading</h1> :
             <AppointmentsList appointments={appointments} />
         }
+
+        <span style={{height: '30px'}}></span>
+
+        <Reviews reviews={reviews} />
 
       </div>
 

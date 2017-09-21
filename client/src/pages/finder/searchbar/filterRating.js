@@ -9,32 +9,22 @@ class FilterRating extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      toggled: false,
-      value: 5
+      value: 4
     };
     this.handleChange = this.handleChange.bind(this);
-    this.handleToggle = this.handleToggle.bind(this);
   }
 
   handleChange(event, index, value) {
     this.setState({
       value
-    });
-  }
-
-  handleToggle(e) {
-    this.setState({
-      toggled: !this.state.toggled
-    });
+    }, this.props.handleFilter({
+      action: 'update',
+      filter: 'rating',
+      param: value
+    }));
   }
 
   render() {
-
-    const { toggled } = this.state;
-
-    if (toggled) {
-      
-    }
 
     return (
 
@@ -54,7 +44,7 @@ class FilterRating extends React.Component {
           trackSwitchedStyle={{backgroundColor: '#ff867c'}}
           labelStyle={{color: '#4f5b62'}}
           style={{width: '150px'}}
-          onToggle={this.handleToggle}
+          onToggle={() => { this.props.handleFilter({action: 'toggle', filter: 'rating', param: this.state.value}); }}
         />
         <div style={{
           display: 'flex',
@@ -72,6 +62,7 @@ class FilterRating extends React.Component {
             <MenuItem value={3} primaryText='3 Stars' />
             <MenuItem value={2} primaryText='2 Stars' />
             <MenuItem value={1} primaryText='1 Star' />
+            <MenuItem value={0} primaryText='No Rating' />
           </DropDownMenu>
         </div>
       </div>

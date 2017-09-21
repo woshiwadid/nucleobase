@@ -6,38 +6,37 @@ import $ from 'jquery';
 export default class Payment extends React.Component {
   constructor(props) {  
     super(props);
-    this.state ={
+    this.state = {
       paid: false,
       paymentFailed: false
     };
-
-  };
+  }
 
   onToken (token) {
     var payment = this;
     $.ajax({
       url: '/charge',
       method: 'POST',
-      data: {token:token},
+      data: {token: token},
       success: () => {
-        console.log('success')
+        console.log('success');
         payment.setState({
           paid: !payment.state.paid,
           paymentFailed: true 
-        })
+        });
       },
       error: () => {
-        console.log('error')
+        console.log('error');
         Payment.setState({
           paymentFailed: true
-        })
+        });
       }
     });
-  };
+  }
  
   render() {
     if (this.state.paid) {
-      return <span>Thank you for you payment</span>
+      return <span>Thank you for you payment</span>;
     } else {
       return (
         <div>
@@ -49,11 +48,11 @@ export default class Payment extends React.Component {
             amount={100}
             currency="USD"
             stripeKey="pk_test_qFuSdzDsL4hRDxF1tFzQq3bR"
-            // billingAddress={true}
+            billingAddress={true}
           />
           
         </div>
       );
     }
-  };
-};
+  }
+}

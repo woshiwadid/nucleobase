@@ -1,0 +1,1196 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"contor",
+				"control"
+			],
+			[
+				"highest",
+				"highestFreqChar"
+			],
+			[
+				"freu",
+				"frequencyArray"
+			],
+			[
+				"high",
+				"highestFreqCount"
+			],
+			[
+				"fr",
+				"frequencyArray"
+			],
+			[
+				"fre",
+				"frequencies"
+			],
+			[
+				"frequ",
+				"frequency"
+			],
+			[
+				"build",
+				"buildMonth"
+			],
+			[
+				"month",
+				"months"
+			],
+			[
+				"day",
+				"dayCounter"
+			],
+			[
+				"start",
+				"startIndex"
+			],
+			[
+				"col-",
+				"col-sm-12"
+			],
+			[
+				"dash",
+				"dashboard"
+			],
+			[
+				"docum",
+				"document_root"
+			],
+			[
+				"get",
+				"getSourceData"
+			],
+			[
+				"bu",
+				"businesses"
+			],
+			[
+				"bus",
+				"businessList"
+			],
+			[
+				"alig",
+				"align-items"
+			],
+			[
+				"flex",
+				"flex-direction"
+			],
+			[
+				"backr",
+				"background-color"
+			],
+			[
+				"left",
+				"left-component"
+			],
+			[
+				"padding",
+				"padding-top"
+			],
+			[
+				"cat",
+				"category_id"
+			],
+			[
+				"trans",
+				"TransactionEntry"
+			],
+			[
+				"wep",
+				"webpackDevMiddleware"
+			],
+			[
+				"data",
+				"dataObj"
+			],
+			[
+				"da",
+				"dataObj"
+			],
+			[
+				"new",
+				"newEntry"
+			],
+			[
+				"d",
+				"dataObj"
+			],
+			[
+				"image",
+				"imageUrl"
+			],
+			[
+				"term",
+				"term"
+			],
+			[
+				"current",
+				"currentDate"
+			],
+			[
+				"short",
+				"shortMonths"
+			],
+			[
+				"ge",
+				"generateDate"
+			],
+			[
+				"goog",
+				"googleTrends"
+			],
+			[
+				"google",
+				"googleHelper"
+			],
+			[
+				"body",
+				"bodyParser"
+			],
+			[
+				"web",
+				"webpackDevMiddleware"
+			],
+			[
+				"we",
+				"webpackConfig"
+			],
+			[
+				"box-",
+				"box-shadow"
+			],
+			[
+				"brod",
+				"border-radius"
+			],
+			[
+				"bor",
+				"border-radius"
+			],
+			[
+				"repo",
+				"repoSchema"
+			],
+			[
+				"curre",
+				"currentAmount"
+			],
+			[
+				"requ",
+				"require"
+			],
+			[
+				"rep",
+				"repoList"
+			],
+			[
+				"db",
+				"dbEntry"
+			],
+			[
+				"repos",
+				"repository"
+			],
+			[
+				"fil",
+				"filteredProps"
+			],
+			[
+				"p",
+				"productOptions"
+			],
+			[
+				"pro",
+				"productOptions"
+			],
+			[
+				"item",
+				"itemImage"
+			],
+			[
+				"return",
+				"returnObj"
+			],
+			[
+				"price",
+				"pricePerCase"
+			],
+			[
+				"pr",
+				"pricePerCase"
+			],
+			[
+				"pri",
+				"pricePerUnit"
+			],
+			[
+				"cycle",
+				"cycleNodes"
+			],
+			[
+				"cyl",
+				"cycleFound"
+			],
+			[
+				"linked",
+				"linkedList"
+			],
+			[
+				"qu",
+				"queryStr"
+			],
+			[
+				"create",
+				"createConnection"
+			],
+			[
+				"archive",
+				"archive-helpers"
+			],
+			[
+				"split",
+				"splitUrl"
+			],
+			[
+				"satus",
+				"statusCode"
+			],
+			[
+				"response",
+				"response"
+			],
+			[
+				"digit",
+				"digitString"
+			],
+			[
+				"exp",
+				"expectedUrl"
+			],
+			[
+				"reque",
+				"request"
+			],
+			[
+				"status",
+				"statusCode"
+			],
+			[
+				"stat",
+				"statusCode"
+			],
+			[
+				"handle",
+				"handleRequest"
+			],
+			[
+				"request",
+				"requestHandler"
+			],
+			[
+				"on",
+				"onChange"
+			],
+			[
+				"scale",
+				"scaleNames"
+			],
+			[
+				"handl",
+				"handleChange"
+			],
+			[
+				"boil",
+				"BoilingVerdict"
+			],
+			[
+				"gro",
+				"GroceryList"
+			],
+			[
+				"Gro",
+				"GroceryList"
+			],
+			[
+				"Video",
+				"VideoListView"
+			],
+			[
+				"selet",
+				"selectVideo"
+			],
+			[
+				"re",
+				"renderVideo"
+			],
+			[
+				"Videos",
+				"videoList"
+			],
+			[
+				"video",
+				"VideoListView"
+			],
+			[
+				"vid",
+				"VideoListView"
+			],
+			[
+				"att",
+				"attributes"
+			],
+			[
+				"alert",
+				"alertThisMessage"
+			],
+			[
+				"render",
+				"renderSomethingOnThePage"
+			],
+			[
+				"my",
+				"myTweet"
+			],
+			[
+				"hand",
+				"handleUsernameClick"
+			],
+			[
+				"han",
+				"handleUsernameClick"
+			],
+			[
+				"sub",
+				"submitter"
+			],
+			[
+				"ha",
+				"handleSubmit"
+			],
+			[
+				"is",
+				"isPrime"
+			],
+			[
+				"prim",
+				"primeTesters"
+			],
+			[
+				"right",
+				"rightCounter"
+			],
+			[
+				"counter",
+				"counter1"
+			],
+			[
+				"mid",
+				"midpoint"
+			],
+			[
+				"pas",
+				"pascalsTree"
+			],
+			[
+				"found",
+				"foundColumnIndex"
+			],
+			[
+				"column",
+				"columnIndex"
+			],
+			[
+				"co",
+				"column"
+			],
+			[
+				"row",
+				"rowIndex"
+			],
+			[
+				"child",
+				"childTree"
+			],
+			[
+				"find",
+				"findAllLeaves"
+			],
+			[
+				"rounds",
+				"roundsLeft"
+			],
+			[
+				"node",
+				"nodeSearch"
+			],
+			[
+				"add",
+				"addToTail"
+			],
+			[
+				"index",
+				"toIndex"
+			],
+			[
+				"from",
+				"fromEdges"
+			],
+			[
+				"obj",
+				"objectInStore"
+			],
+			[
+				"val",
+				"valAtIndex"
+			],
+			[
+				"retu",
+				"returnVal"
+			],
+			[
+				"ex",
+				"extended"
+			],
+			[
+				"tru",
+				"trueSoFar"
+			],
+			[
+				"a",
+				"accumulator"
+			],
+			[
+				"arr",
+				"arrSplit"
+			],
+			[
+				"string",
+				"stringifyJSON"
+			],
+			[
+				"chec",
+				"checkType"
+			],
+			[
+				"strin",
+				"stringifyJSON"
+			],
+			[
+				"ne",
+				"nextElementSibling"
+			],
+			[
+				"dom",
+				"domSearch"
+			],
+			[
+				"cass",
+				"className"
+			],
+			[
+				"class",
+				"className"
+			],
+			[
+				"first",
+				"firstElementChild"
+			],
+			[
+				"firstNode",
+				"firstNodeSeen"
+			],
+			[
+				"card",
+				"cardLength"
+			],
+			[
+				"de",
+				"detectNetwork"
+			],
+			[
+				"b",
+				"b"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "index.js",
+			"settings":
+			{
+				"buffer_size": 2029,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 59.0,
+		"last_filter": "java",
+		"selected_items":
+		[
+			[
+				"java",
+				"Project: Save As"
+			],
+			[
+				"babel",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"babe",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"word",
+				"Word Wrap: Toggle"
+			],
+			[
+				"pack",
+				"Package Control: Install Package"
+			],
+			[
+				"",
+				"Babel Transform"
+			],
+			[
+				"typescrip",
+				"Set Syntax: TypeScriptReact"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"package",
+				"PackageResourceViewer: Open Resource"
+			],
+			[
+				"javascrip",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"javascri",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"high",
+				"BracketHighlighter: Settings"
+			],
+			[
+				"browse",
+				"Preferences: Browse Packages"
+			],
+			[
+				"theme",
+				"UI: Select Color Scheme"
+			],
+			[
+				"wr",
+				"Word Wrap: Toggle"
+			],
+			[
+				"javascript",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"h",
+				"Set Syntax: HTML"
+			],
+			[
+				"bab",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"javasc",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"babl",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"bbel",
+				"Babel Transform"
+			],
+			[
+				"ba",
+				"Preferences: Babel – Default"
+			],
+			[
+				"js",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"html",
+				"Set Syntax: HTML"
+			],
+			[
+				"ht",
+				"Set Syntax: HTML"
+			],
+			[
+				"world\t",
+				"Word Wrap: Toggle"
+			],
+			[
+				"wo\t",
+				"Word Wrap: Toggle"
+			],
+			[
+				"bab\t",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"word\t",
+				"Word Wrap: Toggle"
+			],
+			[
+				"world",
+				"Word Wrap: Toggle"
+			],
+			[
+				"java\t",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"w",
+				"Word Wrap: Toggle"
+			],
+			[
+				"javas",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"javascrip\t",
+				"Set Syntax: JavaScript (Babel)"
+			],
+			[
+				"wrap",
+				"Word Wrap: Toggle"
+			],
+			[
+				"javas\t",
+				"Set Syntax: JavaScript"
+			],
+			[
+				"angular",
+				"Set Syntax: HTML (Angular.js)"
+			],
+			[
+				"word ",
+				"Word Wrap: Toggle"
+			],
+			[
+				"syntax bab",
+				"Set Syntax: JavaScript (Babel)"
+			]
+		],
+		"width": 484.0
+	},
+	"console":
+	{
+		"height": 108.0,
+		"history":
+		[
+			"PackageResourceViewer: Open Resource:",
+			"bg_toggle_enable",
+			"view.options().get('tabSize')",
+			"set tabSize 2",
+			"set <tabSize><2>",
+			"set tabSize 2",
+			"view.options().set('tabsize', 2)",
+			"import urllib.request,os,hashlib; h = 'df21e130d211cfc94d9b0905775a7c0f' + '1e3d39e33b79698005270310898eea76'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://packagecontrol.io/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by)"
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"expanded_folders":
+	[
+		"/Users/cosbyte/Desktop/dev/nucleobase",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/components",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/profile",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/profile/rightView",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/searchbar",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/signup",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/signup/steps",
+		"/Users/cosbyte/Desktop/dev/nucleobase/public",
+		"/Users/cosbyte/Desktop/dev/nucleobase/public/dist"
+	],
+	"file_history":
+	[
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/searchbar/filterPrice.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/searchbar/filterRating.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/searchbar/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/components/navbar.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/signup/steps/stepFour.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/signup/steps/stepThree.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/signup/steps/stepTwo.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/signup/steps/stepOne.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/signup/create.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/signup/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/signup/main.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/Login.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/profile/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/profile/rightView/appointmentEntry.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/profile/rightView/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/profile/leftView/buttons.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/profile/leftView/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/profile/cancelBar.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/public/dist/index.html",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/profile/leftView/header.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/resultsEntry/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/resultsList/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/profile/rightView/appointmentsList.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/components/profiles/profiles.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/db/migrations/20170901184749_update_profiles.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/helpers/parseDate.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/dashboard/schedule/appointmentList/list.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/profile/leftView/splitList.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/dashboard/schedule/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/app.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/profile/leftView/category.js",
+		"/Users/cosbyte/Documents/JS_snippets/ReactRelayGraphQL.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/resultsEntry/trainerInfo.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/finder/resultsEntry/traineeInfo.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/dashboard/dashnav/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/components/search/searchEntry.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/components/search/search.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/dashboard/index.js",
+		"/Users/cosbyte/Library/Application Support/Sublime Text 3/Packages/Agila Theme/Agila Oceanic Next.tmTheme",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/controllers/profiles.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/ajax.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/components/edit/info.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/db/seeds/appointments.json",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/middleware/auth.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/routes/auth.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/node_modules/passport/lib/http/request.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/routes/dashboard.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/db/models/profiles.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/dashboard/main/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/app.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/routes/api.js",
+		"/Users/cosbyte/Desktop/dev/TravelPlanner/react-client/src/components/CreateView/destination/index.jsx",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/routes/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/routes/files.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/middleware/cloudinary.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/package.json",
+		"/Users/cosbyte/Desktop/dev/TravelPlanner/react-client/src/components/CreateView/index.jsx",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/dashboard/schedule/controlPanel/addAppt/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/dashboard/schedule/controlPanel/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/README.md",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/signup/steps/traineeStepTwo.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/signup/steps/trainerStepTwo.js",
+		"/Users/cosbyte/Documents/JS_snippets/frequencySort.js",
+		"/Users/cosbyte/Documents/JS_snippets/isSubsequence.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/dashboard/schedule/controlPanel/searchAppt/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/dashboard/schedule/appointmentList/preview.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/dashboard/schedule/appointmentList/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/dashboard/schedule/appointmentList/dummy.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/helpers/parseTime.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/helpers/parseDateFull.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/dashboard/schedule/appointmentList/entry.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/.gitignore",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/Signup.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/middleware/passport.js",
+		"/Users/cosbyte/Library/Application Support/Sublime Text 3/Packages/Babel/Babel.sublime-settings",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/test/server.spec.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/dashboard/trainers/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/dashboard/editProfile/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/webpack.config.babel.js",
+		"/Users/cosbyte/Desktop/dev/TravelPlanner/server/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/views/foot.ejs",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/views/head.ejs",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/views/index.ejs",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/dashboard/schedule/calendar/index.js",
+		"/Users/cosbyte/Documents/JS_snippets/buildYear.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/dashboard/schedule/calendar/calendar.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/dashboard/schedule/controlPanel/addAppointment/index.js",
+		"/Users/cosbyte/Desktop/dev/TravelPlanner/react-client/src/components/CreateView/chooser/saveBox.jsx",
+		"/Users/cosbyte/Desktop/dev/nucleobase/db/migrations/20170901213111_creat_appointments.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/helpers/buildYear.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/node_modules/react-big-calendar/lib/Calendar.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/dashboard/schedule/calendar/weekList.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/node_modules/eslint/lib/rules/no-multiple-empty-lines.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/dashboard/schedule/calendar",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/pages/dashboard/clients/index.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/views/profile.ejs",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/routes/data.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/helpers/verify.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/helpers",
+		"/Users/cosbyte/Desktop/dev/nucleobase/yarn.lock",
+		"/Users/cosbyte/Desktop/dev/nucleobase/colorcodes.md",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/test/profileModel.spec.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/config/test.json",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/test/auth.spec.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/test/profilesAPI.spec.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/config/test.example.json",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/views/signup.ejs",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/views/login.ejs",
+		"/Users/cosbyte/Desktop/dev/nucleobase/client/src/Login.js",
+		"/Users/cosbyte/Desktop/dev/nucleobase/server/views/login2.ejs",
+		"/Users/cosbyte/Desktop/dev/nucleobase/config/default.json",
+		"/Users/cosbyte/Desktop/dev/nucleobase/config/development.example.json",
+		"/Users/cosbyte/Desktop/dev/nucleobase/config/development.json",
+		"/Users/cosbyte/Desktop/dev/arbitrage/manifest.json",
+		"/Users/cosbyte/Desktop/dev/arbitrage/compiled/src/inject.js",
+		"/Users/cosbyte/Desktop/dev/arbitrage/src/inject.js",
+		"/Users/cosbyte/Desktop/dev/arbitrage/src/app.jsx",
+		"/Users/cosbyte/Desktop/dev/arbitrage/index.html",
+		"/Users/cosbyte/Desktop/dev/arbitrage/src/popup.js",
+		"/Users/cosbyte/Desktop/dev/arbitrage/compiled/src/popup.js",
+		"/Users/cosbyte/Desktop/dev/arbitrage/src/contentScripts/content.js",
+		"/Users/cosbyte/Desktop/dev/arbitrage/src/backgroundScripts/background.js",
+		"/Users/cosbyte/Desktop/HR/hrsf80-mvp/server/index.js",
+		"/Users/cosbyte/Desktop/HR/hrsf80-mvp/database/index.js",
+		"/Users/cosbyte/Desktop/dev/TravelPlanner/react-client/src/index.jsx",
+		"/Users/cosbyte/Desktop/HR/hrsf80-data-structures/sprint-two/src/binarySearchTree.js"
+	],
+	"find":
+	{
+		"height": 40.0
+	},
+	"find_in_files":
+	{
+		"height": 105.0,
+		"where_history":
+		[
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"f44336",
+			"braces",
+			"syntax",
+			"function",
+			"FUNCTION",
+			"put",
+			"qualifications",
+			"'",
+			"servTextCount",
+			"bioText",
+			"href=\"\"",
+			"});\n",
+			"month",
+			"171B1A",
+			"10171F",
+			"=======",
+			"#8bb8ca",
+			"8bb8ca",
+			"#003366",
+			"loggedIn={_data}",
+			"data",
+			"class",
+			"20",
+			"removeFromTrip",
+			"head",
+			"onClick={this.handleMenuItemClick}",
+			" +",
+			".",
+			"0",
+			"9",
+			"8",
+			"7",
+			"6",
+			"5",
+			"4",
+			"3",
+			"1",
+			"2",
+			"row",
+			"handleFlightClick",
+			"requestWeather",
+			"/weather",
+			">\n",
+			"arrivalLocation",
+			"/hotels",
+			"/attraction",
+			"^",
+			"\"",
+			"    \"",
+			"^",
+			"\"",
+			"    \"",
+			"empty",
+			"date",
+			", -4.55, \"EQUATOR\", \"2017-08-02\"",
+			", date",
+			"description",
+			"amount",
+			"transactions",
+			"or latest",
+			"\",",
+			"\"^",
+			"String",
+			"null",
+			"ServerResponse",
+			"functions",
+			"  \n",
+			"open",
+			"getIndexBelowMaxFromKey",
+			"objFromStore",
+			"valAtIndex",
+			"keyValOut",
+			"keyOut",
+			"objKeys",
+			"arrVals",
+			"arrOfKeyVals",
+			";\n",
+			"css",
+			"\";\n",
+			");\n",
+			";\n",
+			"30px",
+			"right",
+			"{\n",
+			"20px",
+			";\n"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "index.js",
+					"semi_transient": true,
+					"settings":
+					{
+						"buffer_size": 2029,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"bracket_highlighter.busy": false,
+							"bracket_highlighter.locations":
+							{
+								"close":
+								{
+								},
+								"icon":
+								{
+								},
+								"open":
+								{
+								},
+								"unmatched":
+								{
+								}
+							},
+							"bracket_highlighter.regions":
+							[
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_double_quote_content",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_round_content",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_default_content",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_c_define_content",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_square_content",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_unmatched_content",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_curly_content",
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_regex_content",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_tag_content",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close",
+								"bh_single_quote_content",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_angle_content"
+							],
+							"syntax": "Packages/JavaScript/JavaScript.sublime-syntax",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 478.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 39.0
+	},
+	"input":
+	{
+		"height": 39.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.doc":
+	{
+		"height": 0.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "",
+	"project": "untitled.sublime-project",
+	"replace":
+	{
+		"height": 48.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"",
+				"client/src/index.js"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 500.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 380.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 231.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}

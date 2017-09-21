@@ -3,6 +3,8 @@ import React from 'react';
 import { parseTime } from '../../../../helpers/parseTime';
 import { parseDateAbrv, parseDateFull, days } from '../../../../helpers/parseDate';
 
+import Payment from '../../../payment';
+
 
 class AppointmentEntry extends React.Component {
   constructor(props) {
@@ -72,7 +74,7 @@ class AppointmentEntry extends React.Component {
           flexGrow: '2'
         }}>
           <div style={{
-            height: '50px',
+            height: '25px',
             width: '100%',
             display: 'flex',
             flexDirection: 'column',
@@ -83,7 +85,7 @@ class AppointmentEntry extends React.Component {
           </div>
 
           <div style={{
-            height: '50px',
+            height: '25px',
             width: '100%',
             display: 'flex',
             flexDirection: 'column',
@@ -92,6 +94,18 @@ class AppointmentEntry extends React.Component {
           }}>
             <span>{`From: ${parseTime(this.props.appointment.time.from)} To: ${parseTime(this.props.appointment.time.to)}`}</span>
           </div>
+
+          <div style={{
+            height: '25px',
+            width: '100%',
+            display: 'flex',
+            flexDirection: 'column',
+            justifyContent: 'flex-start',
+            alignItems: 'center',
+          }}>
+            <Payment />
+          </div>
+
         </div>
 
         {/* Price */}
