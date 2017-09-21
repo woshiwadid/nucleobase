@@ -18,7 +18,6 @@ class ApptList extends React.Component {
   }
 
   render() {
-    console.log('from appointment', this.state.appointment)
     return (
       <div style={{
         height: '100%',
