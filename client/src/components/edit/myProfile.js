@@ -123,7 +123,7 @@ class MyProfile extends React.Component {
         return acc;
       }, {})
       return Object.keys(result).reduce((acc, curr) => {
-        acc.push({label: curr, value: Math.round((result[curr])/this.state.appointments.length * 100)})
+        acc.push({label: curr, value: Math.round((result[curr])/this.state.appointments.filter(x => x.receiver).length * 100)})
         return acc;
       }, []);
     };
