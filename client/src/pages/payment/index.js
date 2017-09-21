@@ -1,7 +1,10 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import StripeCheckout from 'react-stripe-checkout';
 import $ from 'jquery';
+import { Link } from 'react-router-dom';
+
+import StripeCheckout from 'react-stripe-checkout';
+
+import AJAX from '../../ajax';
  
 export default class Payment extends React.Component {
   constructor(props) {  
@@ -19,10 +22,16 @@ export default class Payment extends React.Component {
       method: 'POST',
       data: {token: token},
       success: () => {
-        console.log('success');
-        payment.setState({
-          paid: !payment.state.paid,
-          paymentFailed: true 
+        let options = {
+          id: this.props.appointment.id,
+          receiver: this.props.sessionID
+        };
+        AJAX.put('/appointments', options, (appointment) => {
+          console.log('appointment updated: ', appointment);
+          payment.setState({
+            paid: !payment.state.paid,
+            paymentFailed: true 
+          }, this.props.book());
         });
       },
       error: () => {
@@ -35,6 +44,9 @@ export default class Payment extends React.Component {
   }
  
   render() {
+
+    console.log('props on payment', this.props);
+
     if (this.state.paid) {
       return <span>Thank you for you payment</span>;
     } else {

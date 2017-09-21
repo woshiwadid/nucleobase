@@ -21,7 +21,7 @@ class AppointmentsList extends React.Component {
         {
           this.props.appointments.map((appointment, i) => (
             appointment.receiver === null ?
-              <div key={i} onClick={this.purchase}><AppointmentEntry index={i} appointment={appointment} /></div> :
+              <div key={i} onClick={this.purchase}><AppointmentEntry index={i} appointment={appointment} session={this.props.session} book={this.props.book}/></div> :
               <span key={i}></span>
           ))
         }

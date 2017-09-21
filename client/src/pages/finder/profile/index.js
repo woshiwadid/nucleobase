@@ -33,7 +33,7 @@ class Profile extends React.Component {
 
           <TrainerProfile profile={this.props.profile} />
 
-          <Appointments profile={this.props.profile} />
+          <Appointments profile={this.props.profile} session={this.props.session}/>
 
         </div>
 

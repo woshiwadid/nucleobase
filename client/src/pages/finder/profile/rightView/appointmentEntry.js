@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import { parseTime } from '../../../../helpers/parseTime';
 import { parseDateAbrv, parseDateFull, days } from '../../../../helpers/parseDate';
@@ -13,8 +14,9 @@ class AppointmentEntry extends React.Component {
 
   render() {
 
+    console.log('session on entry: ', this.props.session);
+
     let appointmentDate = this.props.appointment.date.split(' ');
-    // appointment.date = "Sat Sep 23 2017 00:00:00 GMT-0700 (PDT)"
     let background = this.props.index % 2 === 0 ? '#cfd8dc' : '#eceff1';
 
     return (
@@ -103,7 +105,11 @@ class AppointmentEntry extends React.Component {
             justifyContent: 'flex-start',
             alignItems: 'center',
           }}>
-            <Payment />
+            {
+              typeof this.props.session === 'string' ? 
+                <span><Link to="/login">Log in</Link>&nbsp;to purchase</span> :
+                <Payment appointment={this.props.appointment} sessionID={this.props.session.id} book={this.props.book}/>
+            }
           </div>
 
         </div>

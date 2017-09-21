@@ -11,9 +11,11 @@ class Appointments extends React.Component {
     super(props);
     this.state = {
       appointments: [],
+      booked: false,
       reviews: [],
       loading: false
     };
+    this.bookAppointment = this.bookAppointment.bind(this);
   }
 
   componentWillMount() {
@@ -23,9 +25,7 @@ class Appointments extends React.Component {
     let optionsB = {
       trainer_id: this.props.profile.id
     };
-    this.setState({
-      loading: true
-    });
+    
     AJAX.get('/appointments', optionsA, (appointments) => {
       appointments.sort(function(a, b) {
         return Date.parse(a.date) - Date.parse(b.date);
@@ -51,6 +51,24 @@ class Appointments extends React.Component {
     });
   }
 
+  bookAppointment() {
+    let optionsA = {
+      sender: this.props.profile.id
+    };
+    this.setState({
+      loading: true
+    });
+    AJAX.get('/appointments', optionsA, (appointments) => {
+      appointments.sort(function(a, b) {
+        return Date.parse(a.date) - Date.parse(b.date);
+      });
+      this.setState({
+        appointments,
+        loading: false
+      });
+    });
+  }
+
   render() {
 
     const { loading, appointments, reviews } = this.state;
@@ -73,7 +91,7 @@ class Appointments extends React.Component {
         {
           loading ?
             <h1>Loading</h1> :
-            <AppointmentsList appointments={appointments} />
+            <AppointmentsList appointments={appointments} session={this.props.session} book={this.bookAppointment}/>
         }
 
         <span style={{height: '30px'}}></span>

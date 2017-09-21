@@ -145,7 +145,7 @@ class Finder extends React.Component {
 
           {
             selected === true ? 
-              <Profile toggle={this.toggleSelected} profile={selectedProfile}/> :
+              <Profile toggle={this.toggleSelected} profile={selectedProfile} session={session}/> :
               <ResultsList profiles={profiles} select={this.selectionHandler}/>
           }
 

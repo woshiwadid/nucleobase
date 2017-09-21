@@ -48,6 +48,7 @@ class SearchBar extends React.Component {
         flexDirection: 'column',
         width: '100%',
       }}>
+
         <span style={{width: '100%', height: '2px', backgroundColor: '#f44336'}}></span>
         <div style={{
           width: '100%',
@@ -83,6 +84,7 @@ class SearchBar extends React.Component {
           <span style={{color: '#ffffff'}}>Filters</span>
 
         </div>
+
       </div>
     );
 
