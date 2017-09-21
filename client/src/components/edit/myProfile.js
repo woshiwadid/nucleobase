@@ -38,14 +38,14 @@ const styles = {
     width: '100%'
   },
   left: {
-    width: '15%',
+    width: '12%',
     marginRight: '10px',
     paddingLeft: '10px'
   },
   right: {
-    width: '80%',
-    marginRight: '-60px',
-    paddingLeft: '20px'
+    width: '70%',
+    marginRight: '-30px',
+    paddingLeft: '10px'
   },
 };
 
@@ -116,7 +116,7 @@ class MyProfile extends React.Component {
     var result = [];
     if (this.state.appointments.length > 0) {
       this.state.appointments.forEach(appointment => {
-        this.state.session.type === 'trainer' ? appointment.receiver ? result.push(appointment.receiver.first) : result : result.push(appointment.sender);
+        this.state.session.type === 'trainer' ? appointment.receiver ? result.push(appointment.receiver.first) : result : result.push(appointment.sender.first);
       })
       result = result.reduce((acc, curr) => {
         acc[curr] ? acc[curr] += 1 : acc[curr] = 1
