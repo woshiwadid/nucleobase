@@ -7,21 +7,7 @@ class ApptList extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      appointment: {
-        location: '',
-        rating: '',
-        time: {},
-        sender: {
-          first: '',
-          last: '',
-          id: ''
-        },
-        receiver: {
-          first: '',
-          last: '',
-          id: ''
-        }
-      }
+      appointment: null
     };
   }
 
@@ -32,7 +18,6 @@ class ApptList extends React.Component {
   }
 
   render() {
-    console.log('from appointment', this.state.appointment)
     return (
       <div style={{
         height: '100%',
