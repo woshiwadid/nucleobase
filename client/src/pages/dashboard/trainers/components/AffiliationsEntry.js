@@ -174,7 +174,6 @@ export default class AffiliationsEntry extends React.Component {
             </h4>
           </div>
           <TextField hintText='Please write a review'
-          	value={this.state.name}
             floatingLabelText="Your review"
             fullWidth={true}
             multiLine={true}

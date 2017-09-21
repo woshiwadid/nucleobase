@@ -4,6 +4,7 @@ import Avatar from 'material-ui/Avatar';
 import {List, ListItem} from 'material-ui/List';
 import TextField from 'material-ui/TextField';
 import Paper from 'material-ui/Paper';
+import {Card, CardActions, CardHeader, CardMedia, CardTitle, CardText} from 'material-ui/Card';
 
 class Messages extends React.Component {
   constructor(props) {
@@ -32,12 +33,12 @@ class Messages extends React.Component {
           key={index}
           rightAvatar={<Avatar src={message.sender.image_url} />}
           primaryText={
-            <Paper 
+            <Card 
               style= {{ width: 300, height: 50, background: '#75a8f9',display: 'inline-block'}} 
               zDepth={5}
             >
-              {message.message}
-            </Paper>} 
+              <CardText>{message.message}</CardText>
+            </Card>} 
           disabled={true}
           rounded={false}
           style={{marginLeft: '100px'}}
@@ -64,6 +65,7 @@ class Messages extends React.Component {
           <TextField
             onChange={this.updateMessage.bind(this)}
             value={this.state.message}
+            multiLine={true}
           />
           <button onClick={this.submitMessage.bind(this)}>Send</button>
         </div>

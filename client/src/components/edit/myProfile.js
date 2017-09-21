@@ -123,7 +123,7 @@ class MyProfile extends React.Component {
         return acc;
       }, {})
       return Object.keys(result).reduce((acc, curr) => {
-        acc.push({label: curr, value: Math.round((result[curr])/Object.keys(result).length * 100)})
+        acc.push({label: curr, value: Math.round((result[curr])/this.state.appointments.length * 100)})
         return acc;
       }, []);
     };
@@ -216,7 +216,7 @@ class MyProfile extends React.Component {
             }
           </div>
           <div style={{marginTop:'30px'}}>
-            <h4><PhoneIcon/>: {'   ' + this.state.session.phone}</h4>
+            <h4><PhoneIcon/>: {this.state.session.phone ? '   ' + this.state.session.phone : ''}</h4>
             <h4><EmailIcon/>: {'   ' + this.state.session.email}</h4>
           </div>
         </div>  
